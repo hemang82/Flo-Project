@@ -23,8 +23,7 @@ function initScreenSwitcher() {
   const screenIndices = {
     home: 0,
     calendar: 1,
-    tracker: 2,
-    articles: 3
+    tracker: 2
   };
 
   function switchToScreen(screenName) {
@@ -32,7 +31,7 @@ function initScreenSwitcher() {
     if (index === undefined || !carousel) return;
 
     // 1. Slide the iPhone screen container
-    carousel.style.transform = `translateX(-${index * 25}%)`;
+    carousel.style.transform = `translateX(-${index * 33.333}%)`;
 
     // 2. Update the outer segmented control pill position
     const activePromoBtn = document.querySelector(`.segmented-btn[data-switch-to="${screenName}"]`);
