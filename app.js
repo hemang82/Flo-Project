@@ -23,7 +23,9 @@ function initScreenSwitcher() {
   const screenIndices = {
     home: 0,
     calendar: 1,
-    tracker: 2
+    tracker: 2,
+    articles: 3,
+    profile: 4
   };
 
   function switchToScreen(screenName) {
@@ -31,7 +33,7 @@ function initScreenSwitcher() {
     if (index === undefined || !carousel) return;
 
     // 1. Slide the iPhone screen container
-    carousel.style.transform = `translateX(-${index * 33.333}%)`;
+    carousel.style.transform = `translateX(-${index * 20}%)`;
 
     // 2. Update the outer segmented control pill position
     const activePromoBtn = document.querySelector(`.segmented-btn[data-switch-to="${screenName}"]`);
@@ -62,7 +64,7 @@ function initScreenSwitcher() {
           icon.classList.remove('text-brand-gray');
           icon.classList.add('text-brand-pink');
           // Add fill color if applicable
-          if (icon.hasAttribute('data-lucide') && icon.getAttribute('data-lucide') === 'book-open') {
+          if (icon.hasAttribute('data-lucide') && (icon.getAttribute('data-lucide') === 'book-open' || icon.getAttribute('data-lucide') === 'user')) {
             icon.classList.add('fill-brand-pink/20');
           }
         }
