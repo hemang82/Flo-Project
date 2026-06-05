@@ -189,10 +189,11 @@
     <div class="lg:col-span-5 flex flex-col items-center justify-center animate-on-scroll" style="transition-delay: 150ms">
       
       <!-- iOS Segmented Control -->
-      <div class="segmented-control w-64 mb-6">
+      <div class="segmented-control w-72 mb-6">
         <div id="segmented-slider" class="segmented-slider"></div>
         <button data-switch-to="home" class="segmented-btn flex-1 active">Home</button>
         <button data-switch-to="calendar" class="segmented-btn flex-1">Calendar</button>
+        <button data-switch-to="tracker" class="segmented-btn flex-1">Tracker</button>
         <button data-switch-to="articles" class="segmented-btn flex-1">Articles</button>
       </div>
 
@@ -728,7 +729,27 @@
             </div>
 
             <!-- ==========================================
-                 SCREEN 3: ARTICLES SCREEN
+                 SCREEN 3: TRACKER SCREEN
+                 ========================================== -->
+            <div class="phone-screen bg-white">
+              <!-- Header -->
+              <div class="px-5 py-3.5 flex items-center justify-between border-b border-gray-100 bg-white flex-shrink-0">
+                <img src="logo.png" class="h-6 w-auto" alt="Logo">
+                <span class="font-heading font-extrabold text-brand-dark text-sm">Tracker</span>
+                <button class="p-1 text-brand-dark"><i data-lucide="more-vertical" class="w-5 h-5"></i></button>
+              </div>
+
+              <!-- Content Area scrollable -->
+              <div class="flex-1 overflow-y-auto custom-scrollbar bg-white relative">
+                <img src="tracker.png" class="w-full h-auto object-contain" alt="Cycle Tracker History">
+                
+                <!-- Transparent Clickable Area for Edit Period Button -->
+                <button data-switch-to="calendar" class="absolute left-1/2 -translate-x-1/2 w-48 h-12 opacity-0 cursor-pointer" style="top: 26%;"></button>
+              </div>
+            </div>
+
+            <!-- ==========================================
+                 SCREEN 4: ARTICLES SCREEN
                  ========================================== -->
             <div class="phone-screen bg-[#FAF8F9]">
               <!-- Header -->
@@ -865,7 +886,7 @@
             <span>Calendar</span>
           </button>
           
-          <button data-switch-to="home" class="flex flex-col items-center gap-1 py-1 hover:text-brand-pink transition-colors">
+          <button data-switch-to="tracker" class="flex flex-col items-center gap-1 py-1 hover:text-brand-pink transition-colors">
             <i data-lucide="line-chart" class="w-5 h-5 text-brand-gray"></i>
             <span>Tracker</span>
           </button>
