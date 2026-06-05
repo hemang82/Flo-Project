@@ -51,59 +51,7 @@
       
       <!-- LOGO (Pink Spirals, Transparent Background, Solid Bold Text Next to It) -->
       <a href="#" class="flex items-center gap-2">
-        <svg class="h-11 w-auto" viewBox="0 0 280 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(0, -2)">
-            <defs>
-              <linearGradient id="heartGradPink" x1="40" y1="20" x2="40" y2="52" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FF9EBA" />
-                <stop offset="60%" stop-color="#FF5A84" />
-                <stop offset="100%" stop-color="#E03A62" />
-              </linearGradient>
-              <linearGradient id="smallHeartGradPink" x1="62" y1="9" x2="62" y2="23" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FFB0C6" />
-                <stop offset="100%" stop-color="#FF688E" />
-              </linearGradient>
-              <linearGradient id="spermGradPink" x1="58" y1="48" x2="52" y2="38" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#FFFFFF" />
-                <stop offset="100%" stop-color="#FFE0E7" />
-              </linearGradient>
-            </defs>
-
-            <!-- Outer Spiral Line (Pink, Transparent Background) -->
-            <path d="M 40,15 C 65,15 82,32 82,50 C 82,68 62,80 40,80 C 18,80 5,63 5,45 C 5,23 28,6 55,6 C 72,6 80,14 80,14" 
-                  stroke="#FF5E8C" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-            <path d="M 40,71 C 25,71 13,60 13,46 C 13,30 29,18 48,18 C 62,18 70,25 70,25" 
-                  stroke="#FF5E8C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
-
-            <!-- Central Solid Gradient Heart -->
-            <path d="M 40,54 C 27,42 24,33 40,23 C 56,33 53,42 40,54 Z" fill="url(#heartGradPink)"/>
-
-            <!-- Sperm Cell (White glossy with pink highlight) -->
-            <ellipse cx="51" cy="38" rx="6" ry="4" transform="rotate(-35 51 38)" fill="url(#spermGradPink)"/>
-            <ellipse cx="51" cy="38" rx="2" ry="1" transform="rotate(-35 51 38)" fill="#FFF"/>
-            <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" 
-                  stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" 
-                  stroke="#FF5E8C" stroke-width="0.8" stroke-linecap="round" fill="none"/>
-
-            <!-- Floating Small Heart Above -->
-            <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" fill="url(#smallHeartGradPink)"/>
-            <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" stroke="#FFFFFF" stroke-width="0.8" fill="none"/>
-
-            <!-- Sparkles -->
-            <path d="M 74,18 L 76,21 L 79,21 L 77,23 L 78,26 L 75,24 L 72,26 L 73,23 L 71,21 L 74,21 Z" fill="#FF8C69"/>
-            <path d="M 83,28 L 84.5,30 L 86.5,30 L 85,31.5 L 85.5,33.5 L 84,32 L 82.5,33.5 L 83,31.5 L 81.5,30 L 83.5,30 Z" fill="#FF8C69"/>
-          </g>
-
-          <!-- Solid Filled Text "TrackFlow" next to it (Charcoal/Pink) -->
-          <g transform="translate(90, 8)">
-            <text x="0" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#1A1819" letter-spacing="-0.5">Track</text>
-            <text x="74" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#FF5E8C" letter-spacing="-0.5">Fl</text>
-            <!-- Solid filled heart in place of O inside Flow -->
-            <path d="M 108,37 C 103,31 102,26 108,20 C 114,26 113,31 108,37 Z" fill="#FF5E8C"/>
-            <text x="118" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#FF5E8C" letter-spacing="-0.5">w</text>
-          </g>
-        </svg>
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
       </a>
 
       <!-- DESKTOP NAV LINKS -->
@@ -288,36 +236,7 @@
             <div class="phone-screen bg-[#FAF8F9]">
               <!-- Screen Header -->
               <div class="px-5 py-3.5 flex items-center justify-between border-b border-gray-100 bg-white flex-shrink-0">
-                <!-- Mini brand logo mark -->
-                <svg class="w-6 h-6" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="40" cy="40" r="36" fill="#FF5E8C"/>
-                  <g transform="translate(40, 40) scale(0.78) translate(-43.5, -47.5)">
-                    <defs>
-                      <linearGradient id="miniHeartGradHome" x1="40" y1="20" x2="40" y2="54" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFB0C6" />
-                        <stop offset="60%" stop-color="#FF7597" />
-                        <stop offset="100%" stop-color="#E0486F" />
-                      </linearGradient>
-                      <linearGradient id="miniSmallHeartGradHome" x1="62" y1="9" x2="62" y2="21" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFC0D3" />
-                        <stop offset="100%" stop-color="#FF7597" />
-                      </linearGradient>
-                      <linearGradient id="miniSpermGradHome" x1="58" y1="48" x2="52" y2="38" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFFFFF" />
-                        <stop offset="100%" stop-color="#FFEBF0" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M 40,15 C 65,15 82,32 82,50 C 82,68 62,80 40,80 C 18,80 5,63 5,45 C 5,23 28,6 55,6 C 72,6 80,14 80,14" stroke="#FFFFFF" stroke-width="3" fill="none"/>
-                    <path d="M 40,71 C 25,71 13,60 13,46 C 13,30 29,18 48,18 C 62,18 70,25 70,25" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    <path d="M 40,54 C 27,42 24,33 40,23 C 56,33 53,42 40,54 Z" fill="url(#miniHeartGradHome)"/>
-                    <ellipse cx="51" cy="38" rx="6" ry="4" transform="rotate(-35 51 38)" fill="url(#miniSpermGradHome)"/>
-                    <ellipse cx="51" cy="38" rx="2" ry="1" transform="rotate(-35 51 38)" fill="#FFF"/>
-                    <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" stroke="#FFFFFF" stroke-width="2.8" fill="none"/>
-                    <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" fill="url(#miniSmallHeartGradHome)" stroke="#FFFFFF" stroke-width="1"/>
-                    <path d="M 74,18 L 76,21 L 79,21 L 77,23 L 78,26 L 75,24 L 72,26 L 73,23 L 71,21 L 74,21 Z" fill="#FFFFFF"/>
-                  </g>
-                </svg>
-                <span class="font-heading font-extrabold text-brand-dark text-sm tracking-tight">TrackFlow</span>
+                <img src="logo.png" class="h-6 w-auto" alt="Logo">
                 <button class="p-1 text-brand-dark"><i data-lucide="more-vertical" class="w-5 h-5"></i></button>
               </div>
 
@@ -483,34 +402,7 @@
               <!-- Header -->
               <div class="px-5 py-3.5 flex items-center justify-between border-b border-gray-100 bg-white flex-shrink-0">
                 <!-- Mini brand logo mark -->
-                <svg class="w-6 h-6" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="40" cy="40" r="36" fill="#FF5E8C"/>
-                  <g transform="translate(40, 40) scale(0.78) translate(-43.5, -47.5)">
-                    <defs>
-                      <linearGradient id="miniHeartGradCal" x1="40" y1="20" x2="40" y2="54" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFB0C6" />
-                        <stop offset="60%" stop-color="#FF7597" />
-                        <stop offset="100%" stop-color="#E0486F" />
-                      </linearGradient>
-                      <linearGradient id="miniSmallHeartGradCal" x1="62" y1="9" x2="62" y2="21" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFC0D3" />
-                        <stop offset="100%" stop-color="#FF7597" />
-                      </linearGradient>
-                      <linearGradient id="miniSpermGradCal" x1="58" y1="48" x2="52" y2="38" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFFFFF" />
-                        <stop offset="100%" stop-color="#FFEBF0" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M 40,15 C 65,15 82,32 82,50 C 82,68 62,80 40,80 C 18,80 5,63 5,45 C 5,23 28,6 55,6 C 72,6 80,14 80,14" stroke="#FFFFFF" stroke-width="3" fill="none"/>
-                    <path d="M 40,71 C 25,71 13,60 13,46 C 13,30 29,18 48,18 C 62,18 70,25 70,25" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    <path d="M 40,54 C 27,42 24,33 40,23 C 56,33 53,42 40,54 Z" fill="url(#miniHeartGradCal)"/>
-                    <ellipse cx="51" cy="38" rx="6" ry="4" transform="rotate(-35 51 38)" fill="url(#miniSpermGradCal)"/>
-                    <ellipse cx="51" cy="38" rx="2" ry="1" transform="rotate(-35 51 38)" fill="#FFF"/>
-                    <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" stroke="#FFFFFF" stroke-width="2.8" fill="none"/>
-                    <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" fill="url(#miniSmallHeartGradCal)" stroke="#FFFFFF" stroke-width="1"/>
-                    <path d="M 74,18 L 76,21 L 79,21 L 77,23 L 78,26 L 75,24 L 72,26 L 73,23 L 71,21 L 74,21 Z" fill="#FFFFFF"/>
-                  </g>
-                </svg>
+                <img src="logo.png" class="h-6 w-auto" alt="Logo">
                 <span class="font-heading font-extrabold text-brand-dark text-sm">August</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="calendar" class="w-5 h-5"></i></button>
               </div>
@@ -988,34 +880,7 @@
               <!-- Header -->
               <div class="px-5 py-3 flex items-center justify-between border-b border-gray-100 bg-white flex-shrink-0">
                 <!-- Mini high-fidelity circle logo mark in screen navigation -->
-                <svg class="w-7 h-7" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="40" cy="40" r="36" fill="#FF5E8C"/>
-                  <g transform="translate(40, 40) scale(0.78) translate(-43.5, -47.5)">
-                    <defs>
-                      <linearGradient id="miniHeartGrad" x1="40" y1="20" x2="40" y2="54" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFB0C6" />
-                        <stop offset="60%" stop-color="#FF7597" />
-                        <stop offset="100%" stop-color="#E0486F" />
-                      </linearGradient>
-                      <linearGradient id="miniSmallHeartGrad" x1="62" y1="9" x2="62" y2="21" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFC0D3" />
-                        <stop offset="100%" stop-color="#FF7597" />
-                      </linearGradient>
-                      <linearGradient id="miniSpermGrad" x1="58" y1="48" x2="52" y2="38" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFFFFF" />
-                        <stop offset="100%" stop-color="#FFEBF0" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M 40,15 C 65,15 82,32 82,50 C 82,68 62,80 40,80 C 18,80 5,63 5,45 C 5,23 28,6 55,6 C 72,6 80,14 80,14" stroke="#FFFFFF" stroke-width="3" fill="none"/>
-                    <path d="M 40,71 C 25,71 13,60 13,46 C 13,30 29,18 48,18 C 62,18 70,25 70,25" stroke="#FFFFFF" stroke-width="1.5" fill="none" opacity="0.6"/>
-                    <path d="M 40,54 C 27,42 24,33 40,23 C 56,33 53,42 40,54 Z" fill="url(#miniHeartGrad)"/>
-                    <ellipse cx="51" cy="38" rx="6" ry="4" transform="rotate(-35 51 38)" fill="url(#miniSpermGrad)"/>
-                    <ellipse cx="51" cy="38" rx="2" ry="1" transform="rotate(-35 51 38)" fill="#FFF"/>
-                    <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" stroke="#FFFFFF" stroke-width="2.8" fill="none"/>
-                    <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" fill="url(#miniSmallHeartGrad)" stroke="#FFFFFF" stroke-width="1"/>
-                    <path d="M 74,18 L 76,21 L 79,21 L 77,23 L 78,26 L 75,24 L 72,26 L 73,23 L 71,21 L 74,21 Z" fill="#FFFFFF"/>
-                  </g>
-                </svg>
+                <img src="logo.png" class="h-6 w-auto" alt="Logo">
                 <span class="font-heading font-bold text-brand-dark text-sm">Articles</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="search" class="w-5 h-5"></i></button>
               </div>
@@ -2102,39 +1967,7 @@
       <div class="flex flex-col items-center md:items-start gap-4">
         <!-- Re-use High-fidelity Pink logo next to TrackFlow white/pink solid text -->
         <a href="#" class="opacity-90 hover:opacity-100 transition-opacity">
-          <svg class="h-11 w-auto" viewBox="0 0 280 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g transform="translate(0, -2)">
-              <defs>
-                <linearGradient id="footerHeartGradPink" x1="40" y1="20" x2="40" y2="52" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FF9EBA" />
-                  <stop offset="60%" stop-color="#FF5A84" />
-                  <stop offset="100%" stop-color="#E03A62" />
-                </linearGradient>
-                <linearGradient id="footerSmallHeartGradPink" x1="62" y1="9" x2="62" y2="23" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFB0C6" />
-                  <stop offset="100%" stop-color="#FF688E" />
-                </linearGradient>
-                <linearGradient id="footerSpermGradPink" x1="58" y1="48" x2="52" y2="38" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFFFFF" />
-                  <stop offset="100%" stop-color="#FFE0E7" />
-                </linearGradient>
-              </defs>
-              <path d="M 40,15 C 65,15 82,32 82,50 C 82,68 62,80 40,80 C 18,80 5,63 5,45 C 5,23 28,6 55,6 C 72,6 80,14 80,14" stroke="#FF5E8C" stroke-width="2.8" fill="none"/>
-              <path d="M 40,54 C 27,42 24,33 40,23 C 56,33 53,42 40,54 Z" fill="url(#footerHeartGradPink)"/>
-              <ellipse cx="51" cy="38" rx="6" ry="4" transform="rotate(-35 51 38)" fill="url(#footerSpermGradPink)"/>
-              <ellipse cx="51" cy="38" rx="2" ry="1" transform="rotate(-35 51 38)" fill="#FFF"/>
-              <path d="M 47,42 C 43,45 42,42 38,47 C 34,52 35,53 30,56 C 26,59 28,62 25,64" stroke="#FFFFFF" stroke-width="2.5" fill="none"/>
-              <path d="M 62,21 C 57,17 56,13 62,9 C 68,13 67,17 62,21 Z" fill="url(#footerSmallHeartGradPink)" stroke="#FFFFFF" stroke-width="0.8"/>
-              <path d="M 74,18 L 76,21 L 79,21 L 77,23 L 78,26 L 75,24 L 72,26 L 73,23 L 71,21 L 74,21 Z" fill="#FF8C69"/>
-            </g>
-            <g transform="translate(90, 8)">
-              <text x="0" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#1A1819" letter-spacing="-0.5">Track</text>
-              <text x="74" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#FF5E8C" letter-spacing="-0.5">Fl</text>
-              <!-- Solid filled heart in place of O inside Flow -->
-              <path d="M 108,37 C 103,31 102,26 108,20 C 114,26 113,31 108,37 Z" fill="#FF5E8C"/>
-              <text x="118" y="44" font-family="Outfit" font-weight="700" font-size="29" fill="#FF5E8C" letter-spacing="-0.5">w</text>
-            </g>
-          </svg>
+          <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
         </a>
         <p class="text-xs text-brand-gray mt-1">
           &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
