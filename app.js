@@ -135,7 +135,7 @@ const PHASES = [
     },
     color: '#FF85A2', // Matches primary brand color
     dashoffset: 283 * 0.85,
-    rotation: 0
+    rotation: 324
   },
   {
     id: 2,
@@ -151,7 +151,7 @@ const PHASES = [
     },
     color: '#FF8C69',
     dashoffset: 283 * 0.6,
-    rotation: 75
+    rotation: 54
   },
   {
     id: 3,
@@ -167,7 +167,7 @@ const PHASES = [
     },
     color: '#FF4D6D',
     dashoffset: 283 * 0.45,
-    rotation: 165
+    rotation: 108
   },
   {
     id: 4,
@@ -183,7 +183,7 @@ const PHASES = [
     },
     color: '#C05E8C',
     dashoffset: 283 * 0.1,
-    rotation: 270
+    rotation: 234
   }
 ];
 
@@ -229,6 +229,10 @@ function initCycleSimulator() {
     }
     if (dialPointer) {
       dialPointer.style.transform = `rotate(${phase.rotation}deg)`;
+      const dot = dialPointer.querySelector('div');
+      if (dot) {
+        dot.style.borderColor = phase.color;
+      }
     }
 
     // Update Slider value
