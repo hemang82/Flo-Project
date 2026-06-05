@@ -283,3 +283,12 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Ensure maximum clarity and prevent blurriness in simulator mockup images */
+.phone-screen img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
