@@ -115,17 +115,26 @@ h1, h2, h3, h4, h5, h6 {
 .dial-container {
   aspect-ratio: 1;
   position: relative;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .dial-progress {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1), stroke 0.8s ease;
+  will-change: stroke-dashoffset;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .dial-pointer {
   transform-origin: 50% 50%;
   transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 /* Hide default input ranges style for simulator slider */
@@ -197,6 +206,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 300%;
   height: 100%;
   transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .phone-screen {
