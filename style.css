@@ -162,63 +162,164 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 12px rgba(255, 133, 162, 0.5);
 }
 
-/* Custom CSS Phone Mockup Outer shell styling */
+/* ============================================================
+   iPhone 15 Exact Frame — Titanium Flat-Side Design
+   Dimensions based on iPhone 15 physical proportions.
+   ============================================================ */
+
+/* Outer wrapper needed to position hardware side buttons */
+.phone-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* RIGHT SIDE: Power/Sleep Button — Space Black */
+.phone-btn-power {
+  position: absolute;
+  right: -3px;
+  top: 160px;
+  width: 3px;
+  height: 70px;
+  background: linear-gradient(180deg, #3a3a3c 0%, #1c1c1e 40%, #3a3a3c 100%);
+  border-radius: 0 2px 2px 0;
+  z-index: 5;
+}
+
+/* LEFT SIDE: Action Button — Space Black */
+.phone-btn-action {
+  position: absolute;
+  left: -3px;
+  top: 122px;
+  width: 3px;
+  height: 32px;
+  background: linear-gradient(180deg, #3a3a3c 0%, #1c1c1e 40%, #3a3a3c 100%);
+  border-radius: 2px 0 0 2px;
+  z-index: 5;
+}
+
+/* LEFT SIDE: Volume Up — Space Black */
+.phone-btn-vol-up {
+  position: absolute;
+  left: -3px;
+  top: 174px;
+  width: 3px;
+  height: 58px;
+  background: linear-gradient(180deg, #3a3a3c 0%, #1c1c1e 40%, #3a3a3c 100%);
+  border-radius: 2px 0 0 2px;
+  z-index: 5;
+}
+
+/* LEFT SIDE: Volume Down — Space Black */
+.phone-btn-vol-down {
+  position: absolute;
+  left: -3px;
+  top: 244px;
+  width: 3px;
+  height: 58px;
+  background: linear-gradient(180deg, #3a3a3c 0%, #1c1c1e 40%, #3a3a3c 100%);
+  border-radius: 2px 0 0 2px;
+  z-index: 5;
+}
+
+/* Main iPhone 15 frame body — Space Black */
 .phone-frame {
-  width: 320px;
-  height: 650px;
-  border-radius: 44px;
-  border: 2px solid #e5e7eb; /* Sleek, normal 2px border */
-  box-shadow: 
-    0px 25px 50px -12px rgba(0, 0, 0, 0.08),
-    0px 0px 30px rgba(255, 133, 162, 0.03);
+  width: 310px;
+  height: 668px;
+  /* iPhone 15 uses a continuous corner curve — 55px matches physical device */
+  border-radius: 55px;
+  /* Space Black frame — deep charcoal with subtle sheen */
+  border: 10px solid transparent;
+  background-clip: padding-box;
+  background-color: #FAF8F9;
+  /* Outer Space Black frame ring using box-shadow layers */
+  box-shadow:
+    /* Outer black metallic band — subtle edge highlight */
+    0 0 0 1px #4a4a4c,
+    0 0 0 2px #1c1c1e,
+    0 0 0 3px #0a0a0a,
+    /* Realistic depth shadow */
+    0px 30px 70px -10px rgba(0,0,0,0.55),
+    0px 10px 30px -5px  rgba(0,0,0,0.30),
+    /* Subtle pink brand ambient glow at base */
+    0px 0px 40px rgba(255, 133, 162, 0.08);
   position: relative;
   overflow: hidden;
-  background-color: #FAF8F9;
   transition: transform 0.3s ease;
+}
+
+/* Inner screen bezel — iPhone 15 has a very thin 2mm bezel */
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 46px;
+  border: 2px solid rgba(0,0,0,0.06);
+  pointer-events: none;
+  z-index: 100;
 }
 
 /* Responsive scaling for phone simulator on narrow screens to prevent overflow */
 @media (max-width: 380px) {
   .phone-frame {
-    transform: scale(0.9);
+    transform: scale(0.88);
     transform-origin: top center;
-    margin-bottom: -65px; /* Pull content up to compensate for scaled down height */
+    margin-bottom: -80px;
   }
 }
 
 @media (max-width: 340px) {
   .phone-frame {
-    transform: scale(0.85);
+    transform: scale(0.8);
     transform-origin: top center;
-    margin-bottom: -100px;
+    margin-bottom: -134px;
   }
 }
 
+/* iPhone 15 Dynamic Island — pill shaped, correct size */
 .phone-notch {
   position: absolute;
-  top: 9px;
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  width: 85px;
-  height: 25px;
+  /* Dynamic Island — smaller, accurate proportions */
+  width: 88px;
+  height: 26px;
   background: #000;
-  border-radius: 20px;
+  border-radius: 14px;
   z-index: 50;
-  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.15);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.08),
+    0 0 0 1px rgba(0,0,0,0.5);
 }
 
-/* Front camera lens reflection detail inside Dynamic Island */
+/* Front camera dot inside Dynamic Island */
 .phone-notch::after {
   content: '';
   position: absolute;
-  right: 12px;
+  right: 10px;
   top: 50%;
   transform: translateY(-50%);
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #121212;
-  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.35);
+  background: #0a0a0a;
+  box-shadow:
+    inset 0 0 3px rgba(255,255,255,0.25),
+    0 0 0 1px rgba(80,160,255,0.12);
+}
+
+/* Proximity/Face ID sensor dot (smaller, left side inside Dynamic Island) */
+.phone-notch::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #111;
+  box-shadow: inset 0 0 2px rgba(255,255,255,0.15);
 }
 
 /* iPhone Screen Sliding Carousel */

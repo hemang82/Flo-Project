@@ -244,8 +244,18 @@
 
       <!-- Floating wrapper to animate without affecting responsive scaling -->
       <div class="animate-float">
-        <!-- Phone Frame Outer Container -->
-        <div class="phone-frame shadow-2xl relative select-none bg-white">
+        <!-- iPhone 15 Phone Wrapper (positions side hardware buttons) -->
+        <div class="phone-wrapper">
+          <!-- LEFT: Action Button -->
+          <div class="phone-btn-action"></div>
+          <!-- LEFT: Volume Up -->
+          <div class="phone-btn-vol-up"></div>
+          <!-- LEFT: Volume Down -->
+          <div class="phone-btn-vol-down"></div>
+          <!-- RIGHT: Power Button -->
+          <div class="phone-btn-power"></div>
+        <!-- Phone Frame (iPhone 15 exact frame) -->
+        <div class="phone-frame relative select-none">
         <!-- Phone notch -->
         <div class="phone-notch"></div>
 
@@ -1310,7 +1320,8 @@
           </button>
         </div>
       </div>
-      </div>
+        </div><!-- /phone-wrapper -->
+      </div><!-- /animate-float -->
 
     </div>
     </div>
