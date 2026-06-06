@@ -20,6 +20,19 @@
     tailwind.config = {
       theme: {
         extend: {
+          fontSize: {
+            'xs': '0.85rem',
+            'sm': '0.975rem',
+            'base': '1.1rem',
+            'lg': '1.225rem',
+            'xl': '1.375rem',
+            '2xl': '1.65rem',
+            '3xl': '2.05rem',
+            '4xl': '2.5rem',
+            '5xl': '3.3rem',
+            '6xl': '4.1rem',
+            '7xl': '4.85rem',
+          },
           colors: {
             brand: {
               pink: '#FF5E8C', // Primary brand pink
@@ -56,10 +69,12 @@
 
       <!-- DESKTOP NAV LINKS -->
       <nav class="hidden md:flex items-center gap-8 font-medium text-brand-dark/80">
+        <a href="#" class="hover:text-brand-pink transition-colors">Home</a>
         <a href="#features" class="hover:text-brand-pink transition-colors">Features</a>
-        <a href="#simulator" class="hover:text-brand-pink transition-colors">Cycle Guide</a>
-        <a href="#screens" class="hover:text-brand-pink transition-colors">App Screens</a>
+        <a href="#simulator" class="hover:text-brand-pink transition-colors">How It Works</a>
+        <a href="#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
         <a href="#faqs" class="hover:text-brand-pink transition-colors">FAQs</a>
+        <a href="#contact" class="hover:text-brand-pink transition-colors">Contact</a>
       </nav>
 
       <!-- CTA BUTTON -->
@@ -80,10 +95,12 @@
     <!-- MOBILE DROPDOWN MENU -->
     <div id="mobile-menu" class="hidden md:hidden px-6 pb-6 pt-2 border-t border-brand-pink/10 transition-all duration-300 opacity-0 -translate-y-4">
       <nav class="flex flex-col gap-4 font-medium text-brand-dark/80">
+        <a href="#" class="py-2 hover:text-brand-pink border-b border-gray-100">Home</a>
         <a href="#features" class="py-2 hover:text-brand-pink border-b border-gray-100">Features</a>
-        <a href="#simulator" class="py-2 hover:text-brand-pink border-b border-gray-100">Cycle Guide</a>
-        <a href="#screens" class="py-2 hover:text-brand-pink border-b border-gray-100">App Screens</a>
-        <a href="#faqs" class="py-2 hover:text-brand-pink">FAQs</a>
+        <a href="#simulator" class="py-2 hover:text-brand-pink border-b border-gray-100">How It Works</a>
+        <a href="#pricing" class="py-2 hover:text-brand-pink border-b border-gray-100">Pricing</a>
+        <a href="#faqs" class="py-2 hover:text-brand-pink border-b border-gray-100">FAQs</a>
+        <a href="#contact" class="py-2 hover:text-brand-pink">Contact</a>
         <a href="#download" class="mt-2 text-center py-3 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20">
           Download App
         </a>
@@ -94,7 +111,7 @@
   <!-- ==========================================
        HERO SECTION
        ========================================== -->
-  <section class="max-w-7xl mx-auto px-6 pt-10 pb-20 md:pt-16 md:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+  <section class="max-w-7xl mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
     
     <!-- Background glows -->
     <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
@@ -116,7 +133,7 @@
         <span class="text-gradient">Period Tracker</span>
       </h1>
       
-      <p class="text-base sm:text-lg text-brand-gray/90 max-w-xl leading-relaxed">
+      <p class="text-lg sm:text-[21px] text-brand-gray/90 max-w-xl leading-relaxed">
         TrackFlow makes <span class="text-brand-dark font-semibold">logging dates</span>, <span class="text-brand-dark font-semibold">tracking symptoms</span>, and <span class="text-brand-dark font-semibold">predicting ovulation peaks</span> simple. Log flow days, mood changes, cramps, and water intake to get <span class="text-brand-pink font-bold">daily hormonal phase recommendations</span>.
       </p>
 
@@ -128,7 +145,7 @@
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/>
           </svg>
           <div class="text-left leading-none">
-            <span class="text-[9px] text-white/70 block font-normal tracking-wide">Download on the</span>
+            <span class="text-[12px] text-white/70 block font-normal tracking-wide">Download on the</span>
             <span class="text-sm font-semibold block mt-0.5">App Store</span>
           </div>
         </a>
@@ -142,7 +159,7 @@
             <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/>
           </svg>
           <div class="text-left leading-none">
-            <span class="text-[8px] text-white/70 block font-normal tracking-wide uppercase">Get it on</span>
+            <span class="text-[11px] text-white/70 block font-normal tracking-wide uppercase">Get it on</span>
             <span class="text-sm font-semibold block mt-0.5">Google Play</span>
           </div>
         </a>
@@ -157,7 +174,7 @@
           </div>
           <div>
             <span class="block text-lg font-bold text-brand-dark font-heading leading-none">99.2%</span>
-            <span class="text-[10px] text-brand-gray font-semibold block mt-1.5">Log Accuracy</span>
+            <span class="text-xs text-brand-gray font-semibold block mt-1.5">Log Accuracy</span>
           </div>
         </div>
         
@@ -168,7 +185,7 @@
           </div>
           <div>
             <span class="block text-lg font-bold text-brand-dark font-heading leading-none">50+</span>
-            <span class="text-[10px] text-brand-gray font-semibold block mt-1.5">Logged Metrics</span>
+            <span class="text-xs text-brand-gray font-semibold block mt-1.5">Logged Metrics</span>
           </div>
         </div>
         
@@ -179,7 +196,7 @@
           </div>
           <div>
             <span class="block text-lg font-bold text-brand-dark font-heading leading-none">100%</span>
-            <span class="text-[10px] text-brand-gray font-semibold block mt-1.5">Private & Safe</span>
+            <span class="text-xs text-brand-gray font-semibold block mt-1.5">Private & Safe</span>
           </div>
         </div>
       </div>
@@ -197,12 +214,12 @@
       </div>
 
       <!-- Phone Frame Outer Container -->
-      <div class="phone-frame animate-float shadow-2xl relative select-none bg-white">
+      <div class="phone-frame shadow-2xl relative select-none bg-white">
         <!-- Phone notch -->
         <div class="phone-notch"></div>
         
         <!-- Status Bar -->
-        <div class="absolute top-0 inset-x-0 h-10 px-6 flex justify-between items-center text-[10px] font-bold text-brand-dark z-40 bg-white/40 backdrop-blur-sm">
+        <div class="absolute top-0 inset-x-0 h-10 px-6 flex justify-between items-center text-[13px] font-bold text-brand-dark z-40 bg-white/40 backdrop-blur-sm">
           <span>9:41</span>
           <div class="flex items-center gap-1">
             <i data-lucide="signal" class="w-3 h-3"></i>
@@ -212,17 +229,17 @@
         </div>
 
         <!-- Push Notification Banner -->
-        <div id="phone-notification" class="absolute top-8 inset-x-3.5 z-50 transform -translate-y-32 opacity-0 transition-all duration-500 ease-out bg-white/95 backdrop-blur-md border border-gray-100 rounded-2xl p-2.5 shadow-lg flex items-start gap-2.5 pointer-events-none">
+        <div id="phone-notification" class="absolute top-12 inset-x-3.5 z-50 transform -translate-y-56 opacity-0 transition-all duration-500 ease-out bg-white/95 backdrop-blur-md border border-gray-100 rounded-2xl p-2.5 shadow-lg flex items-start gap-2.5 pointer-events-none">
           <div class="w-7 h-7 rounded-xl bg-brand-pink/15 flex items-center justify-center text-brand-pink flex-shrink-0">
             <i id="notif-icon" data-lucide="bell" class="w-4 h-4 fill-brand-pink/10"></i>
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center justify-between">
-              <span class="text-[9px] font-bold text-brand-dark font-heading">TrackFlow Smart Alert</span>
-              <span class="text-[7px] text-brand-gray/65">now</span>
+              <span class="text-[12px] font-bold text-brand-dark font-heading">TrackFlow Smart Alert</span>
+              <span class="text-[10px] text-brand-gray/65">now</span>
             </div>
-            <p id="notif-title" class="text-[10px] font-extrabold text-brand-dark leading-tight mt-0.5 truncate"></p>
-            <p id="notif-body" class="text-[9px] text-brand-gray leading-normal mt-0.5"></p>
+            <p id="notif-title" class="text-[13px] font-extrabold text-brand-dark leading-tight mt-0.5 truncate"></p>
+            <p id="notif-body" class="text-[12px] text-brand-gray leading-normal mt-0.5"></p>
           </div>
         </div>
 
@@ -240,17 +257,17 @@
                   <div class="w-5 h-5 rounded-full bg-brand-pink flex items-center justify-center text-white">
                     <i data-lucide="heart" class="w-3 h-3 fill-white"></i>
                   </div>
-                  <span class="text-[8px] font-extrabold text-brand-dark leading-tight tracking-tight max-w-[65px] text-left">Period Tracker Ovulation Cycle</span>
+                  <span class="text-[11px] font-extrabold text-brand-dark leading-tight tracking-tight text-left">Period Tracker</span>
                 </div>
                 <button class="p-1 text-brand-dark"><i data-lucide="more-vertical" class="w-4 h-4"></i></button>
               </div>
 
               <!-- Content Area scrollable -->
-              <div class="flex-1 overflow-y-auto custom-scrollbar bg-white relative">
-                <img src="home_screen.png" class="w-full h-auto object-contain" alt="Home Screen Dashboard">
+              <div class="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar bg-white relative">
+                <img src="home_screen.png" class="screenshot-img w-[118%] max-w-none -ml-[9%] h-auto object-contain" alt="Home Screen Dashboard">
                 
                 <!-- Transparent Clickable Area for Edit Period Button -->
-                <button data-switch-to="calendar" class="absolute left-1/2 -translate-x-1/2 w-40 h-10 opacity-0 cursor-pointer" style="top: 45%;"></button>
+                <button data-switch-to="calendar" class="absolute left-1/2 -translate-x-1/2 w-44 h-11 opacity-0 cursor-pointer" style="top: 45%;"></button>
               </div>
             </div>
 
@@ -264,12 +281,12 @@
                 <div class="w-5 h-5 rounded-full bg-brand-pink flex items-center justify-center text-white flex-shrink-0">
                   <i data-lucide="heart" class="w-3 h-3 fill-white"></i>
                 </div>
-                <span class="font-heading font-extrabold text-brand-dark text-xs">August</span>
+                <span class="font-heading font-extrabold text-brand-dark text-[15px]">August</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="calendar" class="w-4 h-4"></i></button>
               </div>
 
               <!-- Weekday Headers -->
-              <div class="grid grid-cols-7 text-center py-2 text-[9px] font-extrabold text-brand-gray bg-white border-b border-gray-50">
+              <div class="grid grid-cols-7 text-center py-2 text-[12px] font-extrabold text-brand-gray bg-white border-b border-gray-50">
                 <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
               </div>
 
@@ -282,8 +299,8 @@
                   <!-- Jul 28 (Cycle Day 10) - Greyed, Green clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-gray/30">28</span>
-                      <span class="text-[7px] text-brand-gray/20 font-medium">10</span>
+                      <span class="text-[12px] text-brand-gray/30">28</span>
+                      <span class="text-[10px] text-brand-gray/20 font-medium">10</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -292,8 +309,8 @@
                   <!-- Jul 29 (11) - Greyed, Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-gray/30">29</span>
-                      <span class="text-[7px] text-brand-gray/20 font-medium">11</span>
+                      <span class="text-[12px] text-brand-gray/30">29</span>
+                      <span class="text-[10px] text-brand-gray/20 font-medium">11</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -302,8 +319,8 @@
                   <!-- Jul 30 (12) - Greyed, Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-gray/30">30</span>
-                      <span class="text-[7px] text-brand-gray/20 font-medium">12</span>
+                      <span class="text-[12px] text-brand-gray/30">30</span>
+                      <span class="text-[10px] text-brand-gray/20 font-medium">12</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -312,8 +329,8 @@
                   <!-- Jul 31 (13) - Greyed, Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-gray/30">31</span>
-                      <span class="text-[7px] text-brand-gray/20 font-medium">13</span>
+                      <span class="text-[12px] text-brand-gray/30">31</span>
+                      <span class="text-[10px] text-brand-gray/20 font-medium">13</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -322,8 +339,8 @@
                   <!-- Aug 1 (14) - Active, Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">1</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">14</span>
+                      <span class="text-[12px] text-brand-dark">1</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">14</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -332,8 +349,8 @@
                   <!-- Aug 2 (15) - Active, Orange circle follicle -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">2</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">15</span>
+                      <span class="text-[12px] text-brand-dark">2</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">15</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <!-- Orange Follicle SVG -->
@@ -348,8 +365,8 @@
                   <!-- Aug 3 (16) - Active, Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">3</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">16</span>
+                      <span class="text-[12px] text-brand-dark">3</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">16</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -360,56 +377,56 @@
                   <!-- Aug 4 (17) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">4</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">17</span>
+                      <span class="text-[12px] text-brand-dark">4</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">17</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 5 (18) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">5</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">18</span>
+                      <span class="text-[12px] text-brand-dark">5</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">18</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 6 (19) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">6</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">19</span>
+                      <span class="text-[12px] text-brand-dark">6</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">19</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 7 (20) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">7</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">20</span>
+                      <span class="text-[12px] text-brand-dark">7</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">20</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 8 (21) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">8</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">21</span>
+                      <span class="text-[12px] text-brand-dark">8</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">21</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 9 (22) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">9</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">22</span>
+                      <span class="text-[12px] text-brand-dark">9</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">22</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 10 (23) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">10</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">23</span>
+                      <span class="text-[12px] text-brand-dark">10</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">23</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
@@ -418,48 +435,48 @@
                   <!-- Aug 11 (24) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">11</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">24</span>
+                      <span class="text-[12px] text-brand-dark">11</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">24</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 12 (25) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">12</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">25</span>
+                      <span class="text-[12px] text-brand-dark">12</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">25</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 13 (26) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">13</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">26</span>
+                      <span class="text-[12px] text-brand-dark">13</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">26</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 14 (27) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">14</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">27</span>
+                      <span class="text-[12px] text-brand-dark">14</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">27</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 15 (28) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">15</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">28</span>
+                      <span class="text-[12px] text-brand-dark">15</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">28</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 16 (1) - Solid Pink Period Day -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-[#FF5E8C] text-white rounded-md border border-white shadow-sm">
                     <div class="flex justify-between px-1 w-full text-white">
-                      <span class="text-[9px] font-extrabold">16</span>
-                      <span class="text-[7px] opacity-90 font-medium">1</span>
+                      <span class="text-[12px] font-extrabold">16</span>
+                      <span class="text-[10px] opacity-90 font-medium">1</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <svg class="w-2.5 h-2.5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -470,8 +487,8 @@
                   <!-- Aug 17 (2) - Solid Pink Period Day -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-[#FF5E8C] text-white rounded-md border border-white shadow-sm">
                     <div class="flex justify-between px-1 w-full text-white">
-                      <span class="text-[9px] font-extrabold">17</span>
-                      <span class="text-[7px] opacity-90 font-medium">2</span>
+                      <span class="text-[12px] font-extrabold">17</span>
+                      <span class="text-[10px] opacity-90 font-medium">2</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <svg class="w-2.5 h-2.5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -484,8 +501,8 @@
                   <!-- Aug 18 (3) - Solid Pink Period Day -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-[#FF5E8C] text-white rounded-md border border-white shadow-sm">
                     <div class="flex justify-between px-1 w-full text-white">
-                      <span class="text-[9px] font-extrabold">18</span>
-                      <span class="text-[7px] opacity-90 font-medium">3</span>
+                      <span class="text-[12px] font-extrabold">18</span>
+                      <span class="text-[10px] opacity-90 font-medium">3</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <svg class="w-2.5 h-2.5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -496,8 +513,8 @@
                   <!-- Aug 19 (4) - Solid Peach Transition Day -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-[#FF8C69] text-white rounded-md border border-white shadow-sm">
                     <div class="flex justify-between px-1 w-full text-white">
-                      <span class="text-[9px] font-extrabold">19</span>
-                      <span class="text-[7px] opacity-90 font-medium">4</span>
+                      <span class="text-[12px] font-extrabold">19</span>
+                      <span class="text-[10px] opacity-90 font-medium">4</span>
                     </div>
                     <div id="calendar-day-19-log" class="flex justify-center items-center pb-0.5">
                       <svg class="w-2.5 h-2.5 fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -508,40 +525,40 @@
                   <!-- Aug 20 (5) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">20</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">5</span>
+                      <span class="text-[12px] text-brand-dark">20</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">5</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 21 (6) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">21</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">6</span>
+                      <span class="text-[12px] text-brand-dark">21</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">6</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 22 (7) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">22</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">7</span>
+                      <span class="text-[12px] text-brand-dark">22</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">7</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 23 (8) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">23</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">8</span>
+                      <span class="text-[12px] text-brand-dark">23</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">8</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
                   <!-- Aug 24 (9) -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-b border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">24</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">9</span>
+                      <span class="text-[12px] text-brand-dark">24</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">9</span>
                     </div>
                     <div class="h-4"></div>
                   </div>
@@ -550,8 +567,8 @@
                   <!-- Aug 25 (10) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">25</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">10</span>
+                      <span class="text-[12px] text-brand-dark">25</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">10</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -560,8 +577,8 @@
                   <!-- Aug 26 (11) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">26</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">11</span>
+                      <span class="text-[12px] text-brand-dark">26</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">11</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -570,8 +587,8 @@
                   <!-- Aug 27 (12) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">27</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">12</span>
+                      <span class="text-[12px] text-brand-dark">27</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">12</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -580,8 +597,8 @@
                   <!-- Aug 28 (13) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">28</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">13</span>
+                      <span class="text-[12px] text-brand-dark">28</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">13</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -590,8 +607,8 @@
                   <!-- Aug 29 (14) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">29</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">14</span>
+                      <span class="text-[12px] text-brand-dark">29</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">14</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -600,8 +617,8 @@
                   <!-- Aug 30 (15) - Orange Circle Follicle -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white border-r border-gray-50">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">30</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">15</span>
+                      <span class="text-[12px] text-brand-dark">30</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">15</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <!-- Orange Follicle SVG -->
@@ -616,8 +633,8 @@
                   <!-- Aug 31 (16) - Clover -->
                   <div class="relative h-11 flex flex-col justify-between py-1 bg-white">
                     <div class="flex justify-between px-1.5 w-full">
-                      <span class="text-[9px] text-brand-dark">31</span>
-                      <span class="text-[7px] text-brand-gray/50 font-medium">16</span>
+                      <span class="text-[12px] text-brand-dark">31</span>
+                      <span class="text-[10px] text-brand-gray/50 font-medium">16</span>
                     </div>
                     <div class="flex justify-center items-center pb-0.5">
                       <i data-lucide="clover" class="w-3.5 h-3.5 text-emerald-500 fill-emerald-500/10"></i>
@@ -631,11 +648,11 @@
                   <!-- Aug 19 Cycle Day 4 header -->
                   <div class="flex items-center justify-between">
                     <div class="flex flex-col">
-                      <span class="text-xs font-extrabold text-brand-dark font-heading">Aug 19</span>
-                      <span class="text-[9px] text-brand-gray/80 font-bold">Cycle Day 4</span>
+                      <span class="text-[14px] font-extrabold text-brand-dark font-heading">Aug 19</span>
+                      <span class="text-[12px] text-brand-gray/80 font-bold">Cycle Day 4</span>
                     </div>
                     <!-- Edit Period Button -->
-                    <button class="px-3.5 py-1 bg-white border border-[#FF5E8C] text-[#FF5E8C] rounded-full font-bold text-[9px] flex items-center gap-1 hover:bg-[#FFF5F7] transition-all">
+                    <button class="px-3.5 py-1 bg-white border border-[#FF5E8C] text-[#FF5E8C] rounded-full font-bold text-[12px] flex items-center gap-1 hover:bg-[#FFF5F7] transition-all">
                       <i data-lucide="droplet" class="w-2.5 h-2.5 fill-current"></i>
                       <span>Edit</span>
                     </button>
@@ -643,16 +660,16 @@
 
                   <!-- Chance of Getting Pregnant Banner -->
                   <div class="bg-[#ECEFF1] rounded-xl px-3 py-2 flex items-center gap-2">
-                    <span class="bg-[#546E7A] text-white text-[8px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">Low</span>
-                    <span class="text-[9px] font-bold text-brand-dark/90">- Chance of getting pregnant</span>
+                    <span class="bg-[#546E7A] text-white text-[11px] font-extrabold px-1.5 py-0.5 rounded uppercase tracking-wider">Low</span>
+                    <span class="text-[12px] font-bold text-brand-dark/90">- Chance of getting pregnant</span>
                   </div>
 
                   <!-- Logging placeholder and button -->
                   <div class="pt-1 flex flex-col items-center">
-                    <span id="log-status-text" class="text-[11px] font-extrabold text-brand-dark font-heading">No Record</span>
-                    <span id="log-sub-text" class="text-[9px] text-brand-gray/80 mt-0.5">Tap to add log</span>
+                    <span id="log-status-text" class="text-[14px] font-extrabold text-brand-dark font-heading">No Record</span>
+                    <span id="log-sub-text" class="text-[12px] text-brand-gray/80 mt-0.5">Tap to add log</span>
                     
-                    <button id="add-log-btn" class="w-full mt-3 py-2.5 bg-[#FF5E8C] text-white rounded-full font-extrabold text-xs shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">
+                    <button id="add-log-btn" class="w-full mt-3 py-2.5 bg-[#FF5E8C] text-white rounded-full font-extrabold text-[14px] shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">
                       + Add Log
                     </button>
                   </div>
@@ -667,7 +684,7 @@
                 
                 <!-- Modal Header -->
                 <div class="px-5 pb-3 flex items-center justify-between border-b border-gray-50">
-                  <span class="text-xs font-extrabold text-brand-dark font-heading">Log Symptoms (Aug 19)</span>
+                  <span class="text-[13.5px] font-extrabold text-brand-dark font-heading">Log Symptoms (Aug 19)</span>
                   <button id="close-logger-btn" class="text-brand-gray hover:text-brand-dark p-1">
                     <i data-lucide="x" class="w-4 h-4"></i>
                   </button>
@@ -677,28 +694,28 @@
                 <div class="px-5 py-4 space-y-4 max-h-[260px] overflow-y-auto custom-scrollbar">
                   <!-- Flow Intensity -->
                   <div class="space-y-1.5 text-left">
-                    <span class="text-[9px] font-extrabold text-brand-gray uppercase tracking-wider">Flow Intensity</span>
+                    <span class="text-[12px] font-extrabold text-brand-gray uppercase tracking-wider">Flow Intensity</span>
                     <div class="grid grid-cols-4 gap-1.5">
-                      <button class="symptom-tag text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="light">Light</button>
-                      <button class="symptom-tag text-[9px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all" data-value="medium">Medium</button>
-                      <button class="symptom-tag text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="heavy">Heavy</button>
-                      <button class="symptom-tag text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="spotting">Spotting</button>
+                      <button class="symptom-tag text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="light">Light</button>
+                      <button class="symptom-tag text-[12px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all" data-value="medium">Medium</button>
+                      <button class="symptom-tag text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="heavy">Heavy</button>
+                      <button class="symptom-tag text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all" data-value="spotting">Spotting</button>
                     </div>
                   </div>
 
                   <!-- Symptoms -->
                   <div class="space-y-1.5 text-left">
-                    <span class="text-[9px] font-extrabold text-brand-gray uppercase tracking-wider">Symptoms</span>
+                    <span class="text-[12px] font-extrabold text-brand-gray uppercase tracking-wider">Symptoms</span>
                     <div class="grid grid-cols-3 gap-1.5">
-                      <button class="symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Cramps">
+                      <button class="symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Cramps">
                         <i data-lucide="activity" class="w-3 h-3 text-brand-pink"></i>
                         <span>Cramps</span>
                       </button>
-                      <button class="symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Headache">
+                      <button class="symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Headache">
                         <i data-lucide="sparkles" class="w-3 h-3 text-amber-500"></i>
                         <span>Headache</span>
                       </button>
-                      <button class="symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Fatigue">
+                      <button class="symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-symptom="Fatigue">
                         <i data-lucide="moon" class="w-3 h-3 text-blue-500"></i>
                         <span>Fatigue</span>
                       </button>
@@ -707,17 +724,17 @@
 
                   <!-- Mood -->
                   <div class="space-y-1.5 text-left">
-                    <span class="text-[9px] font-extrabold text-brand-gray uppercase tracking-wider">Mood</span>
+                    <span class="text-[12px] font-extrabold text-brand-gray uppercase tracking-wider">Mood</span>
                     <div class="grid grid-cols-3 gap-1.5">
-                      <button class="mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Happy">
+                      <button class="mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Happy">
                         <i data-lucide="smile" class="w-3 h-3 text-emerald-500"></i>
                         <span>Happy</span>
                       </button>
-                      <button class="mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Sensitive">
+                      <button class="mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Sensitive">
                         <i data-lucide="frown" class="w-3 h-3 text-indigo-500"></i>
                         <span>Sensitive</span>
                       </button>
-                      <button class="mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Anxious">
+                      <button class="mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all" data-mood="Anxious">
                         <i data-lucide="meh" class="w-3 h-3 text-rose-500"></i>
                         <span>Anxious</span>
                       </button>
@@ -727,8 +744,8 @@
 
                 <!-- Modal Action Bar -->
                 <div class="px-5 pt-3 border-t border-gray-50 flex gap-2">
-                  <button id="reset-logger-btn" class="flex-1 py-2 border border-gray-200 text-brand-gray rounded-full font-bold text-[10px] hover:bg-gray-50 transition-all text-center">Reset</button>
-                  <button id="save-logger-btn" class="flex-2 w-2/3 py-2 bg-[#FF5E8C] text-white rounded-full font-bold text-[10px] shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">Save Log</button>
+                  <button id="reset-logger-btn" class="flex-1 py-2 border border-gray-200 text-brand-gray rounded-full font-bold text-[13px] hover:bg-gray-50 transition-all text-center">Reset</button>
+                  <button id="save-logger-btn" class="flex-2 w-2/3 py-2 bg-[#FF5E8C] text-white rounded-full font-bold text-[13px] shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">Save Log</button>
                 </div>
               </div>
 
@@ -737,24 +754,59 @@
             <!-- ==========================================
                  SCREEN 3: TRACKER SCREEN
                  ========================================== -->
-            <div class="phone-screen bg-white">
+            <div class="phone-screen bg-white flex flex-col">
               <!-- Header -->
               <div class="px-5 py-3.5 flex items-center justify-between border-b border-gray-100 bg-white flex-shrink-0">
-                <div class="w-5 h-5 rounded-full bg-brand-pink flex items-center justify-center text-white flex-shrink-0">
-                  <i data-lucide="heart" class="w-3 h-3 fill-white"></i>
+                <div class="w-7 h-7 rounded-full bg-white border border-gray-100 shadow-sm flex items-center justify-center text-brand-pink flex-shrink-0">
+                  <i data-lucide="heart" class="w-4 h-4 fill-brand-pink text-brand-pink"></i>
                 </div>
-                <span class="font-heading font-extrabold text-brand-dark text-xs">Tracker</span>
+                <span class="font-heading font-extrabold text-brand-dark text-[15px]">Tracker</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="more-vertical" class="w-4 h-4"></i></button>
               </div>
 
               <!-- Content Area scrollable -->
-              <div class="flex-1 overflow-y-auto custom-scrollbar bg-white relative">
-                <img src="tracker.png" class="w-full h-auto object-contain" alt="Cycle Tracker History">
+              <div class="flex-1 overflow-y-auto custom-scrollbar bg-white px-5 py-5 flex flex-col gap-6">
                 
-                <!-- Transparent Clickable Area for Edit Period Button -->
-                <button data-switch-to="calendar" class="absolute left-1/2 -translate-x-1/2 w-48 h-12 opacity-0 cursor-pointer" style="top: 26%;"></button>
+                <!-- Avg stats grid -->
+                <div class="grid grid-cols-2 gap-4">
+                  <!-- Average Period Card -->
+                  <div class="bg-[#FFF5F7] px-2.5 py-4 rounded-2xl border border-[#FFD2DF] flex flex-col items-center justify-between h-[130px] text-center shadow-sm">
+                    <span class="text-[12px] font-bold text-brand-pink uppercase tracking-wider whitespace-nowrap">Average period</span>
+                    <span class="text-2xl font-bold text-brand-dark font-heading leading-tight whitespace-nowrap">4 days</span>
+                    <div class="w-9 h-9 rounded-full bg-[#FFE5EC] flex items-center justify-center text-brand-pink shadow-sm/50">
+                      <i data-lucide="droplet" class="w-4.5 h-4.5 fill-brand-pink text-brand-pink"></i>
+                    </div>
+                  </div>
+                  
+                  <!-- Average Cycle Card -->
+                  <div class="bg-[#FFF8F5] px-2.5 py-4 rounded-2xl border border-[#FFE4D6] flex flex-col items-center justify-between h-[130px] text-center shadow-sm">
+                    <span class="text-[12px] font-bold text-brand-peach uppercase tracking-wider whitespace-nowrap">Average cycle</span>
+                    <span class="text-2xl font-bold text-brand-dark font-heading leading-tight whitespace-nowrap">28 days</span>
+                    <div class="w-9 h-9 rounded-full bg-[#FFF0EB] flex items-center justify-center text-brand-peach shadow-sm/50">
+                      <i data-lucide="calendar" class="w-4.5 h-4.5 fill-brand-peach/30 text-brand-peach"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- List item sample -->
+                <div class="bg-[#FAF8F9] p-4.5 rounded-2xl border border-gray-100 space-y-3.5">
+                  <span class="font-heading font-bold text-xs text-brand-dark block">Latest Recorded Cycle</span>
+                  <div class="bg-white p-4 rounded-xl border border-gray-50 shadow-sm space-y-3">
+                    <div class="flex justify-between text-xs font-bold text-brand-dark">
+                      <span>Aug 16 - Aug 19, 2024</span>
+                      <span class="text-brand-gray text-[14px]">28 days</span>
+                    </div>
+                    <div class="relative w-full h-4 bg-gray-100 rounded-full flex items-center">
+                      <div class="h-full bg-brand-pink rounded-full" style="width: 15%"></div>
+                      <!-- Hollow Orange Circle outline indicating fertile window -->
+                      <div class="absolute left-[45%] w-3.5 h-3.5 border-2 border-brand-peach bg-white rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
+
 
             <!-- ==========================================
                  SCREEN 4: ARTICLES SCREEN
@@ -765,7 +817,7 @@
                 <div class="w-5 h-5 rounded-full bg-brand-pink flex items-center justify-center text-white flex-shrink-0">
                   <i data-lucide="heart" class="w-3 h-3 fill-white"></i>
                 </div>
-                <span class="font-heading font-extrabold text-brand-dark text-xs">Articles</span>
+                <span class="font-heading font-extrabold text-brand-dark text-[15px]">Articles</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="search" class="w-4 h-4"></i></button>
               </div>
 
@@ -774,14 +826,14 @@
                 
                 <!-- Section 1 -->
                 <div class="space-y-2.5">
-                  <div class="flex justify-between items-center text-[11px] font-bold text-brand-dark">
+                  <div class="flex justify-between items-center text-[14px] font-bold text-brand-dark">
                     <span>Period & Menstruation</span>
                     <span class="text-brand-pink hover:underline cursor-pointer">View All</span>
                   </div>
                   <div class="space-y-2">
                     <!-- Article Card 1 -->
                     <div class="bg-white p-3 rounded-2xl border border-gray-100 flex items-center justify-between shadow-sm hover:border-brand-pink/20 transition-all">
-                      <h4 class="text-[11px] font-bold text-brand-dark leading-tight max-w-[70%]">Understanding Your Menstrual Cycle</h4>
+                      <h4 class="text-[14px] font-bold text-brand-dark leading-tight max-w-[70%]">Understanding Your Menstrual Cycle</h4>
                       <div class="w-8 h-8 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                         <i data-lucide="droplet" class="w-4 h-4 fill-brand-pink/10"></i>
                       </div>
@@ -790,10 +842,10 @@
                     <div class="bg-white p-3 rounded-2xl border border-gray-100 flex items-center justify-between shadow-sm hover:border-brand-pink/20 transition-all premium-article cursor-pointer relative overflow-hidden">
                       <div class="max-w-[70%] space-y-0.5 text-left">
                         <div class="flex items-center gap-1">
-                          <span class="text-[7px] font-extrabold text-brand-pink bg-brand-pink/10 px-1 rounded-sm uppercase tracking-wide">PRO</span>
+                          <span class="text-[10px] font-extrabold text-brand-pink bg-brand-pink/10 px-1 rounded-sm uppercase tracking-wide">PRO</span>
                           <i data-lucide="lock" class="w-2 h-2 text-brand-pink"></i>
                         </div>
-                        <h4 class="text-[11px] font-bold text-brand-dark leading-tight">Coping with PMS: Tips and Tricks</h4>
+                        <h4 class="text-[14px] font-bold text-brand-dark leading-tight">Coping with PMS: Tips and Tricks</h4>
                       </div>
                       <div class="w-8 h-8 rounded-lg bg-amber-500/5 flex items-center justify-center text-amber-500">
                         <i data-lucide="lightbulb" class="w-4 h-4 fill-amber-500/10"></i>
@@ -804,7 +856,7 @@
 
                 <!-- Section 2 -->
                 <div class="space-y-2.5">
-                  <div class="flex justify-between items-center text-[11px] font-bold text-brand-dark">
+                  <div class="flex justify-between items-center text-[14px] font-bold text-brand-dark">
                     <span>Nutrition</span>
                     <span class="text-brand-pink hover:underline cursor-pointer">View All</span>
                   </div>
@@ -812,7 +864,7 @@
                     <!-- Article Card 3 -->
                     <div class="bg-white p-3 rounded-2xl border border-gray-100 flex items-center justify-between shadow-sm hover:border-brand-pink/20 transition-all">
                       <div class="max-w-[70%] text-left">
-                        <h4 class="text-[11px] font-bold text-brand-dark leading-tight">Foods That Support Hormones</h4>
+                        <h4 class="text-[14px] font-bold text-brand-dark leading-tight">Foods That Support Hormones</h4>
                       </div>
                       <div class="w-8 h-8 rounded-lg bg-emerald-500/5 flex items-center justify-center text-emerald-500">
                         <i data-lucide="leaf" class="w-4 h-4 fill-emerald-500/10"></i>
@@ -822,10 +874,10 @@
                     <div class="bg-white p-3 rounded-2xl border border-gray-100 flex items-center justify-between shadow-sm hover:border-brand-pink/20 transition-all premium-article cursor-pointer relative overflow-hidden">
                       <div class="max-w-[70%] space-y-0.5 text-left">
                         <div class="flex items-center gap-1">
-                          <span class="text-[7px] font-extrabold text-brand-pink bg-brand-pink/10 px-1 rounded-sm uppercase tracking-wide">PRO</span>
+                          <span class="text-[10px] font-extrabold text-brand-pink bg-brand-pink/10 px-1 rounded-sm uppercase tracking-wide">PRO</span>
                           <i data-lucide="lock" class="w-2 h-2 text-brand-pink"></i>
                         </div>
-                        <h4 class="text-[11px] font-bold text-brand-dark leading-tight">Essential Vitamins for Women</h4>
+                        <h4 class="text-[14px] font-bold text-brand-dark leading-tight">Essential Vitamins for Women</h4>
                       </div>
                       <div class="w-8 h-8 rounded-lg bg-rose-500/5 flex items-center justify-center text-rose-500">
                         <i data-lucide="activity" class="w-4 h-4"></i>
@@ -843,7 +895,7 @@
                 
                 <!-- Modal Header -->
                 <div class="px-5 pb-3 flex items-center justify-between border-b border-gray-50">
-                  <span class="text-xs font-extrabold text-brand-dark font-heading">Premium Feature</span>
+                  <span class="text-[13px] font-extrabold text-brand-dark font-heading">Premium Feature</span>
                   <button id="close-paywall-btn" class="text-brand-gray hover:text-brand-dark p-1">
                     <i data-lucide="x" class="w-4 h-4"></i>
                   </button>
@@ -855,8 +907,8 @@
                     <i data-lucide="lock" class="w-6 h-6"></i>
                   </div>
                   <div class="space-y-1">
-                    <h3 class="text-xs font-extrabold text-brand-dark font-heading">Unlock Premium Insights</h3>
-                    <p class="text-[10px] text-brand-gray leading-normal px-2">
+                    <h3 class="text-[14px] font-extrabold text-brand-dark font-heading">Unlock Premium Insights</h3>
+                    <p class="text-[13px] text-brand-gray leading-normal px-2">
                       Access expert-written guides, daily bio-hacks, and personalized phase analysis to take control of your hormones.
                     </p>
                   </div>
@@ -864,17 +916,17 @@
                   <!-- Pricing Plan teaser -->
                   <div class="w-full bg-[#FAF8F9] rounded-2xl p-3 border border-gray-100 flex items-center justify-between">
                     <div class="text-left">
-                      <span class="block text-[8px] font-extrabold text-brand-pink uppercase tracking-widest">Yearly Access</span>
-                      <span class="block text-xs font-extrabold text-brand-dark mt-0.5">$29.99 / year</span>
+                      <span class="block text-[11px] font-extrabold text-brand-pink uppercase tracking-widest">Yearly Access</span>
+                      <span class="block text-[13px] font-extrabold text-brand-dark mt-0.5">$29.99 / year</span>
                     </div>
-                    <span class="text-[9px] font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full">Save 50%</span>
+                    <span class="text-[12px] font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full">Save 50%</span>
                   </div>
 
                   <!-- Action Button -->
-                  <button class="w-full py-2.5 bg-[#FF5E8C] text-white rounded-full font-extrabold text-xs shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">
+                  <button class="w-full py-2.5 bg-[#FF5E8C] text-white rounded-full font-extrabold text-[14px] shadow-md shadow-brand-pink/20 hover:bg-brand-pink/95 transition-all text-center">
                     Try 7 Days Free Trial
                   </button>
-                  <span class="text-[8px] text-brand-gray/65">Cancel anytime. Terms apply.</span>
+                  <span class="text-[11px] text-brand-gray/65">Cancel anytime. Terms apply.</span>
                 </div>
               </div>
 
@@ -890,7 +942,7 @@
                 <div class="w-5 h-5 rounded-full bg-brand-pink flex items-center justify-center text-white flex-shrink-0">
                   <i data-lucide="heart" class="w-3 h-3 fill-white"></i>
                 </div>
-                <span class="font-heading font-extrabold text-brand-dark text-xs">Profile</span>
+                <span class="font-heading font-extrabold text-brand-dark text-[15px]">Profile</span>
                 <button class="p-1 text-brand-dark"><i data-lucide="settings" class="w-4 h-4"></i></button>
               </div>
 
@@ -900,10 +952,10 @@
                 <!-- Profile Card -->
                 <div class="bg-white p-3 rounded-[20px] border border-gray-50 flex items-center justify-between shadow-sm">
                   <div class="flex items-center gap-3">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120&h=120" class="w-10 h-10 rounded-full object-cover border border-brand-pink/20" alt="Lisa T. Perez">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400" class="w-10 h-10 rounded-full object-cover border border-brand-pink/20" alt="Lisa T. Perez">
                     <div>
-                      <h4 class="text-[11px] font-bold text-brand-dark font-heading">Lisa T. Perez</h4>
-                      <p class="text-[8px] text-brand-gray font-semibold">Lisa123@gmail.com</p>
+                      <h4 class="text-[17px] font-bold text-brand-dark font-heading leading-tight">Lisa T. Perez</h4>
+                      <p class="text-[13px] text-brand-gray font-semibold mt-0.5">Lisa123@gmail.com</p>
                     </div>
                   </div>
                   <button class="w-6 h-6 rounded-full bg-brand-pink/5 flex items-center justify-center text-brand-pink hover:bg-brand-pink/10 transition-colors">
@@ -913,7 +965,7 @@
 
                 <!-- Cycle Analysis Section -->
                 <div class="space-y-1.5">
-                  <span class="block text-[9px] font-bold text-brand-dark/75 px-1 font-heading">Cycle Analysis</span>
+                  <span class="block text-[14px] font-bold text-brand-dark/50 px-1 font-heading uppercase tracking-wider">Cycle Analysis</span>
                   <div class="bg-white rounded-[20px] border border-gray-50 divide-y divide-gray-50 overflow-hidden shadow-sm">
                     <!-- Option 1 -->
                     <div class="p-2.5 flex items-center justify-between hover:bg-gray-50/50 transition-colors cursor-pointer">
@@ -921,7 +973,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Cycle Report</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Cycle Report</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -931,7 +983,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Flow Report</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Flow Report</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -941,7 +993,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="activity" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Fertility Report</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Fertility Report</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -951,7 +1003,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Update Cycle</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Update Cycle</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -961,7 +1013,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="heart" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Sex Life</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Sex Life</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -970,14 +1022,14 @@
 
                 <!-- My Goal Section -->
                 <div class="space-y-1.5">
-                  <span class="block text-[9px] font-bold text-brand-dark/75 px-1 font-heading">My Goal</span>
+                  <span class="block text-[14px] font-bold text-brand-dark/50 px-1 font-heading uppercase tracking-wider">My Goal</span>
                   <div class="bg-white rounded-[20px] border border-gray-50 divide-y divide-gray-50 overflow-hidden shadow-sm">
                     <div class="p-2.5 flex items-center justify-between hover:bg-gray-50/50 transition-colors cursor-pointer">
                       <div class="flex items-center gap-2.5">
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="target" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Track My Period</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Track My Period</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -986,14 +1038,14 @@
 
                 <!-- General Section -->
                 <div class="space-y-1.5">
-                  <span class="block text-[9px] font-bold text-brand-dark/75 px-1 font-heading">General</span>
+                  <span class="block text-[14px] font-bold text-brand-dark/50 px-1 font-heading uppercase tracking-wider">General</span>
                   <div class="bg-white rounded-[20px] border border-gray-50 divide-y divide-gray-50 overflow-hidden shadow-sm">
                     <div class="p-2.5 flex items-center justify-between hover:bg-gray-50/50 transition-colors cursor-pointer">
                       <div class="flex items-center gap-2.5">
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="settings" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Settings</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Settings</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -1002,7 +1054,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="bell" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Reminder Alert</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Reminder Alert</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -1011,14 +1063,14 @@
 
                 <!-- Support Section -->
                 <div class="space-y-1.5">
-                  <span class="block text-[9px] font-bold text-brand-dark/75 px-1 font-heading">Support</span>
+                  <span class="block text-[14px] font-bold text-brand-dark/50 px-1 font-heading uppercase tracking-wider">Support</span>
                   <div class="bg-white rounded-[20px] border border-gray-50 divide-y divide-gray-50 overflow-hidden shadow-sm">
                     <div class="p-2.5 flex items-center justify-between hover:bg-gray-50/50 transition-colors cursor-pointer">
                       <div class="flex items-center gap-2.5">
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Data & Analytics</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Data & Analytics</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -1027,7 +1079,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Help & Support</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Help & Support</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -1036,7 +1088,7 @@
                         <div class="w-6 h-6 rounded-lg bg-brand-pink/5 flex items-center justify-center text-brand-pink">
                           <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-brand-dark">Log Out</span>
+                        <span class="text-[14px] font-bold text-brand-dark">Log Out</span>
                       </div>
                       <i data-lucide="chevron-right" class="w-3 h-3 text-brand-gray/60"></i>
                     </div>
@@ -1045,7 +1097,7 @@
                         <div class="w-6 h-6 rounded-lg bg-rose-50 flex items-center justify-center text-rose-500">
                           <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
                         </div>
-                        <span class="text-[9px] font-bold text-rose-500">Delete Account</span>
+                        <span class="text-[14px] font-bold text-rose-500">Delete Account</span>
                       </div>
                     </div>
                   </div>
@@ -1058,7 +1110,7 @@
         </div>
 
         <!-- Phone Fixed Navigation bar (Bottom) -->
-        <div id="phone-nav-bar" class="absolute bottom-0 inset-x-0 h-16 bg-white border-t border-gray-100 grid grid-cols-5 text-center items-center text-[9px] font-bold text-brand-gray z-40">
+        <div id="phone-nav-bar" class="absolute bottom-0 inset-x-0 h-16 bg-white border-t border-gray-100 grid grid-cols-5 text-center items-center text-[12px] font-bold text-brand-gray z-40">
           <button data-switch-to="home" class="flex flex-col items-center gap-1 py-1 hover:text-brand-pink transition-colors">
             <i data-lucide="home" class="w-5 h-5 text-brand-gray"></i>
             <span>Home</span>
@@ -1092,21 +1144,21 @@
 
   <!-- ==========================================
        FEATURES GRID SECTION
-       ========================================== -->  <section id="features" class="py-24 bg-white border-y border-brand-pink/5 relative overflow-hidden">
+       ========================================== -->  <section id="features" class="scroll-mt-20 py-12 md:py-16 bg-white border-y border-brand-pink/5 relative overflow-hidden">
     <!-- Background glow orb -->
     <div class="absolute -right-24 top-1/4 w-80 h-80 rounded-full bg-brand-pink/5 blur-3xl -z-10 animate-pulse-slow"></div>
     <div class="absolute -left-24 bottom-1/4 w-80 h-80 rounded-full bg-brand-peach/5 blur-3xl -z-10 animate-pulse-slow" style="animation-delay: 3s"></div>
     
-    <div class="max-w-7xl mx-auto px-6 space-y-16">
+    <div class="max-w-7xl mx-auto px-6 space-y-10 md:space-y-12">
       
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto space-y-4 animate-on-scroll">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs tracking-wide">
           <i data-lucide="layers" class="w-3.5 h-3.5"></i>
-          <span>App Functionality & Flow</span>
+          <span>Designed for Your Body</span>
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-          Explore TrackFlow's Full Capabilities
+          Everything You Need to Track Your Cycle
         </h2>
         <p class="text-brand-gray text-base leading-relaxed max-w-2xl mx-auto">
           Understand every phase, log daily habits, and get detailed health insights. Learn about our features designed for your health.
@@ -1125,7 +1177,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Authentication & Onboarding</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Start your journey securely with multiple authentication models or keep it completely private.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1134,8 +1186,8 @@
                   <i data-lucide="smartphone" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">OTP & Social Login</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Fast and secure verification via SMS OTP or Google single-tap login.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">OTP & Social Login</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Fast and secure verification via SMS OTP or Google single-tap login.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1143,8 +1195,8 @@
                   <i data-lucide="milestone" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Personalized Onboarding</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">7-step setup detailing cycle history, height, and weight to customize predictions.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Personalized Onboarding</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">7-step setup detailing cycle history, height, and weight to customize predictions.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1152,8 +1204,8 @@
                   <i data-lucide="eye-off" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Anonymous Mode</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Track your cycle securely with full privacy and without sharing personal info.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Anonymous Mode</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Track your cycle securely with full privacy and without sharing personal info.</span>
                 </div>
               </li>
             </ul>
@@ -1169,7 +1221,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Cycle & Ovulation Tracker</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Track your cycle phases, predict your fertile window, and adjust logs dynamically.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1178,8 +1230,8 @@
                   <i data-lucide="layout-dashboard" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Interactive Dashboard</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Live countdown of cycle days, current health phases, and ovulation estimates.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Interactive Dashboard</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Live countdown of cycle days, current health phases, and ovulation estimates.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1187,8 +1239,8 @@
                   <i data-lucide="trending-up" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Predictive Analytics</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Smart algorithms forecasting upcoming period dates 3 to 6 months in advance.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Predictive Analytics</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Smart algorithms forecasting upcoming period dates 3 to 6 months in advance.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1196,8 +1248,8 @@
                   <i data-lucide="calendar-days" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Calendar & Adjustments</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Monthly calendar highlighting active period cycles, with manual adjustments to update forecasts.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Calendar & Adjustments</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Monthly calendar highlighting active period cycles, with manual adjustments to update forecasts.</span>
                 </div>
               </li>
             </ul>
@@ -1213,7 +1265,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Daily Health Logging</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Log daily physical changes, track hydration intake, and add custom notes effortlessly.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1222,8 +1274,8 @@
                   <i data-lucide="smile" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">70+ Symptom/Mood Trackers</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Track cramps, headaches, skin breakouts, moods, discharge, and mental states.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">70+ Symptom/Mood Trackers</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Track cramps, headaches, skin breakouts, moods, discharge, and mental states.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1231,8 +1283,8 @@
                   <i data-lucide="droplet" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Hydration Monitor</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Monitor and track your daily water intake with trace logging history.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Hydration Monitor</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Monitor and track your daily water intake with trace logging history.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1240,8 +1292,8 @@
                   <i data-lucide="pill" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Meds & Custom Notes</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Keep track of pill schedules, medications, and write custom text logs or daily notes.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Meds & Custom Notes</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Keep track of pill schedules, medications, and write custom text logs or daily notes.</span>
                 </div>
               </li>
             </ul>
@@ -1250,7 +1302,7 @@
 
         <!-- Card 4: Health Analytics & PDF Reports (Categories D) -->
         <div class="glass-card p-6 rounded-3xl space-y-5 flex flex-col justify-between hover:border-purple-500/30 hover:shadow-xl hover:shadow-purple-500/5 duration-300 relative border-purple-200/50 bg-purple-50/10">
-          <div class="absolute top-4 right-4 bg-purple-600 text-white text-[9px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Premium Feature</div>
+          <div class="absolute top-4 right-4 bg-purple-600 text-white text-[12px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">Premium Feature</div>
           
           <div class="space-y-4">
             <div class="w-11 h-11 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-600">
@@ -1259,7 +1311,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Health Analytics & PDF</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Access premium insights, metric correlation graphs, and expert-ready medical reports.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1268,8 +1320,8 @@
                   <i data-lucide="bar-chart-3" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Interactive Metric Charts</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Visual graphs for historic records of weight, body temperature, and water logs.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Interactive Metric Charts</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Visual graphs for historic records of weight, body temperature, and water logs.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1277,8 +1329,8 @@
                   <i data-lucide="git-commit" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Correlation Analysis</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Understand correlations between daily habits, cycle lengths, and mood variations.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Correlation Analysis</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Understand correlations between daily habits, cycle lengths, and mood variations.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1286,8 +1338,8 @@
                   <i data-lucide="file-text" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Reports & PDF Exports</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Spot symptom summaries over cycles and download expert Fertility & Flow Intensity PDF reports.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Reports & PDF Exports</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Spot symptom summaries over cycles and download expert Fertility & Flow Intensity PDF reports.</span>
                 </div>
               </li>
             </ul>
@@ -1303,7 +1355,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Health Library & Media</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Learn from verified articles, workout guides, and relaxation sounds.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1312,8 +1364,8 @@
                   <i data-lucide="check-square" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Verified Expert Content</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Read articles and guides reviewed and verified by gynecologists and experts.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Verified Expert Content</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Read articles and guides reviewed and verified by gynecologists and experts.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1321,8 +1373,8 @@
                   <i data-lucide="video" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Dynamic Media Support</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Access visual yoga workouts, stretching video clips, and wellness podcasts.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Dynamic Media Support</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Access visual yoga workouts, stretching video clips, and wellness podcasts.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1330,8 +1382,8 @@
                   <i data-lucide="lock" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Premium Gated Content</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Teaser previews on premium resources until a subscription plan is unlocked.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Premium Gated Content</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Teaser previews on premium resources until a subscription plan is unlocked.</span>
                 </div>
               </li>
             </ul>
@@ -1347,7 +1399,7 @@
             <div class="space-y-1 text-left">
               <h3 class="text-lg font-bold text-brand-dark font-heading">Smart Reminders & Alerts</h3>
             </div>
-            <p class="text-brand-gray text-xs leading-relaxed text-left">
+            <p class="text-brand-gray text-base leading-relaxed text-left">
               Stay in sync with daily habits, medication schedules, and automated phase tips.
             </p>
             <ul class="space-y-4 pt-2 text-left">
@@ -1356,8 +1408,8 @@
                   <i data-lucide="clock" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Habits & Med Reminders</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Set custom alerts to track daily water intake and log scheduled medications.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Habits & Med Reminders</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Set custom alerts to track daily water intake and log scheduled medications.</span>
                 </div>
               </li>
               <li class="flex items-start gap-2.5">
@@ -1365,8 +1417,8 @@
                   <i data-lucide="alert-triangle" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Automated Cycle Alerts</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed text-left">
+                  <span class="block text-base font-extrabold text-brand-dark">Automated Cycle Alerts</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed text-left">
                     Alerts 2 days before period starts, late cycle notifications (if 3+ days late), and fertile phase triggers.
                   </span>
                 </div>
@@ -1376,8 +1428,8 @@
                   <i data-lucide="help-circle" class="w-3 h-3"></i>
                 </span>
                 <div class="space-y-0.5">
-                  <span class="block text-sm font-extrabold text-brand-dark">Daily Phase Tips</span>
-                  <span class="block text-xs text-brand-gray/90 font-medium leading-relaxed">Get personalized nutrition and fitness advice aligned to your active cycle phase.</span>
+                  <span class="block text-base font-extrabold text-brand-dark">Daily Phase Tips</span>
+                  <span class="block text-sm text-brand-gray/90 font-medium leading-relaxed">Get personalized nutrition and fitness advice aligned to your active cycle phase.</span>
                 </div>
               </li>
             </ul>
@@ -1387,27 +1439,27 @@
       </div>
 
       <!-- Banner Block: Category G: Subscription & Plans -->
-      <div class="glass-panel p-8 rounded-3xl border border-brand-pink/15 bg-brand-pink/[0.02] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden">
+      <div id="pricing" class="glass-panel p-8 rounded-3xl border border-brand-pink/15 bg-brand-pink/[0.02] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative overflow-hidden scroll-mt-24">
         <!-- Accent Glow -->
         <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-brand-pink/5 blur-3xl"></div>
         
         <!-- Left Side: Subscription Text (8 cols) -->
         <div class="lg:col-span-8 space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-[10px] uppercase tracking-wider">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
             Plan Options
           </div>
           <h3 class="text-2xl font-extrabold text-brand-dark font-heading">Subscription & Plans (Free vs Premium)</h3>
-          <p class="text-brand-gray text-xs leading-relaxed max-w-2xl">
+          <p class="text-brand-gray text-base leading-relaxed max-w-2xl">
             Choose the subscription package that matches your fitness and track goals. Mock payments or secure Razorpay options make upgrading fast.
           </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-[11px] font-bold text-brand-dark">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-sm font-bold text-brand-dark">
             <div class="flex items-center gap-2.5">
               <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <i data-lucide="check" class="w-3.5 h-3.5"></i>
               </span>
               <div class="space-y-0.5">
-                <span class="block text-xs font-bold text-brand-dark">Free vs Premium (Razorpay/Mock)</span>
-                <span class="block text-[11px] text-brand-gray/85 font-normal">Unlock premium health tracking features with flexible monthly or yearly paid plans.</span>
+                <span class="block text-base font-bold text-brand-dark">Free vs Premium (Razorpay/Mock)</span>
+                <span class="block text-sm text-brand-gray/85 font-normal">Unlock premium health tracking features with flexible monthly or yearly paid plans.</span>
               </div>
             </div>
             <div class="flex items-center gap-2.5">
@@ -1415,8 +1467,8 @@
                 <i data-lucide="check" class="w-3.5 h-3.5"></i>
               </span>
               <div class="space-y-0.5">
-                <span class="block text-xs font-bold text-brand-dark">7-Day Free Trial</span>
-                <span class="block text-[11px] text-brand-gray/85 font-normal">Explore all premium guides, alerts, and reports with a risk-free 7-day trial.</span>
+                <span class="block text-base font-bold text-brand-dark">7-Day Free Trial</span>
+                <span class="block text-sm text-brand-gray/85 font-normal">Explore all premium guides, alerts, and reports with a risk-free 7-day trial.</span>
               </div>
             </div>
           </div>
@@ -1424,11 +1476,11 @@
 
         <!-- Right Side: CTA Button (4 cols) -->
         <div class="lg:col-span-4 flex flex-col gap-3">
-          <a href="#download" class="w-full py-3.5 bg-brand-pink hover:bg-brand-pink/95 text-white rounded-full font-bold text-xs text-center shadow-lg shadow-brand-pink/25 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
+          <a href="#download" class="w-full py-3.5 bg-brand-pink hover:bg-brand-pink/95 text-white rounded-full font-bold text-sm text-center shadow-lg shadow-brand-pink/25 transition-all transform hover:scale-[1.02] flex items-center justify-center gap-2">
             <span>Start 7-Day Free Trial</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <span class="text-center text-[10px] text-brand-gray font-medium">Cancel anytime. No lock-in contracts.</span>
+          <span class="text-center text-xs text-brand-gray font-medium">Cancel anytime. No lock-in contracts.</span>
         </div>
       </div>
 
@@ -1438,7 +1490,7 @@
   <!-- ==========================================
        CYCLE PHASE SIMULATOR SECTION (INTERACTIVE)
        ========================================== -->
-  <section id="simulator" class="py-24 max-w-7xl mx-auto px-6 space-y-16">
+  <section id="simulator" class="scroll-mt-20 py-12 md:py-16 max-w-7xl mx-auto px-6 space-y-10 md:space-y-12">
     
     <!-- Section Header -->
     <div class="text-center max-w-2xl mx-auto space-y-4 animate-on-scroll">
@@ -1449,7 +1501,7 @@
       <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
         Align with Your Hormones
       </h2>
-      <p class="text-brand-gray text-base leading-relaxed">
+      <p class="text-brand-gray text-[19px] leading-relaxed">
         Your cycle is more than just your period. It is composed of four distinct phases, each accompanied by changes in energy, focus, and nutritional needs. Drag the slider below to explore.
       </p>
     </div>
@@ -1472,10 +1524,10 @@
           
           <!-- Central text panel -->
           <div class="absolute inset-10 bg-white rounded-full flex flex-col items-center justify-center text-center shadow-inner p-4 border border-gray-100">
-            <span class="text-[10px] font-bold text-brand-gray uppercase tracking-widest">Active Phase</span>
+            <span class="text-xs font-bold text-brand-gray uppercase tracking-widest">Active Phase</span>
             <span id="dial-phase" class="text-2xl font-extrabold text-brand-dark font-heading mt-0.5">Menstrual</span>
-            <span id="dial-days" class="text-xs font-bold text-brand-pink mt-1">Days 1 - 5</span>
-            <span id="dial-hormones" class="text-[8px] text-brand-gray/60 font-semibold mt-2 text-center max-w-[120px]">Estrogen: Low | Progesterone: Low</span>
+            <span id="dial-days" class="text-sm font-bold text-brand-pink mt-1">Days 1 - 5</span>
+            <span id="dial-hormones" class="text-[13px] text-brand-gray/60 font-semibold mt-2 text-center max-w-[120px]">Estrogen: Low | Progesterone: Low</span>
           </div>
 
           <!-- Rotating dial pointer -->
@@ -1501,19 +1553,19 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-brand-pink/10">
           <div class="space-y-2">
             <span class="text-xs font-bold text-brand-pink uppercase tracking-wider block">Nutrition Tip</span>
-            <p id="sim-food" class="text-xs font-semibold text-brand-dark leading-relaxed">
+            <p id="sim-food" class="text-sm font-semibold text-brand-dark leading-relaxed">
               Warm broths, herbal teas, iron-rich foods (spinach, lentils)
             </p>
           </div>
           <div class="space-y-2">
             <span class="text-xs font-bold text-brand-peach uppercase tracking-wider block">Energy Level</span>
-            <p id="sim-energy" class="text-xs font-semibold text-brand-dark leading-relaxed">
+            <p id="sim-energy" class="text-sm font-semibold text-brand-dark leading-relaxed">
               Low - focus on deep rest and restorative sleep
             </p>
           </div>
           <div class="space-y-2">
             <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Exercise Fit</span>
-            <p id="sim-workout" class="text-xs font-semibold text-brand-dark leading-relaxed">
+            <p id="sim-workout" class="text-sm font-semibold text-brand-dark leading-relaxed">
               Gentle walking, light stretching, restorative yoga
             </p>
           </div>
@@ -1523,7 +1575,7 @@
         <div class="space-y-6 pt-4">
           <!-- Slide Range -->
           <div class="space-y-2">
-            <div class="flex justify-between text-xs font-bold text-brand-gray">
+            <div class="flex justify-between text-sm font-bold text-brand-gray">
               <span>Menstrual</span>
               <span>Follicular</span>
               <span>Ovulatory</span>
@@ -1534,10 +1586,10 @@
 
           <!-- Buttons -->
           <div class="flex flex-wrap gap-2.5">
-            <button data-phase-id="1" class="px-4 py-2 border rounded-full text-xs font-bold transition-all transform hover:scale-105">Menstrual</button>
-            <button data-phase-id="2" class="px-4 py-2 border rounded-full text-xs font-bold transition-all transform hover:scale-105">Follicular</button>
-            <button data-phase-id="3" class="px-4 py-2 border rounded-full text-xs font-bold transition-all transform hover:scale-105">Ovulatory</button>
-            <button data-phase-id="4" class="px-4 py-2 border rounded-full text-xs font-bold transition-all transform hover:scale-105">Luteal</button>
+            <button data-phase-id="1" class="px-6 py-2.5 border rounded-full text-sm font-bold transition-all transform hover:scale-105">Menstrual</button>
+            <button data-phase-id="2" class="px-6 py-2.5 border rounded-full text-sm font-bold transition-all transform hover:scale-105">Follicular</button>
+            <button data-phase-id="3" class="px-6 py-2.5 border rounded-full text-sm font-bold transition-all transform hover:scale-105">Ovulatory</button>
+            <button data-phase-id="4" class="px-6 py-2.5 border rounded-full text-sm font-bold transition-all transform hover:scale-105">Luteal</button>
           </div>
         </div>
       </div>
@@ -1548,15 +1600,15 @@
   <!-- ==========================================
        APP SCREENS DETAILS GRID
        ========================================== -->
-  <section id="screens" class="py-24 bg-[#FAF8F9] border-y border-brand-pink/5">
-    <div class="max-w-7xl mx-auto px-6 space-y-20">
+  <section id="screens" class="scroll-mt-20 py-12 md:py-16 bg-[#FAF8F9] border-y border-brand-pink/5">
+    <div class="max-w-7xl mx-auto px-6 space-y-12 md:space-y-16">
       
       <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto space-y-4 animate-on-scroll">
         <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark tracking-tight">
-          Explore the App Features
+          Inside the TrackFlow App
         </h2>
-        <p class="text-brand-gray text-base leading-relaxed">
+        <p class="text-brand-gray text-[19px] leading-relaxed">
           See details of the key screens and components designed to support you every day.
         </p>
       </div>
@@ -1571,10 +1623,10 @@
           <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-dark font-heading">
             Track Cycle Lengths and Phase Ratios at a Glance
           </h3>
-          <p class="text-brand-gray text-sm leading-relaxed">
+          <p class="text-brand-gray text-base leading-relaxed">
             The Cycle History screen allows you to visual your logs. The average period and cycle length summaries keep you updated on your body's typical ranges, and the timeline shows your period length contrasted with your fertile window (orange indicator) for each cycle.
           </p>
-          <ul class="space-y-3 pt-2 text-xs font-semibold text-brand-dark">
+          <ul class="space-y-3 pt-2 text-sm font-semibold text-brand-dark">
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-pink"></i> Average cycle/period stats calculated automatically</li>
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-pink"></i> Timeline comparison with fertility metrics</li>
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-pink"></i> Historical phase indicators based on logs</li>
@@ -1587,7 +1639,7 @@
             <!-- Avg stats grid -->
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-brand-pink/5 p-5 rounded-2xl border border-brand-pink/10 flex flex-col items-center text-center">
-                <span class="text-[10px] font-bold text-brand-pink uppercase tracking-wider">Average period</span>
+                <span class="text-[13px] font-bold text-brand-pink uppercase tracking-wider">Average period</span>
                 <span class="text-3xl font-bold text-brand-dark font-heading mt-1">4 days</span>
                 <div class="w-10 h-10 mt-3 rounded-full bg-brand-pink/10 flex items-center justify-center">
                   <i data-lucide="droplet" class="w-5 h-5 text-brand-pink fill-brand-pink"></i>
@@ -1595,7 +1647,7 @@
               </div>
               
               <div class="bg-brand-peach/5 p-5 rounded-2xl border border-brand-peach/10 flex flex-col items-center text-center">
-                <span class="text-[10px] font-bold text-brand-peach uppercase tracking-wider">Average cycle</span>
+                <span class="text-[13px] font-bold text-brand-peach uppercase tracking-wider">Average cycle</span>
                 <span class="text-3xl font-bold text-brand-dark font-heading mt-1">28 days</span>
                 <div class="w-10 h-10 mt-3 rounded-full bg-brand-peach/10 flex items-center justify-center">
                   <i data-lucide="calendar" class="w-5 h-5 text-brand-peach fill-brand-peach/20"></i>
@@ -1635,13 +1687,13 @@
             </div>
             
             <div class="grid grid-cols-7 text-center font-bold gap-y-3.5 gap-x-1">
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">S</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">M</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">T</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">W</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">T</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">F</span>
-              <span class="text-[10px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">S</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">S</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">M</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">T</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">W</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">T</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">F</span>
+              <span class="text-[13px] text-brand-gray/60 uppercase tracking-wider flex items-center justify-center">S</span>
               
               <!-- ROW 1 (Aug 1 to 3) -->
               <div></div>
@@ -1650,19 +1702,19 @@
               <div></div>
               
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">1</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">1</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">2</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">2</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">3</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">3</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
@@ -1670,43 +1722,43 @@
 
               <!-- ROW 2 (Aug 4 to 10) -->
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">4</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">4</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">5</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">5</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">6</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">6</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">7</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">7</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">8</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">8</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">9</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">9</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">10</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">10</span>
                 <span class="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
@@ -1714,43 +1766,43 @@
 
               <!-- ROW 3 (Aug 11 to 17) -->
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">11</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">11</span>
                 <span class="w-6 h-6 rounded-full border border-gray-150 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-pink">12</span>
+                <span class="text-[13px] font-extrabold text-brand-pink">12</span>
                 <span class="w-6 h-6 rounded-full bg-brand-pink flex items-center justify-center text-white shadow-sm shadow-brand-pink/20">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-pink">13</span>
+                <span class="text-[13px] font-extrabold text-brand-pink">13</span>
                 <span class="w-6 h-6 rounded-full bg-brand-pink flex items-center justify-center text-white shadow-sm shadow-brand-pink/20">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-pink">14</span>
+                <span class="text-[13px] font-extrabold text-brand-pink">14</span>
                 <span class="w-6 h-6 rounded-full bg-brand-pink flex items-center justify-center text-white shadow-sm shadow-brand-pink/20">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-pink">15</span>
+                <span class="text-[13px] font-extrabold text-brand-pink">15</span>
                 <span class="w-6 h-6 rounded-full bg-brand-pink flex items-center justify-center text-white shadow-sm shadow-brand-pink/20">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">16</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">16</span>
                 <span class="w-6 h-6 rounded-full border border-gray-150 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">17</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">17</span>
                 <span class="w-6 h-6 rounded-full border border-gray-150 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
@@ -1758,43 +1810,43 @@
 
               <!-- ROW 4 (Aug 18 to 24) -->
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">18</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">18</span>
                 <span class="w-6 h-6 rounded-full border border-gray-150 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-extrabold text-brand-dark">19</span>
+                <span class="text-[13px] font-extrabold text-brand-dark">19</span>
                 <span class="w-6 h-6 rounded-full border border-gray-150 flex items-center justify-center text-gray-300">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">20</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">20</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">21</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">21</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">22</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">22</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">23</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">23</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">24</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">24</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
@@ -1802,43 +1854,43 @@
 
               <!-- ROW 5 (Aug 25 to 31) -->
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">25</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">25</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">26</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">26</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">27</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">27</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">28</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">28</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">29</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">29</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">30</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">30</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
               </div>
               <div class="flex flex-col items-center gap-1">
-                <span class="text-[10px] font-bold text-brand-gray/30">31</span>
+                <span class="text-[13px] font-bold text-brand-gray/30">31</span>
                 <span class="w-6 h-6 rounded-full border border-gray-100 flex items-center justify-center text-gray-200">
                   <i data-lucide="check" class="w-3.5 h-3.5"></i>
                 </span>
@@ -1847,7 +1899,7 @@
             
             <div class="py-2.5 px-4 bg-brand-pink/5 border border-brand-pink/10 rounded-2xl flex items-center gap-3">
               <i data-lucide="info" class="w-4 h-4 text-brand-pink"></i>
-              <span class="text-[10px] font-semibold text-brand-dark leading-snug">Drag and select days easily inside the mobile calendar. Selected days are immediately saved to cycle models.</span>
+              <span class="text-xs font-semibold text-brand-dark leading-snug">Drag and select days easily inside the mobile calendar. Selected days are immediately saved to cycle models.</span>
             </div>
           </div>
         </div>
@@ -1860,10 +1912,10 @@
           <h3 class="text-2xl sm:text-3xl font-extrabold text-brand-dark font-heading">
             Simple and Beautiful Period Logging Calendar
           </h3>
-          <p class="text-brand-gray text-sm leading-relaxed">
+          <p class="text-brand-gray text-base leading-relaxed">
             Quickly edit and refine your logs. The calendar features a clean day grid detailing which days have been logged as active period segments (shown in pink). Toggle days or confirm previous records within seconds.
           </p>
-          <ul class="space-y-3 pt-2 text-xs font-semibold text-brand-dark">
+          <ul class="space-y-3 pt-2 text-sm font-semibold text-brand-dark">
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-peach"></i> Instant calendar selection</li>
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-peach"></i> Interactive, responsive grids</li>
             <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-brand-peach"></i> Multi-month support and visual checkpoints</li>
@@ -1877,7 +1929,7 @@
   <!-- ==========================================
        FAQ SECTION (ACCORDION)
        ========================================== -->
-  <section id="faqs" class="py-24 max-w-4xl mx-auto px-6 space-y-12">
+  <section id="faqs" class="scroll-mt-20 py-12 md:py-16 max-w-4xl mx-auto px-6 space-y-8">
     
     <!-- Section Header -->
     <div class="text-center space-y-4 animate-on-scroll">
@@ -1895,11 +1947,11 @@
       <!-- FAQ 1 -->
       <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
         <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-          <span class="font-bold text-brand-dark text-base font-heading">Is my data secure and private?</span>
+          <span class="font-bold text-brand-dark text-lg font-heading">Is my data secure and private?</span>
           <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300"></i>
         </button>
         <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-          <div class="px-6 pb-6 text-sm text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+          <div class="px-6 pb-6 text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
             Yes, completely. At TrackFlow, privacy is our foundational promise. We store all health records using industry-grade encryption, and we never share or sell your hormonal or personal data to advertisers or third-party agencies.
           </div>
         </div>
@@ -1908,11 +1960,11 @@
       <!-- FAQ 2 -->
       <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
         <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-          <span class="font-bold text-brand-dark text-base font-heading">How does TrackFlow predict my fertility?</span>
+          <span class="font-bold text-brand-dark text-lg font-heading">How does TrackFlow predict my fertility?</span>
           <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300"></i>
         </button>
         <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-          <div class="px-6 pb-6 text-sm text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+          <div class="px-6 pb-6 text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
             Using your logged period start dates and historical cycle ranges, TrackFlow estimates your ovulation day based on standard calendar guidelines, while using machine learning to refine forecasts if you have irregular periods. You can also log symptoms like basal body temperature and LH surge results to improve calculations.
           </div>
         </div>
@@ -1921,11 +1973,11 @@
       <!-- FAQ 3 -->
       <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
         <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-          <span class="font-bold text-brand-dark text-base font-heading">Can I log custom symptoms?</span>
+          <span class="font-bold text-brand-dark text-lg font-heading">Can I log custom symptoms?</span>
           <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300"></i>
         </button>
         <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-          <div class="px-6 pb-6 text-sm text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+          <div class="px-6 pb-6 text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
             Absolutely. TrackFlow has over 50 log metrics including flow intensity, physical symptoms (cramps, headaches, bloating), moods, energy levels, hydration volume, nutrition focus, sleep hours, and custom text logs.
           </div>
         </div>
@@ -1934,11 +1986,11 @@
       <!-- FAQ 4 -->
       <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
         <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none">
-          <span class="font-bold text-brand-dark text-base font-heading">Does it support irregular cycles?</span>
+          <span class="font-bold text-brand-dark text-lg font-heading">Does it support irregular cycles?</span>
           <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300"></i>
         </button>
         <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-          <div class="px-6 pb-6 text-sm text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+          <div class="px-6 pb-6 text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
             Yes! Our machine learning models are designed to find patterns in varying cycle lengths and adapt prediction intervals to your custom data instead of forcing a strict 28-day standard.
           </div>
         </div>
@@ -1950,7 +2002,7 @@
   <!-- ==========================================
        NEWSLETTER & DOWNLOAD APP SECTION
        ========================================== -->
-  <section id="download" class="py-24 bg-brand-accent/20 text-brand-dark relative overflow-hidden border-t border-brand-pink/10">
+  <section id="download" class="scroll-mt-20 py-12 md:py-16 bg-brand-accent/20 text-brand-dark relative overflow-hidden border-t border-brand-pink/10">
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-brand-pink/5 rounded-full filter blur-[100px]"></div>
 
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
@@ -1961,7 +2013,7 @@
           Ready to flow with<br>
           <span class="text-brand-pink">your body's rhythm?</span>
         </h2>
-        <p class="text-brand-gray text-base max-w-md leading-relaxed">
+        <p class="text-brand-gray text-lg max-w-md leading-relaxed">
           Download TrackFlow today for iOS or Android. Join over 100,000+ women tracking cycles, optimizing workouts, and living in sync.
         </p>
 
@@ -1973,7 +2025,7 @@
               <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/>
             </svg>
             <div class="text-left leading-none">
-              <span class="text-[9px] text-white/70 block font-normal tracking-wide">Download on the</span>
+              <span class="text-[12px] text-white/70 block font-normal tracking-wide">Download on the</span>
               <span class="text-sm font-semibold block mt-0.5">App Store</span>
             </div>
           </a>
@@ -1987,7 +2039,7 @@
               <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/>
             </svg>
             <div class="text-left leading-none text-white">
-              <span class="text-[8px] text-white/70 block font-normal tracking-wide uppercase">Get it on</span>
+              <span class="text-[11px] text-white/70 block font-normal tracking-wide uppercase">Get it on</span>
               <span class="text-sm font-semibold block mt-0.5">Google Play</span>
             </div>
           </a>
@@ -1998,7 +2050,7 @@
       <div class="glass-panel p-8 md:p-10 rounded-3xl space-y-6 border border-brand-pink/15 animate-on-scroll" style="transition-delay: 100ms">
         <div class="space-y-2">
           <h3 class="text-xl font-bold font-heading text-brand-dark">Stay updated on cycle health</h3>
-          <p class="text-brand-gray text-xs leading-relaxed">
+          <p class="text-brand-gray text-base leading-relaxed">
             Subscribe to our weekly newsletter for research digests, nutrition suggestions, and expert health articles. No spam, ever.
           </p>
         </div>
@@ -2019,40 +2071,49 @@
   <!-- ==========================================
        FOOTER
        ========================================== -->
-  <footer class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+  <footer id="contact" class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
       
-      <!-- Left brand and copyright -->
-      <div class="flex flex-col items-center md:items-start gap-4">
-        <!-- Re-use High-fidelity Pink logo next to TrackFlow white/pink solid text -->
+      <!-- Top Tier: Logo, Navigation, Socials -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
+        <!-- Logo -->
         <a href="#" class="opacity-90 hover:opacity-100 transition-opacity">
           <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
         </a>
-        <p class="text-xs text-brand-gray mt-1">
+
+        <!-- Center navigation -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
+          <a href="#" class="hover:text-brand-pink transition-colors">Home</a>
+          <a href="#features" class="hover:text-brand-pink transition-colors">Features</a>
+          <a href="#simulator" class="hover:text-brand-pink transition-colors">How It Works</a>
+          <a href="#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
+          <a href="#faqs" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="#contact" class="hover:text-brand-pink transition-colors">Contact</a>
+        </div>
+
+        <!-- Right socials -->
+        <div class="flex gap-4">
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Github">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal links -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+        <p>
           &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
         </p>
-      </div>
-
-      <!-- Center navigation -->
-      <div class="flex flex-wrap justify-center gap-6 text-xs font-semibold text-brand-gray">
-        <a href="#features" class="hover:text-brand-pink transition-colors">Features</a>
-        <a href="#simulator" class="hover:text-brand-pink transition-colors">Cycle Guide</a>
-        <a href="#screens" class="hover:text-brand-pink transition-colors">App Screens</a>
-        <a href="#faqs" class="hover:text-brand-pink transition-colors">FAQs</a>
-        <a href="#" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
-      </div>
-
-      <!-- Right socials -->
-      <div class="flex gap-4">
-        <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
-          <i data-lucide="twitter" class="w-4 h-4"></i>
-        </a>
-        <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
-          <i data-lucide="instagram" class="w-4 h-4"></i>
-        </a>
-        <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Github">
-          <i data-lucide="github" class="w-4 h-4"></i>
-        </a>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
       </div>
 
     </div>

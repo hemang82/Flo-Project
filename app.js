@@ -436,6 +436,20 @@ function initMockNotifications() {
   ];
 
   let currentIndex = 0;
+  let autoHideTimeout = null;
+
+  function dismissNotification() {
+    notif.classList.remove('translate-y-0', 'opacity-100');
+    notif.classList.add('-translate-y-56', 'opacity-0');
+    notif.style.pointerEvents = 'none';
+    notif.style.transform = '';
+    notif.style.opacity = '';
+    notif.style.transition = '';
+    if (autoHideTimeout) {
+      clearTimeout(autoHideTimeout);
+      autoHideTimeout = null;
+    }
+  }
 
   function triggerNotification() {
     const alert = alerts[currentIndex];
@@ -459,18 +473,103 @@ function initMockNotifications() {
     }
 
     // Slide down notification banner
-    notif.classList.remove('-translate-y-32', 'opacity-0');
+    notif.classList.remove('-translate-y-56', 'opacity-0');
     notif.classList.add('translate-y-0', 'opacity-100');
+    notif.style.pointerEvents = 'auto';
+    notif.style.cursor = 'grab';
+    notif.style.transform = 'translateY(0px)';
+    notif.style.opacity = '1';
+    notif.style.transition = ''; // Reset custom transition inline style
+
+    playNotificationSound();
+
+    if (autoHideTimeout) clearTimeout(autoHideTimeout);
 
     // Slide up/hide after 4.5 seconds
-    setTimeout(() => {
-      notif.classList.remove('translate-y-0', 'opacity-100');
-      notif.classList.add('-translate-y-32', 'opacity-0');
+    autoHideTimeout = setTimeout(() => {
+      dismissNotification();
     }, 4500);
 
     // Increment index
     currentIndex = (currentIndex + 1) % alerts.length;
   }
+
+  // Drag-to-dismiss behavior (mouse/touch gestures)
+  let isDragging = false;
+  let startY = 0;
+  let currentTranslateY = 0;
+
+  function onDragStart(e) {
+    // Only allow drag on left-click
+    if (e.type === 'mousedown' && e.button !== 0) return;
+    
+    isDragging = true;
+    startY = e.clientY || (e.touches && e.touches[0].clientY);
+    notif.style.cursor = 'grabbing';
+    notif.style.transition = 'none'; // Instant response during drag
+    
+    // Clear auto-hide timeout when user interacts
+    if (autoHideTimeout) {
+      clearTimeout(autoHideTimeout);
+      autoHideTimeout = null;
+    }
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+    
+    const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+    const deltaY = clientY - startY;
+
+    // Only allow dragging upwards (negative translation)
+    currentTranslateY = Math.min(0, deltaY);
+    notif.style.transform = `translateY(${currentTranslateY}px)`;
+    
+    // Also fade out slightly as it is swiped up
+    const percentMoved = Math.min(1, Math.abs(currentTranslateY) / 60);
+    notif.style.opacity = (1 - percentMoved).toString();
+  }
+
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    notif.style.cursor = 'grab';
+    
+    // Snap back or slide out smoothly
+    notif.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-out';
+
+    if (currentTranslateY < -15) {
+      // Swipe threshold met, dismiss completely
+      dismissNotification();
+    } else {
+      // Snap back to normal active display
+      notif.style.transform = 'translateY(0px)';
+      notif.style.opacity = '1';
+      
+      // Clear inline transition after animation completes
+      setTimeout(() => {
+        if (!isDragging) {
+          notif.style.transition = '';
+        }
+      }, 300);
+
+      // Re-trigger auto-hide since the user didn't dismiss it
+      if (autoHideTimeout) clearTimeout(autoHideTimeout);
+      autoHideTimeout = setTimeout(() => {
+        dismissNotification();
+      }, 2500); // Give it another 2.5 seconds to read
+    }
+  }
+
+  // Bind mouse drag events
+  notif.addEventListener('mousedown', onDragStart);
+  window.addEventListener('mousemove', onDragMove);
+  window.addEventListener('mouseup', onDragEnd);
+
+  // Bind touch drag events for mobile users
+  notif.addEventListener('touchstart', onDragStart, { passive: true });
+  window.addEventListener('touchmove', onDragMove, { passive: true });
+  window.addEventListener('touchend', onDragEnd);
 
   // Trigger the first notification after 3 seconds, then repeat every 9 seconds
   setTimeout(() => {
@@ -517,9 +616,9 @@ function initSymptomLogger() {
   flowTags.forEach(tag => {
     tag.addEventListener('click', () => {
       flowTags.forEach(t => {
-        t.className = "symptom-tag text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all";
+        t.className = "symptom-tag text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all";
       });
-      tag.className = "symptom-tag text-[9px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all";
+      tag.className = "symptom-tag text-[12px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all";
       selectedFlow = tag.getAttribute('data-value');
     });
   });
@@ -531,10 +630,10 @@ function initSymptomLogger() {
       const idx = selectedSymptoms.indexOf(symptom);
       if (idx > -1) {
         selectedSymptoms.splice(idx, 1);
-        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
+        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
       } else {
         selectedSymptoms.push(symptom);
-        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C]/10 text-[#FF5E8C] transition-all";
+        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C]/10 text-[#FF5E8C] transition-all";
       }
     });
   });
@@ -546,10 +645,10 @@ function initSymptomLogger() {
       const idx = selectedMoods.indexOf(mood);
       if (idx > -1) {
         selectedMoods.splice(idx, 1);
-        btn.className = "mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
+        btn.className = "mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
       } else {
         selectedMoods.push(mood);
-        btn.className = "mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C]/10 text-[#FF5E8C] transition-all";
+        btn.className = "mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C]/10 text-[#FF5E8C] transition-all";
       }
     });
   });
@@ -563,18 +662,18 @@ function initSymptomLogger() {
       
       flowTags.forEach(t => {
         if (t.getAttribute('data-value') === 'medium') {
-          t.className = "symptom-tag text-[9px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all";
+          t.className = "symptom-tag text-[12px] py-1.5 border border-[#FF5E8C] rounded-xl font-bold bg-[#FF5E8C] text-white transition-all";
         } else {
-          t.className = "symptom-tag text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all";
+          t.className = "symptom-tag text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 hover:bg-brand-pink/5 transition-all";
         }
       });
 
       symptomBtns.forEach(btn => {
-        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
+        btn.className = "symptom-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
       });
 
       moodBtns.forEach(btn => {
-        btn.className = "mood-btn flex items-center justify-center gap-1 text-[9px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
+        btn.className = "mood-btn flex items-center justify-center gap-1 text-[12px] py-1.5 border border-gray-100 rounded-xl font-bold bg-white text-brand-dark hover:border-brand-pink/30 transition-all";
       });
     });
   }
@@ -598,7 +697,7 @@ function initSymptomLogger() {
       // Update text in dashboard card details
       if (logStatusText) {
         logStatusText.textContent = "Saved Successfully";
-        logStatusText.className = "text-[11px] font-extrabold text-emerald-500 font-heading";
+        logStatusText.className = "text-[14px] font-extrabold text-emerald-500 font-heading";
       }
 
       if (logSubText) {
@@ -608,12 +707,12 @@ function initSymptomLogger() {
           textSummary += ` (${combined.slice(0, 2).join(', ')})`;
         }
         logSubText.textContent = textSummary;
-        logSubText.className = "text-[9px] text-brand-gray/90 font-bold mt-0.5";
+        logSubText.className = "text-[12px] text-brand-gray/90 font-bold mt-0.5";
       }
 
       // Turn Add Log button into green "Logged!" feedback state
       addLogBtn.textContent = "Logged!";
-      addLogBtn.className = "w-full mt-3 py-2.5 bg-emerald-500 text-white rounded-full font-extrabold text-xs shadow-md shadow-emerald-500/20 transition-all text-center pointer-events-none";
+      addLogBtn.className = "w-full mt-3 py-2.5 bg-emerald-500 text-white rounded-full font-extrabold text-[14px] shadow-md shadow-emerald-500/20 transition-all text-center pointer-events-none";
 
       // Show simulator success toast
       showSimulatorToast("Daily logs updated successfully! 🎉");
@@ -655,7 +754,7 @@ function showSimulatorToast(message) {
   if (oldToast) oldToast.remove();
 
   const toast = document.createElement('div');
-  toast.className = "simulator-toast absolute bottom-18 inset-x-6 z-50 bg-[#1A1819]/95 text-white text-[10px] font-bold py-2 px-4 rounded-full shadow-xl text-center backdrop-blur-sm transition-all duration-300 opacity-0 transform translate-y-2 border border-white/10";
+  toast.className = "simulator-toast absolute bottom-18 inset-x-6 z-50 bg-[#1A1819]/95 text-white text-[13px] font-bold py-2 px-4 rounded-full shadow-xl text-center backdrop-blur-sm transition-all duration-300 opacity-0 transform translate-y-2 border border-white/10";
   toast.textContent = message;
   
   phoneViewport.appendChild(toast);
@@ -675,3 +774,40 @@ function showSimulatorToast(message) {
     }, 300);
   }, 3000);
 }
+
+// Global Audio element for the authentic iOS Tri-Tone notification sound
+const NOTIF_SOUND_URL = "https://raw.githubusercontent.com/extratone/macOSsystemsounds/main/mp3/Note.mp3";
+let notificationAudio = null;
+
+try {
+  notificationAudio = new Audio(NOTIF_SOUND_URL);
+  notificationAudio.volume = 0.4; // Set a clean, moderate volume
+} catch (e) {
+  console.warn("Audio element initialization failed:", e);
+}
+
+function playNotificationSound() {
+  if (notificationAudio) {
+    try {
+      notificationAudio.currentTime = 0;
+      notificationAudio.play().catch(e => {
+        console.warn("Audio play blocked by browser policy (requires user interaction first):", e);
+      });
+    } catch (e) {
+      console.warn("Error playing notification sound:", e);
+    }
+  }
+}
+
+// User click gesture audio unlocker for mobile and desktop browsers
+document.addEventListener('click', () => {
+  if (notificationAudio) {
+    notificationAudio.play().then(() => {
+      notificationAudio.pause();
+      notificationAudio.currentTime = 0;
+    }).catch(e => {
+      // Ignore initial block warnings
+    });
+  }
+}, { once: true });
+
