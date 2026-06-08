@@ -40,6 +40,14 @@
   
   <!-- Custom CSS Link -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- In-app webview mode detection -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('app') === 'true' || urlParams.get('webview') === 'true') {
+      document.documentElement.classList.add('is-in-app');
+    }
+  </script>
 </head>
 <body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink min-h-screen flex flex-col justify-between">
 
@@ -190,10 +198,11 @@
         <!-- Center navigation -->
         <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
           <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
-          <a href="index.html#features" class="hover:text-brand-pink transition-colors">Features</a>
-          <a href="index.html#simulator" class="hover:text-brand-pink transition-colors">How It Works</a>
-          <a href="index.html#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
-          <a href="index.html#faqs" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
         </div>
 
         <!-- Right socials -->

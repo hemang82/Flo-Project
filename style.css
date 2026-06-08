@@ -418,3 +418,33 @@ h1, h2, h3, h4, h5, h6 {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
+
+/* ============================================================
+   IN-APP / WEBVIEW UTILITY STYLES
+   Hides website navigation elements when query param app=true is active.
+   ============================================================ */
+.is-in-app header,
+.is-in-app footer,
+.is-in-app .back-to-home-btn {
+  display: none !important;
+}
+
+.is-in-app main {
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* FAQ Accordion Styling overrides */
+.faq-trigger:focus {
+  outline: none;
+}
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+}
+.faq-item.active .faq-content {
+  max-height: 1000px;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0), padding 0.3s ease;
+}
+

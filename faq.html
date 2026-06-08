@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - TrackFlow</title>
+  <meta name="description" content="Find answers to common questions about TrackFlow profile management, data privacy, and ovulation tracking.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- In-app webview mode detection -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('app') === 'true' || urlParams.get('webview') === 'true') {
+      document.documentElement.classList.add('is-in-app');
+    }
+  </script>
+</head>
+<body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================
+       STICKY NAVIGATION BAR
+       ========================================== -->
+  <header class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+      </a>
+
+      <!-- BACK BUTTON -->
+      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-5 py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-1 relative w-full">
+    
+    <!-- Background glows -->
+    <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
+    <div class="glow-orb-peach absolute bottom-10 right-10 w-96 h-96 -z-10 animate-pulse-slow" style="animation-delay: 2s"></div>
+
+    <!-- Title Header -->
+    <div class="text-center space-y-4 mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
+        Support Center
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-brand-gray text-base leading-relaxed max-w-xl mx-auto">
+        Have questions about using TrackFlow? Find quick answers regarding profile setups, accounts, and application tracking below.
+      </p>
+    </div>
+
+    <!-- FAQ Accordion List (Styled in a beautiful glassmorphic container) -->
+    <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-brand-pink/15 space-y-4 shadow-lg">
+      
+      <!-- FAQ Item 1 (From User Screenshot) -->
+      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+          <span class="text-[17px] font-bold text-brand-dark font-body">How can I edit my profile?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+        </button>
+        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+            To edit your profile, go to the <strong>Profile</strong> tab inside the application, tap on the edit/settings icon next to your name, and update your personal details such as average cycle length, height, weight, and name.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 (From User Screenshot) -->
+      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+          <span class="text-[17px] font-bold text-brand-dark font-body">How do I logout?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+        </button>
+        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+            You can log out by navigating to the <strong>Profile</strong> tab, scroll to the bottom of the page, and select <strong>Log Out</strong>. Your local backup settings will be saved securely on your device.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 (From User Screenshot - Active default) -->
+      <div class="faq-item active bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+          <span class="text-[17px] font-bold text-brand-dark font-body">Can I delete my account?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none transform rotate-180"></i>
+        </button>
+        <div class="faq-content px-6 transition-all duration-300 ease-in-out" style="max-height: 1000px;">
+          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+            Yes, from Account screen tap Delete Account and confirm.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+          <span class="text-[17px] font-bold text-brand-dark font-body">Is my health and cycle data secure?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+        </button>
+        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+            Yes, TrackFlow utilizes zero-knowledge client-side local database encryption. Your period logs, symptom history, and ovulation predictions are compiled entirely offline. We never sell or share medical tracking reports with advertisers.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 5 -->
+      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+          <span class="text-[17px] font-bold text-brand-dark font-body">How accurate are the fertility window predictions?</span>
+          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+        </button>
+        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+            Our predictions use standard clinical cycle tracking algorithms combined with symptom recording patterns. While it is highly accurate for spotting ovulation patterns, it should not be utilized as a primary form of contraceptive protection.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Still need help callout (Premium styled box) -->
+    <div class="mt-10 text-center bg-white/70 backdrop-blur-md rounded-3xl p-8 border border-brand-pink/15 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-brand-dark font-heading">Still have questions?</h3>
+      <p class="text-sm sm:text-base text-brand-gray max-w-md mx-auto leading-relaxed">Our dedicated support team is here to assist you with any questions or custom inquiries.</p>
+      <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-full font-bold text-sm shadow-lg shadow-brand-pink/25 hover:shadow-xl hover:shadow-brand-pink/35 transform hover:-translate-y-0.5 transition-all">
+        Contact Our Support Team
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
+      
+      <!-- Top Tier: Logo, Navigation, Socials -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
+        <!-- Logo -->
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
+          <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Center navigation -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
+          <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+          <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+
+        <!-- Right socials -->
+        <div class="flex gap-4">
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal links -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+        <p>
+          &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
+        </p>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Accordion Toggling Script -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    function toggleFaq(button) {
+      const parentItem = button.closest('.faq-item');
+      const content = parentItem.querySelector('.faq-content');
+      const icon = button.querySelector('[data-lucide]');
+
+      // Check if it's already active
+      const isActive = parentItem.classList.contains('active');
+
+      // Close all active items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        const itemContent = item.querySelector('.faq-content');
+        const itemIcon = item.querySelector('[data-lucide]');
+        itemContent.style.maxHeight = null;
+        if (itemIcon) {
+          itemIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current item
+      if (!isActive) {
+        parentItem.classList.add('active');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) {
+          icon.style.transform = 'rotate(180deg)';
+        }
+      }
+    }
+
+    // Set initial active state correctly
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.faq-item.active').forEach(item => {
+        const content = item.querySelector('.faq-content');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      });
+    });
+  </script>
+
+</body>
+</html>

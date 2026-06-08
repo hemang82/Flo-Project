@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Our Mission & Team | TrackFlow</title>
+  <meta name="description" content="Learn more about the mission behind TrackFlow. We design female health trackers focused on security, biological precision, and user data safety.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- In-app webview mode detection -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('app') === 'true' || urlParams.get('webview') === 'true') {
+      document.documentElement.classList.add('is-in-app');
+    }
+  </script>
+</head>
+<body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================
+       STICKY NAVIGATION BAR
+       ========================================== -->
+  <header class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+      </a>
+
+      <!-- BACK BUTTON -->
+      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-5 py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-1 relative w-full">
+    
+    <!-- Background glows -->
+    <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
+    <div class="glow-orb-peach absolute bottom-10 right-10 w-96 h-96 -z-10 animate-pulse-slow" style="animation-delay: 2s"></div>
+
+    <!-- Title Header -->
+    <div class="text-center space-y-4 mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
+        Our Vision
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
+        About TrackFlow
+      </h1>
+      <p class="text-brand-gray text-base leading-relaxed max-w-xl mx-auto">
+        Empowering women globally with reliable, science-backed cycle intelligence while maintaining the highest standard of data privacy.
+      </p>
+    </div>
+
+    <!-- Main Story Section -->
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-pink/15 space-y-8 text-left shadow-lg bg-white/60 backdrop-blur-md">
+      
+      <!-- Core Story -->
+      <div class="space-y-4">
+        <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+          <i data-lucide="heart" class="w-6 h-6 text-brand-pink fill-brand-pink/10"></i>
+          <span>Our Journey</span>
+        </h2>
+        <p class="text-brand-gray text-sm sm:text-base leading-relaxed">
+          TrackFlow was founded in 2025 by a passionate team of doctors, developers, and wellness advocates. We noticed a major gap in the market: most period tracking apps were tracking cycles while monetizing or leaking users' reproductive logs.
+        </p>
+        <p class="text-brand-gray text-sm sm:text-base leading-relaxed">
+          We set out to rebuild female cycle tracking from scratch—with bank-grade local client-side database encryption, scientific phase analytics, and a beautiful premium design. Today, TrackFlow helps thousands of women align with their natural cycles safely and elegantly.
+        </p>
+      </div>
+
+      <hr class="border-gray-100">
+
+      <!-- Core Values -->
+      <div class="space-y-5">
+        <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+          <i data-lucide="award" class="w-6 h-6 text-brand-pink"></i>
+          <span>What We Stand For</span>
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+              <i data-lucide="shield" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-base font-bold text-brand-dark font-heading">Absolute Security</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Your logs belong solely to you. We employ local zero-knowledge encryption so no third parties can query your records.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+              <i data-lucide="activity" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-base font-bold text-brand-dark font-heading">Clinical Accuracy</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Our predictions integrate standardized reproductive research parameters to yield reliable ovulation windows.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+              <i data-lucide="users" class="w-4 h-4"></i>
+            </div>
+            <h3 class="text-base font-bold text-brand-dark font-heading">Empowered Wellness</h3>
+            <p class="text-xs text-brand-gray leading-relaxed">
+              Learn how hormones affect energy, work, and workouts. Adapt your schedule to your biology, not the calendar.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
+      
+      <!-- Top Tier: Logo, Navigation, Socials -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
+        <!-- Logo -->
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
+          <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Center navigation -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
+          <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+          <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+
+        <!-- Right socials -->
+        <div class="flex gap-4">
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal links -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+        <p>
+          &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
+        </p>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>

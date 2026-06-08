@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - TrackFlow Support & Feedback</title>
+  <meta name="description" content="Reach out to the TrackFlow support team. Submit app bugs, request features, or ask billing questions.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- In-app webview mode detection -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('app') === 'true' || urlParams.get('webview') === 'true') {
+      document.documentElement.classList.add('is-in-app');
+    }
+  </script>
+</head>
+<body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================
+       STICKY NAVIGATION BAR
+       ========================================== -->
+  <header class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+      </a>
+
+      <!-- BACK BUTTON -->
+      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-5 py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to Home</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="max-w-6xl mx-auto px-6 py-12 flex-1 relative w-full flex flex-col justify-center">
+    
+    <!-- Background glows -->
+    <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
+    <div class="glow-orb-peach absolute bottom-10 right-10 w-96 h-96 -z-10 animate-pulse-slow" style="animation-delay: 2s"></div>
+
+    <!-- Page Title -->
+    <div class="text-center space-y-4 mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
+        Get In Touch
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
+        Contact Our Team
+      </h1>
+      <p class="text-brand-gray text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+        Have questions about subscription packages, app improvements, or bug logging? Fill out the contact form below and we'll reply shortly.
+      </p>
+    </div>
+
+    <!-- Two Column Layout: Form & Details -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- LEFT Column: Glassmorphic Feedback Form -->
+      <div class="lg:col-span-7 bg-white/70 backdrop-blur-md border border-brand-pink/15 rounded-3xl p-8 shadow-lg flex flex-col justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-brand-dark font-heading mb-6 flex items-center gap-2.5">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-pink"></i>
+            <span>Send Us a Message</span>
+          </h2>
+          
+          <form class="space-y-6" onsubmit="event.preventDefault(); alert('Your message has been sent successfully! Our support agents will contact you shortly.');">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Full Name</label>
+                <input type="text" placeholder="Jane Doe" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm">
+              </div>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Email Address</label>
+                <input type="email" placeholder="jane@example.com" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm">
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Subject / Query Topic</label>
+              <div class="relative">
+                <select required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm appearance-none">
+                  <option value="">Select a topic...</option>
+                  <option value="billing">Subscription & Billing Support</option>
+                  <option value="technical">App Bugs & Technical Support</option>
+                  <option value="features">Feature Suggestions</option>
+                  <option value="privacy">Security & Data Privacy</option>
+                  <option value="other">Other Inquiries</option>
+                </select>
+                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-gray/60">
+                  <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Your Message</label>
+              <textarea rows="5" placeholder="How can we help you today?" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-4 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-xl font-bold text-sm shadow-lg shadow-brand-pink/20 hover:shadow-xl hover:shadow-brand-pink/35 transform hover:scale-[1.01] transition-all">
+              Send message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- RIGHT Column: Contact Details -->
+      <div class="lg:col-span-5 flex flex-col justify-between gap-6">
+        
+        <!-- Info Card 1: Support Desk -->
+        <div class="bg-white/70 backdrop-blur-md border border-brand-pink/10 rounded-3xl p-6 shadow-sm space-y-4 hover:border-brand-pink/20 transition-all duration-300">
+          <div class="w-10 h-10 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+            <i data-lucide="help-circle" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-brand-dark font-heading">Online Support Center</h3>
+            <p class="text-sm text-brand-gray leading-relaxed">
+              Before reaching out, check our Help Center containing fast, guided answers for general app behaviors.
+            </p>
+          </div>
+          <a href="faq.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-brand-pink hover:text-brand-pink/90 transition-all">
+            <span>Visit Help Center FAQ</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <!-- Info Card 2: Email channels -->
+        <div class="bg-white/70 backdrop-blur-md border border-brand-pink/10 rounded-3xl p-6 shadow-sm space-y-4 hover:border-brand-pink/20 transition-all duration-300">
+          <div class="w-10 h-10 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-brand-dark font-heading">Direct Email Support</h3>
+            <p class="text-sm text-brand-gray leading-relaxed">
+              Prefer emailing us directly? Drop a query with your account registration ID for instant escalation.
+            </p>
+            <div class="text-sm font-bold text-brand-dark select-all mt-1">support@trackflow-app.com</div>
+          </div>
+        </div>
+
+        <!-- Info Card 3: Response Timeline -->
+        <div class="bg-white/70 backdrop-blur-md border border-brand-pink/10 rounded-3xl p-6 shadow-sm space-y-4 hover:border-brand-pink/20 transition-all duration-300">
+          <div class="w-10 h-10 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
+            <i data-lucide="clock" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-brand-dark font-heading">Operating Hours</h3>
+            <p class="text-sm text-brand-gray leading-relaxed">
+              Monday – Friday, 09:00 AM – 06:00 PM EST. Our support team typically replies within 24-48 business hours.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
+      
+      <!-- Top Tier: Logo, Navigation, Socials -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
+        <!-- Logo -->
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
+          <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Center navigation -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
+          <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+          <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+
+        <!-- Right socials -->
+        <div class="flex gap-4">
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal links -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+        <p>
+          &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
+        </p>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
