@@ -243,6 +243,23 @@
 
     // Fetch dynamic content from CMS API
     async function loadCMSContent() {
+      const container = document.getElementById('privacy-content');
+      
+      // 1. Show premium shimmer skeleton loader
+      container.innerHTML = `
+        <div class="skeleton-loader py-4">
+          <div class="skeleton-line h-8 w-2/5 mb-6"></div>
+          <div class="skeleton-line h-4 w-11/12"></div>
+          <div class="skeleton-line h-4 w-full"></div>
+          <div class="skeleton-line h-4 w-4/5"></div>
+          <div class="skeleton-line h-4 w-3/4"></div>
+          <div class="skeleton-line h-8 w-1/3 mt-8 mb-6"></div>
+          <div class="skeleton-line h-4 w-5/6"></div>
+          <div class="skeleton-line h-4 w-full"></div>
+          <div class="skeleton-line h-4 w-2/3"></div>
+        </div>
+      `;
+      
       try {
         const response = await fetch('https://flo-tracker-api.tracewavetransparency.com/api/v1/admin/cms/list_cms', {
           method: 'POST',
@@ -256,7 +273,6 @@
         const resJson = await response.json();
         if (resJson && resJson.status && resJson.data && resJson.data.length > 0) {
           const cmsData = resJson.data[0];
-          const container = document.getElementById('privacy-content');
           
           // Inject content and trigger fade animation
           container.innerHTML = cmsData.description;
@@ -264,9 +280,31 @@
           
           // Re-render Lucide icons if any exist in the dynamic content
           lucide.createIcons();
+        } else {
+          throw new Error('Data not found or empty response');
         }
       } catch (error) {
-        console.error('Failed to load CMS content from API, showing local fallback. Error:', error);
+        console.error('Failed to load CMS content from API. Error:', error);
+        
+        // Render beautiful "Data Not Found" interface with retry
+        container.innerHTML = `
+          <div class="text-center py-12 px-4 space-y-6 max-w-md mx-auto">
+            <div class="w-16 h-16 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink mx-auto shadow-inner">
+              <i data-lucide="alert-circle" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-brand-dark font-heading">Data Not Found</h3>
+              <p class="text-sm text-brand-gray leading-relaxed font-medium">
+                We couldn't retrieve the content from the server. Please check your internet connection and try again.
+              </p>
+            </div>
+            <button onclick="loadCMSContent()" class="inline-flex items-center gap-2 px-6 py-2.5 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-full font-bold text-xs shadow-md shadow-brand-pink/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Retry Connection</span>
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
       }
     }
   </script>
