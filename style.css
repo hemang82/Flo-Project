@@ -442,8 +442,9 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: span 12 / span 12 !important;
 }
 
-.is-in-app .glass-panel {
-  padding: 1rem !important;
+.is-in-app .glass-panel,
+.is-in-app .contact-form-container {
+  padding: 1rem !important; /* equivalent to p-4 */
   border-radius: 1.5rem !important;
   border-width: 0 !important;
   box-shadow: none !important;
