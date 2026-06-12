@@ -431,7 +431,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .is-in-app main {
-  padding-top: 0 !important;
+  padding-top: 0.5rem !important;
   padding-bottom: 1rem !important;
   padding-left: 0.5rem !important;
   padding-right: 0.5rem !important;
