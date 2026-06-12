@@ -435,6 +435,10 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 2rem !important;
 }
 
+.is-in-app .contact-form-container {
+  grid-column: span 12 / span 12 !important;
+}
+
 /* FAQ Accordion Styling overrides */
 .faq-trigger:focus {
   outline: none;
