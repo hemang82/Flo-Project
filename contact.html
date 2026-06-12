@@ -125,24 +125,19 @@
                 <input id="contact-email" type="email" placeholder="Please enter your email" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm">
                 <p id="error-email" class="hidden text-xs text-red-500 font-semibold mt-1"></p>
               </div>
-            </div>
-
-            <div class="space-y-2">
-              <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Subject / Query Topic</label>
-              <div class="relative">
-                <select id="contact-topic" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm appearance-none">
-                  <option value="">Select a topic...</option>
-                  <option value="billing">Subscription & Billing Support</option>
-                  <option value="technical">App Bugs & Technical Support</option>
-                  <option value="features">Feature Suggestions</option>
-                  <option value="privacy">Security & Data Privacy</option>
-                  <option value="other">Other Inquiries</option>
-                </select>
-                <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-brand-gray/60">
-                  <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Phone Number</label>
+                <div class="relative flex items-center">
+                  <span class="absolute left-4 text-sm font-semibold text-brand-dark/50">+91</span>
+                  <input id="contact-phone" type="tel" placeholder="Enter 10-digit number" required class="w-full pl-14 pr-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm">
                 </div>
+                <p id="error-phone" class="hidden text-xs text-red-500 font-semibold mt-1"></p>
               </div>
-              <p id="error-topic" class="hidden text-xs text-red-500 font-semibold mt-1"></p>
+              <div class="space-y-2">
+                <label class="text-xs font-bold text-brand-dark/70 uppercase tracking-wider block">Subject / Query Topic</label>
+                <input id="contact-subject" type="text" placeholder="Please enter subject" required class="w-full px-4 py-3.5 bg-white/90 border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/40 focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-sm">
+                <p id="error-subject" class="hidden text-xs text-red-500 font-semibold mt-1"></p>
+              </div>
             </div>
 
             <div class="space-y-2">
@@ -274,12 +269,14 @@
       
       const nameInput = document.getElementById('contact-name');
       const emailInput = document.getElementById('contact-email');
-      const topicSelect = document.getElementById('contact-topic');
+      const phoneInput = document.getElementById('contact-phone');
+      const subjectInput = document.getElementById('contact-subject');
       const messageInput = document.getElementById('contact-message');
       
       const errorName = document.getElementById('error-name');
       const errorEmail = document.getElementById('error-email');
-      const errorTopic = document.getElementById('error-topic');
+      const errorPhone = document.getElementById('error-phone');
+      const errorSubject = document.getElementById('error-subject');
       const errorMessage = document.getElementById('error-message');
       
       const statusBanner = document.getElementById('form-status');
@@ -294,7 +291,8 @@
       statusBanner.classList.add('hidden');
       errorName.classList.add('hidden');
       errorEmail.classList.add('hidden');
-      errorTopic.classList.add('hidden');
+      errorPhone.classList.add('hidden');
+      errorSubject.classList.add('hidden');
       errorMessage.classList.add('hidden');
       
       let hasError = false;
@@ -315,10 +313,19 @@
         hasError = true;
       }
       
-      const topicVal = topicSelect.value;
-      if (!topicVal) {
-        errorTopic.innerText = "Please select a topic.";
-        errorTopic.classList.remove('hidden');
+      // Phone validation: exactly 10 digits
+      const phoneVal = phoneInput.value.trim();
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phoneVal)) {
+        errorPhone.innerText = "Please enter a valid 10-digit phone number.";
+        errorPhone.classList.remove('hidden');
+        hasError = true;
+      }
+      
+      const subjectVal = subjectInput.value.trim();
+      if (subjectVal.length < 3) {
+        errorSubject.innerText = "Please enter a subject (at least 3 characters).";
+        errorSubject.classList.remove('hidden');
         hasError = true;
       }
       
@@ -336,12 +343,12 @@
       btnText.innerText = "Sending message...";
       btnSpinner.classList.remove('hidden');
       
-      // Construct exact API payload
+      // Prepend +91 for backend and construct API payload
       const payload = {
         name: nameVal,
         email: emailVal,
-        phonenumber: "",
-        description: `Topic: ${topicSelect.options[topicSelect.selectedIndex].text}\n\nMessage: ${messageVal}`
+        phonenumber: "+91" + phoneVal,
+        description: `Subject: ${subjectVal}\n\nMessage: ${messageVal}`
       };
       
       try {
