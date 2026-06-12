@@ -55,17 +55,17 @@
        STICKY NAVIGATION BAR
        ========================================== -->
   <header class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
       
       <!-- LOGO -->
       <a href="index.html" class="flex items-center gap-2">
-        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-8 sm:h-11 w-auto">
       </a>
 
       <!-- BACK BUTTON -->
-      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-5 py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
+      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
         <i data-lucide="arrow-left" class="w-4 h-4"></i>
-        <span>Back to Home</span>
+        <span class="hidden sm:inline">Back to Home</span>
       </a>
 
     </div>
@@ -95,72 +95,55 @@
 
     <!-- FAQ Accordion List (Styled in a beautiful glassmorphic container) -->
     <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-brand-pink/15 space-y-4 shadow-lg">
-      
-      <!-- FAQ Item 1 (From User Screenshot) -->
-      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
-        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
-          <span class="text-[17px] font-bold text-brand-dark font-body">How can I edit my profile?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
-        </button>
-        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
-          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
-            To edit your profile, go to the <strong>Profile</strong> tab inside the application, tap on the edit/settings icon next to your name, and update your personal details such as average cycle length, height, weight, and name.
+      <div id="faq-list" class="space-y-4">
+        <!-- FAQ Item 1 (Fallback / SEO Static HTML) -->
+        <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+          <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+            <span class="text-[17px] font-bold text-brand-dark font-body">How can I edit my profile?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+          </button>
+          <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+            <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+              To edit your profile, go to the <strong>Profile</strong> tab inside the application, tap on the edit/settings icon next to your name, and update your personal details such as average cycle length, height, weight, and name.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 (Fallback / SEO Static HTML) -->
+        <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+          <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+            <span class="text-[17px] font-bold text-brand-dark font-body">How do I logout?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
+          </button>
+          <div class="faq-content px-6 transition-all duration-300 ease-in-out">
+            <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+              You can log out by navigating to the <strong>Profile</strong> tab, scroll to the bottom of the page, and select <strong>Log Out</strong>. Your local backup settings will be saved securely on your device.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 (Fallback / SEO Static HTML - Active default) -->
+        <div class="faq-item active bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+          <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+            <span class="text-[17px] font-bold text-brand-dark font-body">Can I delete my account?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none transform rotate-180"></i>
+          </button>
+          <div class="faq-content px-6 transition-all duration-300 ease-in-out" style="max-height: 1000px;">
+            <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
+              Yes, from Account screen tap Delete Account and confirm.
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- FAQ Item 2 (From User Screenshot) -->
-      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
-        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
-          <span class="text-[17px] font-bold text-brand-dark font-body">How do I logout?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
-        </button>
-        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
-          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
-            You can log out by navigating to the <strong>Profile</strong> tab, scroll to the bottom of the page, and select <strong>Log Out</strong>. Your local backup settings will be saved securely on your device.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 3 (From User Screenshot - Active default) -->
-      <div class="faq-item active bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
-        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
-          <span class="text-[17px] font-bold text-brand-dark font-body">Can I delete my account?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none transform rotate-180"></i>
-        </button>
-        <div class="faq-content px-6 transition-all duration-300 ease-in-out" style="max-height: 1000px;">
-          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
-            Yes, from Account screen tap Delete Account and confirm.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 4 -->
-      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
-        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
-          <span class="text-[17px] font-bold text-brand-dark font-body">Is my health and cycle data secure?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
-        </button>
-        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
-          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
-            Yes, TrackFlow utilizes zero-knowledge client-side local database encryption. Your period logs, symptom history, and ovulation predictions are compiled entirely offline. We never sell or share medical tracking reports with advertisers.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ Item 5 -->
-      <div class="faq-item bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
-        <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
-          <span class="text-[17px] font-bold text-brand-dark font-body">How accurate are the fertility window predictions?</span>
-          <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none"></i>
-        </button>
-        <div class="faq-content px-6 transition-all duration-300 ease-in-out">
-          <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed">
-            Our predictions use standard clinical cycle tracking algorithms combined with symptom recording patterns. While it is highly accurate for spotting ovulation patterns, it should not be utilized as a primary form of contraceptive protection.
-          </div>
-        </div>
-      </div>
-
+    <!-- Still need help callout (Premium styled box) -->
+    <div class="mt-10 text-center bg-white/70 backdrop-blur-md rounded-3xl p-8 border border-brand-pink/15 shadow-sm space-y-4">
+      <h3 class="text-xl font-bold text-brand-dark font-heading">Still have questions?</h3>
+      <p class="text-sm sm:text-base text-brand-gray max-w-md mx-auto leading-relaxed">Our dedicated support team is here to assist you with any questions or custom inquiries.</p>
+      <a href="contact.html" class="inline-flex items-center justify-center px-8 py-3 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-full font-bold text-sm shadow-lg shadow-brand-pink/25 hover:shadow-xl hover:shadow-brand-pink/35 transform hover:-translate-y-0.5 transition-all">
+        Contact Our Support Team
+      </a>
     </div>
 
   </main>
@@ -248,12 +231,70 @@
     }
 
     // Set initial active state correctly
-    window.addEventListener('DOMContentLoaded', () => {
+    function setupAccordions() {
       document.querySelectorAll('.faq-item.active').forEach(item => {
         const content = item.querySelector('.faq-content');
-        content.style.maxHeight = content.scrollHeight + 'px';
+        if (content) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        }
       });
-    });
+    }
+
+    window.addEventListener('DOMContentLoaded', setupAccordions);
+
+    // Fetch dynamic content from CMS API
+    async function loadCMSContent() {
+      try {
+        const response = await fetch('https://flo-tracker-api.tracewavetransparency.com/api/v1/admin/cms/list_cms', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'platform': 'AnDroId@Trace'
+          },
+          body: JSON.stringify({ type: 'faq' })
+        });
+        
+        const resJson = await response.json();
+        if (resJson && resJson.status && resJson.data && resJson.data.length > 0) {
+          const faqListContainer = document.getElementById('faq-list');
+          let htmlContent = '';
+          
+          resJson.data.forEach((faqItem, index) => {
+            const isActiveClass = index === 0 ? 'active' : '';
+            const rotateStyle = index === 0 ? 'transform: rotate(180deg);' : '';
+            const contentMaxHeightStyle = index === 0 ? '' : 'style="max-height: 0px;"';
+            
+            htmlContent += `
+              <div class="faq-item ${isActiveClass} bg-white/80 rounded-2xl border border-brand-pink/10 shadow-sm transition-all duration-300 overflow-hidden hover:border-brand-pink/20">
+                <button class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="text-[17px] font-bold text-brand-dark font-body">${faqItem.title}</span>
+                  <i data-lucide="chevron-down" class="w-5 h-5 text-brand-gray transition-transform duration-300 pointer-events-none" style="${rotateStyle}"></i>
+                </button>
+                <div class="faq-content px-6 transition-all duration-300 ease-in-out" ${contentMaxHeightStyle}>
+                  <div class="border-t border-brand-pink/10 pt-4 pb-5 text-[15px] text-brand-gray/90 leading-relaxed cms-content">
+                    ${faqItem.description}
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          
+          faqListContainer.innerHTML = htmlContent;
+          faqListContainer.classList.add('cms-content-fade');
+          
+          // Re-render Lucide icons
+          lucide.createIcons();
+          
+          // Set initial accordion heights
+          setupAccordions();
+        }
+      } catch (error) {
+        console.error('Failed to load CMS content from API, showing local fallback. Error:', error);
+      }
+    }
+
+    // Call load on DOM content ready
+    document.addEventListener('DOMContentLoaded', loadCMSContent);
   </script>
 
 </body>
