@@ -259,6 +259,30 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
+    // Clear error messages dynamically as the user types
+    const setupErrorClearing = () => {
+      const fields = [
+        { inputId: 'contact-name', errorId: 'error-name' },
+        { inputId: 'contact-email', errorId: 'error-email' },
+        { inputId: 'contact-phone', errorId: 'error-phone' },
+        { inputId: 'contact-subject', errorId: 'error-subject' },
+        { inputId: 'contact-message', errorId: 'error-message' }
+      ];
+
+      fields.forEach(({ inputId, errorId }) => {
+        const input = document.getElementById(inputId);
+        const error = document.getElementById(errorId);
+        if (input && error) {
+          input.addEventListener('input', () => {
+            error.classList.add('hidden');
+          });
+        }
+      });
+    };
+
+    // Run setup on load
+    document.addEventListener('DOMContentLoaded', setupErrorClearing);
+
     function closeStatus() {
       const statusBanner = document.getElementById('form-status');
       statusBanner.classList.add('hidden');
