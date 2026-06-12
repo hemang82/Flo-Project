@@ -425,7 +425,8 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .is-in-app header,
 .is-in-app footer,
-.is-in-app .back-to-home-btn {
+.is-in-app .back-to-home-btn,
+.is-in-app .hide-in-app {
   display: none !important;
 }
 
