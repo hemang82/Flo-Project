@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Privacy Policy - Period Tracker Ovulation Cycle</title>
+  <meta name="description" content="Privacy Policy for the Period Tracker Ovulation Cycle mobile application. Learn how we collect, use, and safeguard your health and cycle data.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom CSS Link -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- In-app webview mode detection -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('app') === 'true' || urlParams.get('webview') === 'true') {
+      document.documentElement.classList.add('is-in-app');
+    }
+  </script>
+</head>
+<body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink min-h-screen flex flex-col justify-between">
+
+  <!-- ==========================================
+       STICKY NAVIGATION BAR
+       ========================================== -->
+  <header class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-8 sm:h-11 w-auto">
+      </a>
+
+      <!-- BACK BUTTON -->
+      <a href="index.html" class="back-to-home-btn flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2 rounded-full border border-brand-pink/20 text-brand-pink font-semibold text-sm hover:bg-brand-pink/5 transition-all">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span class="hidden sm:inline">Back to Home</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT CONTAINER
+       ========================================== -->
+  <main class="max-w-4xl mx-auto px-6 py-12 flex-1 relative w-full">
+    
+    <!-- Background glows -->
+    <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
+    <div class="glow-orb-peach absolute bottom-10 right-10 w-96 h-96 -z-10 animate-pulse-slow" style="animation-delay: 2s"></div>
+
+    <!-- Title Header -->
+    <div class="hide-in-app text-center space-y-4 mb-10">
+      <div class="hide-in-app inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
+        Mobile App Policy
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
+        App Privacy Policy
+      </h1>
+      <p class="hide-in-app text-brand-gray text-base leading-relaxed max-w-xl mx-auto">
+        This Privacy Policy explains how we protect, store, and process your cycle metrics inside the mobile application.
+      </p>
+      <div class="text-xs text-brand-gray/65 font-medium">Last Updated: June 15, 2026</div>
+    </div>
+
+    <!-- Glassmorphic Policy Content Panel -->
+    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-pink/15 shadow-lg bg-white/60 backdrop-blur-md">
+      
+      <div class="cms-content space-y-8">
+        
+        <!-- Intro -->
+        <div>
+          <p>
+            At Period Tracker Ovulation Cycle("App", "we", "our", or "us"), we respect your privacy and are protecting your personal and health data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.
+          </p>
+        </div>
+
+        <hr class="border-gray-100">
+
+        <!-- Section 1 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="database" class="w-5 h-5 text-brand-pink"></i>
+            <span>1. Information We Collect</span>
+          </h2>
+          <p>
+            We only collect information that is strictly necessary to provide you with cycle predictions, logs, reminders, and personalized health reports.
+          </p>
+          <ul class="list-disc list-inside pl-4 space-y-2 font-medium">
+            <li>
+              <strong>Account Setup & Authentication:</strong> We offer two secure methods to log in. You can choose to log in via OTP (which collects your Phone Number) or via Google Sign-In (which collects your Email Address).
+            </li>
+            <li>
+              <strong>Mandatory Health & Cycle Data:</strong> To calculate your predictions we require your Name, Date of Birth (DoB), Period Length, Period Cycle Length, Previous Month's Period Date, Height, and Weight during the mandatory profile setup.
+            </li>
+            <li>
+              <strong>Optional Profile Data:</strong> You may optionally choose to add or edit a Profile Picture, or an Email/Phone number (if not already used for login) within your profile settings. The app remains fully functional even without these optional details.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="activity" class="w-5 h-5 text-brand-pink"></i>
+            <span>2. How We Use Your Information</span>
+          </h2>
+          <p>
+            We use the collected data strictly for running the core features of the app, including:
+          </p>
+          <ul class="list-disc list-inside pl-4 space-y-1.5 font-medium">
+            <li>To predict your period, fertile window, and ovulation.</li>
+            <li>Displaying health reports and tracking charts for your Weight, Temperature, and Water level logs.</li>
+            <li>Generating detailed insights such as your Cycle Report, Flow Report, Fertility Report, and Sex Life Report.</li>
+            <li>Providing informational articles across different categories.</li>
+            <li>To sync your data across devices securely.</li>
+          </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="eye-off" class="w-5 h-5 text-brand-pink"></i>
+            <span>3. Data Sharing & Third Parties</span>
+          </h2>
+          <p class="font-semibold text-brand-dark">
+            WE DO NOT SELL, RENT, OR SHARE YOUR MENSTRUAL CYCLE, HEALTH, OR PERSONAL DATA WITH ADVERTISERS, AD NETWORKS, OR MARKETING COMPANIES.
+          </p>
+          <p>
+            Your data is used solely to provide and improve the services within the app for your personal benefit. We do not disclose your sensitive information to any third parties unless required by strict legal obligations or court orders.
+          </p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="lock" class="w-5 h-5 text-brand-pink"></i>
+            <span>4. Data Security</span>
+          </h2>
+          <p>
+            Your reproductive and health data is highly personal. We implement industry-standard security measures, including encryption protocols (SSL/TLS), to safeguard your data both in transit (when it is sent to our servers) and at rest (when stored securely).
+          </p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="user-check" class="w-5 h-5 text-brand-pink"></i>
+            <span>5. User Rights & Data Deletion</span>
+          </h2>
+          <p>
+            You retain absolute ownership and control over your data:
+          </p>
+          <ul class="list-disc list-inside pl-4 space-y-2 font-medium">
+            <li>You can review, edit, or modify your profile details and daily logs at any time directly through the app interface.</li>
+            <li>
+              <strong>Account and Data Deletion:</strong> If you wish to stop using the app, you can permanently delete your account directly through the Account Settings by selecting "Account Delete". Upon receiving this request, all your personal info, login details, and logged health history will be permanently and irreversibly deleted from our servers.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="mail" class="w-5 h-5 text-brand-pink"></i>
+            <span>6. Contact Us</span>
+          </h2>
+          <p>
+            For any privacy-related queries or to request data assistance, please contact us at:
+          </p>
+          <p class="font-bold text-brand-dark">
+            Email: <a href="mailto:info@tracewavetransparency.com" class="text-brand-pink hover:underline">info@tracewavetransparency.com</a>
+          </p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="space-y-3">
+          <h2 class="text-xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-brand-pink"></i>
+            <span>7. Medical and Health Disclaimer</span>
+          </h2>
+          <p>
+            <strong>Not Medical Advice:</strong> The information, articles, and predictions provided by the Period Tracker Ovulation Cycle app are for general informational and personal tracking purposes only. This app is NOT a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare provider or doctor with any questions you may have regarding a medical condition, severe symptoms, or changes in your health.
+          </p>
+          <p>
+            <strong>Not for Contraception:</strong> The fertility date range, ovulation day, and cycle predictions provided by the app are estimates based on your logged data. These predictions should NOT be used as a method of birth control or contraception to prevent pregnancy.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto px-6 space-y-8">
+      
+      <!-- Top Tier: Logo, Navigation, Socials -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
+        <!-- Logo -->
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
+          <img src="logo.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Center navigation -->
+        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
+          <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+          <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        </div>
+
+        <!-- Right socials -->
+        <div class="flex gap-4">
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Twitter">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="p-2 rounded-lg bg-brand-pink/10 hover:bg-brand-pink/20 text-brand-pink transition-all" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal links -->
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+        <p>
+          &copy; 2026 TrackFlow Technologies Inc. All rights reserved.
+        </p>
+        <div class="flex gap-6 font-semibold">
+          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+          <a href="app-privacy.html" class="hover:text-brand-pink transition-colors">App Privacy Policy</a>
+          <a href="delete-account.html" class="hover:text-brand-pink transition-colors">Delete Account</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
