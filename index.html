@@ -2574,24 +2574,35 @@
     </div>
   </footer>
 
-  <!-- Mock Checkout Modal -->
+  <!-- Plan Information Modal -->
   <div id="mock-checkout-modal" class="fixed inset-0 z-[100] bg-brand-dark/60 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
-    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 border border-brand-pink/15 shadow-2xl relative transform transition-all duration-300 scale-95 opacity-0 text-center space-y-6">
-      <!-- Success Icon -->
-      <div class="mx-auto w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
-        <i data-lucide="check-circle" class="w-10 h-10"></i>
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 border border-brand-pink/15 shadow-2xl relative transform transition-all duration-300 scale-95 opacity-0 space-y-6">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center gap-4 border-b border-brand-pink/10 pb-4">
+        <div class="w-12 h-12 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
+          <i data-lucide="calendar" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h4 id="info-modal-title" class="text-xl sm:text-2xl font-bold font-heading text-brand-dark">Plan Details</h4>
+          <p id="info-modal-price" class="text-sm font-semibold text-brand-pink mt-0.5">Price details</p>
+        </div>
       </div>
-      <!-- Modal Text -->
-      <div class="space-y-2">
-        <h4 class="text-2xl font-bold font-heading text-brand-dark">Mock Payment Successful!</h4>
-        <p id="checkout-plan-details" class="text-brand-gray text-base leading-relaxed">
-          Welcome to TrackFlow Premium! You have successfully upgraded to the Premium Plan (Demo Mode).
-        </p>
+      
+      <!-- Modal Features list -->
+      <div class="space-y-3">
+        <p class="text-xs font-bold text-brand-gray uppercase tracking-wider text-left">Features Included:</p>
+        <ul id="info-modal-features" class="space-y-3">
+          <!-- Populated dynamically via JS -->
+        </ul>
       </div>
+
       <!-- Actions -->
-      <button onclick="closeCheckoutModal()" class="w-full py-3 bg-brand-pink hover:bg-brand-pink/95 text-white rounded-full font-bold text-base shadow-lg shadow-brand-pink/20 transition-all duration-300">
-        Let's Go
-      </button>
+      <div class="pt-2">
+        <button onclick="closeCheckoutModal()" class="w-full py-3 bg-brand-pink hover:bg-brand-pink/95 text-white rounded-full font-bold text-base shadow-lg shadow-brand-pink/20 transition-all duration-300">
+          Got It
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2608,11 +2619,45 @@
     // Mock Pricing Checkout Handler
     function handlePricingChoice(planName) {
       const modal = document.getElementById('mock-checkout-modal');
-      const details = document.getElementById('checkout-plan-details');
-      const planText = planName === 'monthly' ? 'Monthly Plan (₹299/month)' : 'Annual Plan (₹1,999/year)';
+      const title = document.getElementById('info-modal-title');
+      const price = document.getElementById('info-modal-price');
+      const featuresList = document.getElementById('info-modal-features');
       
-      if (details) {
-        details.innerHTML = `Welcome to TrackFlow Premium! You have successfully upgraded to the <strong class="text-brand-dark font-extrabold">${planText}</strong> (Demo Mode).`;
+      const isMonthly = planName === 'monthly';
+      const planTitle = isMonthly ? 'Monthly Plan' : 'Annual Plan';
+      const planPrice = isMonthly ? '₹299/month' : '₹1,999/year';
+      const features = isMonthly 
+        ? [
+            'Cycle Tracking',
+            'Period Predictions',
+            'Advanced Health Reports',
+            'Full Article Library Access',
+            'VIP Support'
+          ]
+        : [
+            'Everything in Monthly Premium',
+            'Cycle Correlation Charts',
+            'Priority VIP Support',
+            '2 Months Free (Billed Annually)'
+          ];
+      
+      if (title) title.textContent = planTitle;
+      if (price) price.textContent = planPrice;
+      
+      if (featuresList) {
+        featuresList.innerHTML = features.map(f => `
+          <li class="flex items-center gap-3 text-brand-dark/85 font-medium text-sm sm:text-base">
+            <span class="text-brand-pink flex-shrink-0">
+              <i data-lucide="check-circle-2" class="w-5 h-5 fill-brand-pink/5"></i>
+            </span>
+            <span class="text-left">${f}</span>
+          </li>
+        `).join('');
+        
+        // Re-initialize Lucide Icons inside dynamic list
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
       }
       
       if (modal) {
