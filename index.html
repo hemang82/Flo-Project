@@ -2504,9 +2504,9 @@
           </p>
         </div>
 
-        <form class="space-y-4 pt-2" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <form id="newsletter-form" class="space-y-4 pt-2" onsubmit="handleNewsletterSubmit(event)">
           <div class="relative">
-            <input type="email" placeholder="Enter your email address" required
+            <input type="email" id="newsletter-email" placeholder="Enter your email address" required
               class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl text-brand-dark placeholder-brand-gray/50 focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20 transition-all text-sm">
           </div>
           <button type="submit"
@@ -2540,7 +2540,6 @@
           <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
           <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
           <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
-          <a href="delete-account.html" class="hover:text-brand-pink transition-colors">Delete Account</a>
         </div>
 
         <!-- Right socials -->
@@ -2568,7 +2567,6 @@
         <div class="flex gap-6 font-semibold">
           <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
           <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
-          <a href="delete-account.html" class="hover:text-brand-pink transition-colors">Delete Account</a>
         </div>
       </div>
 
@@ -2604,6 +2602,27 @@
           Got It
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Success Modal -->
+  <div id="newsletter-success-modal" class="fixed inset-0 z-[100] bg-brand-dark/60 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300 opacity-0 pointer-events-none">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 border border-brand-pink/15 shadow-2xl relative transform transition-all duration-300 scale-95 opacity-0 text-center space-y-6">
+      <!-- Success Icon -->
+      <div class="mx-auto w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+        <i data-lucide="check-circle" class="w-10 h-10"></i>
+      </div>
+      <!-- Modal Text -->
+      <div class="space-y-2">
+        <h4 class="text-2xl font-bold font-heading text-brand-dark">Subscription Successful!</h4>
+        <p class="text-brand-gray text-base leading-relaxed">
+          Thank you for subscribing to our weekly newsletter. You will now receive cycle health updates and expert articles.
+        </p>
+      </div>
+      <!-- Actions -->
+      <button onclick="closeNewsletterModal()" class="w-full py-3 bg-brand-pink hover:bg-brand-pink/95 text-white rounded-full font-bold text-base shadow-lg shadow-brand-pink/20 transition-all duration-300">
+        Okay
+      </button>
     </div>
   </div>
 
@@ -2683,6 +2702,44 @@
         }
         setTimeout(() => {
           modal.classList.add('opacity-0', 'pointer-events-none');
+        }, 300);
+      }
+    }
+
+    // Newsletter Submit Handler
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('newsletter-email');
+      if (!emailInput || !emailInput.value) return;
+      
+      const modal = document.getElementById('newsletter-success-modal');
+      if (modal) {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        // Trigger reflow to start transition
+        setTimeout(() => {
+          const content = modal.querySelector('div');
+          if (content) {
+            content.classList.remove('scale-95', 'opacity-0');
+          }
+        }, 10);
+      }
+    }
+
+    // Close Newsletter Modal and clear input
+    function closeNewsletterModal() {
+      const modal = document.getElementById('newsletter-success-modal');
+      const emailInput = document.getElementById('newsletter-email');
+      
+      if (modal) {
+        const content = modal.querySelector('div');
+        if (content) {
+          content.classList.add('scale-95', 'opacity-0');
+        }
+        setTimeout(() => {
+          modal.classList.add('opacity-0', 'pointer-events-none');
+          if (emailInput) {
+            emailInput.value = ''; // clear input text
+          }
         }, 300);
       }
     }
