@@ -32,6 +32,22 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
   </script>
+
+  <style>
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: 0.2s;
+    }
+    input[type="date"]:hover::-webkit-calendar-picker-indicator {
+        opacity: 1;
+    }
+    input[type="date"] {
+        color: #FF5E8C;
+        font-weight: 700;
+        font-family: inherit;
+    }
+  </style>
 </head>
 <body class="bg-[#FAF8F9] antialiased min-h-screen flex flex-col justify-between">
 <header
