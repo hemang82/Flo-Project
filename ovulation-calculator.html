@@ -18,18 +18,55 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    input[type="date"]::-webkit-calendar-picker-indicator {
+    input[type="text" class="flatpickr-input" placeholder="Select date..."]::-webkit-calendar-picker-indicator {
         cursor: pointer;
         opacity: 0.5;
         transition: 0.2s;
     }
-    input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    input[type="text" class="flatpickr-input" placeholder="Select date..."]:hover::-webkit-calendar-picker-indicator {
         opacity: 1;
     }
-    input[type="date"] {
+    input[type="text" class="flatpickr-input" placeholder="Select date..."] {
         color: #FF5E8C;
         font-weight: 700;
         font-family: inherit;
+    }
+  </style>
+
+  <!-- Flatpickr for Themed Date Picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    .flatpickr-calendar {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 25px -5px rgba(255, 94, 140, 0.15), 0 8px 10px -6px rgba(255, 94, 140, 0.1) !important;
+      border: 1px solid rgba(255, 94, 140, 0.1) !important;
+    }
+    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+      background: #FF5E8C !important;
+      border-color: #FF5E8C !important;
+    }
+    .flatpickr-day:hover {
+      background: #FFF0F2 !important;
+      border-color: transparent !important;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+      background: transparent !important;
+    }
+    .flatpickr-month {
+      color: #1A1819 !important;
+      fill: #1A1819 !important;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months {
+      font-weight: 700 !important;
+    }
+    .flatpickr-weekdays .flatpickr-weekday {
+      color: #FF5E8C !important;
+      font-weight: 700 !important;
+    }
+    /* Hide native calendar icon since flatpickr handles it */
+    input[type="text" class="flatpickr-input" placeholder="Select date..."]::-webkit-calendar-picker-indicator {
+        display: none !important;
     }
   </style>
 </head>
@@ -118,13 +155,7 @@
         <!-- Left Side: Text -->
         <div class="flex-1 space-y-6">
           <!-- Breadcrumb -->
-          <div class="text-[11px] font-bold text-brand-dark/60 tracking-widest uppercase flex items-center gap-2">
-            <a href="index.html" class="hover:text-brand-pink transition-colors"><i data-lucide="home" class="w-3.5 h-3.5"></i></a> 
-            <i data-lucide="chevron-right" class="w-3 h-3"></i> 
-            <a href="index.html" class="hover:text-brand-pink transition-colors">Calculators</a>
-            <i data-lucide="chevron-right" class="w-3 h-3"></i> 
-            <span class="text-brand-dark">Ovulation Calculator</span>
-          </div>
+          
           
           <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark font-heading leading-tight max-w-2xl">
             Ovulation calculator: Figure out your most fertile days
@@ -178,7 +209,7 @@
             <div>
               <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period</label>
               <div class="relative">
-                <input type="date" id="calc-last-period" class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink transition-all text-brand-dark font-medium text-lg shadow-sm">
+                <input type="text" class="flatpickr-input" placeholder="Select date..." id="calc-last-period" class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink transition-all text-brand-dark font-medium text-lg shadow-sm">
               </div>
             </div>
             
@@ -348,5 +379,13 @@
     }
 
   </script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  flatpickr("input[type=date]", {
+    dateFormat: "Y-m-d",
+    maxDate: "today",
+    disableMobile: "true"
+  });
+</script>
 </body>
 </html>

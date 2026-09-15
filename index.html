@@ -89,6 +89,43 @@
   }
   </script>
 
+
+  <!-- Flatpickr for Themed Date Picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <style>
+    .flatpickr-calendar {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      border-radius: 16px !important;
+      box-shadow: 0 10px 25px -5px rgba(255, 94, 140, 0.15), 0 8px 10px -6px rgba(255, 94, 140, 0.1) !important;
+      border: 1px solid rgba(255, 94, 140, 0.1) !important;
+    }
+    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
+      background: #FF5E8C !important;
+      border-color: #FF5E8C !important;
+    }
+    .flatpickr-day:hover {
+      background: #FFF0F2 !important;
+      border-color: transparent !important;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+      background: transparent !important;
+    }
+    .flatpickr-month {
+      color: #1A1819 !important;
+      fill: #1A1819 !important;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months {
+      font-weight: 700 !important;
+    }
+    .flatpickr-weekdays .flatpickr-weekday {
+      color: #FF5E8C !important;
+      font-weight: 700 !important;
+    }
+    /* Hide native calendar icon since flatpickr handles it */
+    input[type="text" class="flatpickr-input" placeholder="Select date..."]::-webkit-calendar-picker-indicator {
+        display: none !important;
+    }
+  </style>
 </head>
 
 <body class="bg-mesh-glow antialiased selection:bg-brand-pink/20 selection:text-brand-pink">
@@ -1425,7 +1462,7 @@
       <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
         <div class="w-full sm:w-auto text-left">
           <label class="block text-sm font-semibold text-brand-gray mb-1">First day of last period:</label>
-          <input type="date" id="calc-last-period" class="w-full sm:w-48 px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20">
+          <input type="text" class="flatpickr-input" placeholder="Select date..." id="calc-last-period" class="w-full sm:w-48 px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20">
         </div>
         <div class="w-full sm:w-auto text-left">
           <label class="block text-sm font-semibold text-brand-gray mb-1">Cycle length (days):</label>
@@ -2853,6 +2890,14 @@
       }
     }
   </script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+  flatpickr("input[type=date]", {
+    dateFormat: "Y-m-d",
+    maxDate: "today",
+    disableMobile: "true"
+  });
+</script>
 </body>
 
 </html>
