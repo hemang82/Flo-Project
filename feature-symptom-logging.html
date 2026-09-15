@@ -75,86 +75,79 @@
   <!-- ==========================================
        MAIN CONTENT CONTAINER
        ========================================== -->
-  <main class="max-w-4xl mx-auto px-6 py-12 flex-1 relative w-full">
-    
-    <!-- Background glows -->
-    <div class="glow-orb-pink absolute top-10 left-10 w-72 h-72 -z-10 animate-pulse-slow"></div>
-    <div class="glow-orb-peach absolute bottom-10 right-10 w-96 h-96 -z-10 animate-pulse-slow" style="animation-delay: 2s"></div>
-
+    <main class="max-w-6xl mx-auto px-6 py-12 flex-1 relative w-full">
     <!-- Title Header -->
-    <div class="hide-in-app text-center space-y-4 mb-12">
-      <div class="hide-in-app inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
-        Our Vision
+    <div class="text-center space-y-4 mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs uppercase tracking-wider">
+        Feature Detail
       </div>
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
+      <h1 class="text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-tight font-heading">
         Understand Your Body
       </h1>
-      <p class="hide-in-app text-brand-gray text-base leading-relaxed max-w-xl mx-auto">
-        Empowering women globally with reliable, science-backed cycle intelligence while maintaining the highest standard of data privacy.
+      <p class="text-brand-gray text-lg leading-relaxed max-w-2xl mx-auto">
+        Log daily symptoms, moods, and physical changes to discover patterns in your cycle.
       </p>
     </div>
 
-    <!-- Main Story Section -->
-    <div class="glass-panel p-8 sm:p-10 rounded-3xl border border-brand-pink/15 shadow-lg bg-white/60 backdrop-blur-md">
+    <!-- Layout: Image Left, Cards Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
       
-      <div id="about-content" class="cms-content space-y-8">
-        <!-- Core Story (Fallback / SEO Static HTML) -->
-        <div class="space-y-4">
-          <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
-            <i data-lucide="heart" class="w-6 h-6 text-brand-pink fill-brand-pink/10"></i>
-            <span>Symptom Logging</span>
-          </h2>
-          <p class="text-brand-gray text-sm sm:text-base leading-relaxed">
-            Log over 30 different symptoms, moods, and physical changes. TrackFlow analyzes these patterns to provide you with daily insights and health tips tailored to your current cycle phase.
-          </p>
-          <p class="text-brand-gray text-sm sm:text-base leading-relaxed">
-            We set out to rebuild female cycle tracking from scratchâ€”with bank-grade local client-side database encryption, scientific phase analytics, and a beautiful premium design. Today, TrackFlow helps thousands of women align with their natural cycles safely and elegantly.
-          </p>
-        </div>
-
-        <hr class="border-gray-100">
-
-        <!-- Core Values (Fallback / SEO Static HTML) -->
-        <div class="space-y-5">
-          <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-2.5 font-heading">
-            <i data-lucide="award" class="w-6 h-6 text-brand-pink"></i>
-            <span>Key Benefits</span>
-          </h2>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="space-y-2">
-              <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
-                <i data-lucide="shield" class="w-4 h-4"></i>
-              </div>
-              <h3 class="text-base font-bold text-brand-dark font-heading">Absolute Security</h3>
-              <p class="text-xs text-brand-gray leading-relaxed">
-                Your logs belong solely to you. We employ local zero-knowledge encryption so no third parties can query your records.
-              </p>
-            </div>
-
-            <div class="space-y-2">
-              <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
-                <i data-lucide="activity" class="w-4 h-4"></i>
-              </div>
-              <h3 class="text-base font-bold text-brand-dark font-heading">Clinical Accuracy</h3>
-              <p class="text-xs text-brand-gray leading-relaxed">
-                Our predictions integrate standardized reproductive research parameters to yield reliable ovulation windows.
-              </p>
-            </div>
-
-            <div class="space-y-2">
-              <div class="w-8 h-8 rounded-xl bg-brand-pink/10 flex items-center justify-center text-brand-pink">
-                <i data-lucide="users" class="w-4 h-4"></i>
-              </div>
-              <h3 class="text-base font-bold text-brand-dark font-heading">Empowered Wellness</h3>
-              <p class="text-xs text-brand-gray leading-relaxed">
-                Learn how hormones affect energy, work, and workouts. Adapt your schedule to your biology, not the calendar.
-              </p>
-            </div>
-          </div>
-        </div>
+      <!-- Left Image Mockup -->
+      <div class="relative flex justify-center">
+         <div class="absolute inset-0 bg-gradient-to-tr from-brand-pink/20 to-brand-peach/20 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+         <!-- Phone Frame CSS -->
+         <div class="relative w-[280px] h-[580px] bg-white rounded-[40px] border-[8px] border-brand-dark/5 shadow-2xl overflow-hidden flex items-center justify-start flex-col">
+             <div class="w-full bg-gray-100 px-4 py-2 text-center border-b text-xs font-bold text-gray-400">TrackFlow App</div>
+             <img src="home_screen.png" class="w-full h-auto object-cover" alt="Feature Screenshot">
+         </div>
       </div>
 
+      <!-- Right Feature Cards -->
+      <div class="space-y-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-pink/10 flex gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
+             <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark font-heading mb-1">30+ Trackable Symptoms</h3>
+            <p class="text-brand-gray text-sm leading-relaxed">Easily log cramps, headaches, sleep quality, and mood swings with just a few taps.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-pink/10 flex gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-brand-peach/10 flex items-center justify-center text-brand-peach flex-shrink-0">
+             <i data-lucide="bell" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark font-heading mb-1">Pattern Discovery</h3>
+            <p class="text-brand-gray text-sm leading-relaxed">See how your symptoms correlate with your cycle phases over time using our beautiful analytics charts.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-pink/10 flex gap-4 hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-500 flex-shrink-0">
+             <i data-lucide="lock" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-brand-dark font-heading mb-1">Health Insights</h3>
+            <p class="text-brand-gray text-sm leading-relaxed">Receive personalized nutrition and self-care tips based on the symptoms you've logged today.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-12 bg-gradient-to-r from-brand-pink/5 to-brand-peach/5 p-10 rounded-3xl border border-brand-pink/10">
+      <h2 class="text-2xl font-bold text-brand-dark font-heading mb-4">Ready to take control of your cycle?</h2>
+      <a href="index.html#download" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-brand-pink text-white font-bold text-lg shadow-lg shadow-brand-pink/30 hover:shadow-brand-pink/40 hover:-translate-y-1 transition-all">
+        Download TrackFlow Free
+        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
     </div>
 
   </main>
