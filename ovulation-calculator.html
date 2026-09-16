@@ -304,12 +304,6 @@
             See results
           </button>
           
-          <!-- Results Area -->
-          <div id="calc-results" class="hidden mt-6 p-6 border-2 border-[#EE6B81] bg-brand-pink/5 rounded-2xl animate-fade-in text-center space-y-4">
-            <p class="text-lg font-bold text-brand-dark">Your estimated fertile window is:</p>
-            <p id="result-fertile" class="text-3xl font-extrabold text-[#EE6B81] font-heading">...</p>
-            <p class="text-sm text-brand-gray mt-2">Your approximate ovulation day is <strong id="result-ovulation" class="text-brand-dark">...</strong></p>
-          </div>
         </div>
 
         <!-- Disclaimer Box -->
@@ -317,6 +311,73 @@
            <i data-lucide="info" class="w-5 h-5 flex-shrink-0 text-gray-400 mt-0.5"></i>
            <p>Remember that ovulation predictors and calculators can help you learn more about your cycle and fertile window, but they are estimates. Do not use this as a method of birth control.</p>
         </div>
+
+  <!-- ===== RESULTS MODAL ===== -->
+  <div id="result-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <!-- Backdrop -->
+    <div id="modal-backdrop" onclick="closeModal()" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    
+    <!-- Modal Card -->
+    <div id="modal-card" class="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+      
+      <!-- Pink Header -->
+      <div class="bg-gradient-to-br from-[#FF5E8C] to-[#FF8C69] p-8 text-white text-center relative overflow-hidden">
+        <!-- Decorative circles -->
+        <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
+        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full"></div>
+        
+        <div class="relative z-10">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="heart-pulse" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-extrabold font-heading">Your Results</h3>
+          <p class="text-white/80 text-sm mt-1">Based on your cycle data</p>
+        </div>
+      </div>
+      
+      <!-- Results Body -->
+      <div class="p-8 space-y-6">
+        
+        <!-- Ovulation Day -->
+        <div class="text-center p-5 bg-[#FFF0F2] rounded-2xl border border-[#FF5E8C]/15">
+          <p class="text-[10px] font-extrabold text-[#FF5E8C] uppercase tracking-[3px] mb-2">Estimated Ovulation Day</p>
+          <p id="result-ovulation" class="text-2xl font-extrabold text-brand-dark font-heading">...</p>
+        </div>
+        
+        <!-- Fertile Window -->
+        <div class="text-center p-5 bg-gray-50 rounded-2xl border border-gray-100">
+          <p class="text-[10px] font-extrabold text-brand-gray uppercase tracking-[3px] mb-2">Your Fertile Window</p>
+          <p id="result-fertile" class="text-lg font-bold text-brand-dark">...</p>
+        </div>
+
+        <!-- Next Period -->
+        <div class="text-center p-5 bg-gray-50 rounded-2xl border border-gray-100">
+          <p class="text-[10px] font-extrabold text-brand-gray uppercase tracking-[3px] mb-2">Next Period Expected</p>
+          <p id="result-next-period" class="text-lg font-bold text-brand-dark">...</p>
+        </div>
+        
+        <!-- CTA -->
+        <a href="index.html#download" class="block w-full py-4 bg-gradient-to-r from-[#FF5E8C] to-[#FF8C69] text-white rounded-xl font-bold text-center shadow-lg shadow-[#FF5E8C]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+          <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>
+          Track Daily in Our Free App
+        </a>
+        
+        <!-- Close -->
+        <button onclick="closeModal()" class="block w-full py-3 text-brand-gray font-semibold text-sm hover:text-brand-dark transition-colors">
+          Close
+        </button>
+      </div>
+      
+    </div>
+  </div>
+
+  <style>
+    #result-modal.show { display: flex !important; }
+    #result-modal.show #modal-backdrop { animation: fadeIn 0.3s ease; }
+    #result-modal.show #modal-card { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+  </style>
 
         <!-- The SEO Article -->
         <div class="prose prose-pink max-w-none text-brand-dark/85 font-body">
@@ -448,11 +509,22 @@
         const yearOptions = { year: 'numeric', month: 'long', day: 'numeric' };
         
         document.getElementById('result-ovulation').textContent = ovulationDate.toLocaleDateString('en-US', yearOptions);
-        document.getElementById('result-fertile').textContent = fertileStart.toLocaleDateString('en-US', options) + " - " + fertileEnd.toLocaleDateString('en-US', yearOptions);
+        document.getElementById('result-fertile').textContent = fertileStart.toLocaleDateString('en-US', options) + " — " + fertileEnd.toLocaleDateString('en-US', yearOptions);
+        document.getElementById('result-next-period').textContent = nextPeriodDate.toLocaleDateString('en-US', yearOptions);
         
-        const resBox = document.getElementById('calc-results');
-        resBox.classList.remove('hidden');
-        resBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Show modal
+        const modal = document.getElementById('result-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('result-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
     }
 
   </script>
