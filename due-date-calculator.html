@@ -34,54 +34,58 @@
   </script>
 
   <style>
+    /* ===== DATE INPUT FIELD ===== */
     .flatpickr-input {
-        color: #FF5E8C !important;
-        font-weight: 700;
-        font-family: inherit;
+        color: #1A1819 !important;
+        font-weight: 600;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         caret-color: #FF5E8C;
+        background: #FFF0F2 !important;
+        border: 2px solid #FF5E8C !important;
+        border-radius: 12px;
+        padding: 16px 20px !important;
+        font-size: 16px !important;
+        transition: all 0.3s ease;
+    }
+    .flatpickr-input:focus {
+        box-shadow: 0 0 0 4px rgba(255, 94, 140, 0.15) !important;
+        outline: none !important;
     }
     .flatpickr-input::placeholder {
         color: #FF5E8C;
-        opacity: 0.5;
+        opacity: 0.6;
         font-weight: 500;
     }
-  </style>
-
-  <!-- Flatpickr for Themed Date Picker -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <style>
     .flatpickr-calendar {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      border-radius: 16px !important;
-      box-shadow: 0 10px 25px -5px rgba(255, 94, 140, 0.15), 0 8px 10px -6px rgba(255, 94, 140, 0.1) !important;
-      border: 1px solid rgba(255, 94, 140, 0.1) !important;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      border-radius: 20px !important;
+      box-shadow: 0 20px 60px -15px rgba(255, 94, 140, 0.25), 0 10px 20px -10px rgba(0,0,0,0.06) !important;
+      border: 2px solid #FF5E8C !important;
+      padding: 8px !important;
+      width: 320px !important;
+      background: #fff !important;
+      overflow: hidden;
     }
-    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
-      background: #FF5E8C !important;
-      border-color: #FF5E8C !important;
+    .flatpickr-calendar.open { animation: fadeInScale 0.2s ease-out; }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.95) translateY(-5px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
     }
-    .flatpickr-day:hover {
-      background: #FFF0F2 !important;
-      border-color: transparent !important;
-    }
-    .flatpickr-current-month .flatpickr-monthDropdown-months:hover {
-      background: transparent !important;
-    }
-    .flatpickr-month {
-      color: #1A1819 !important;
-      fill: #1A1819 !important;
-    }
-    .flatpickr-current-month .flatpickr-monthDropdown-months {
-      font-weight: 700 !important;
-    }
-    .flatpickr-weekdays .flatpickr-weekday {
-      color: #FF5E8C !important;
-      font-weight: 700 !important;
-    }
-    /* Hide native calendar icon since flatpickr handles it */
-    input[type="text"]::-webkit-calendar-picker-indicator {
-        display: none !important;
-    }
+    .flatpickr-months { padding: 4px 0 8px !important; }
+    .flatpickr-month { color: #1A1819 !important; fill: #FF5E8C !important; height: 40px !important; }
+    .flatpickr-current-month { font-size: 16px !important; font-weight: 800 !important; color: #1A1819 !important; }
+    .flatpickr-current-month .flatpickr-monthDropdown-months { font-weight: 800 !important; font-size: 16px !important; color: #1A1819 !important; }
+    .flatpickr-current-month .flatpickr-monthDropdown-months:hover { background: transparent !important; }
+    .flatpickr-current-month input.cur-year { font-weight: 800 !important; font-size: 16px !important; color: #1A1819 !important; }
+    .flatpickr-months .flatpickr-prev-month, .flatpickr-months .flatpickr-next-month { fill: #FF5E8C !important; color: #FF5E8C !important; padding: 8px !important; }
+    .flatpickr-months .flatpickr-prev-month:hover svg, .flatpickr-months .flatpickr-next-month:hover svg { fill: #d44a72 !important; }
+    .flatpickr-weekdays { padding: 0 4px !important; }
+    .flatpickr-weekday { color: #FF5E8C !important; font-weight: 800 !important; font-size: 12px !important; text-transform: uppercase; letter-spacing: 0.5px; }
+    .flatpickr-day { border-radius: 10px !important; font-weight: 600 !important; font-size: 14px !important; line-height: 40px !important; height: 40px !important; max-width: 40px !important; color: #1A1819 !important; transition: all 0.15s ease !important; }
+    .flatpickr-day:hover { background: #FFF0F2 !important; border-color: #FF5E8C !important; color: #FF5E8C !important; }
+    .flatpickr-day.today { border-color: #FF5E8C !important; background: #FFF0F2 !important; color: #FF5E8C !important; }
+    .flatpickr-day.selected, .flatpickr-day.selected:hover, .flatpickr-day.selected:focus { background: #FF5E8C !important; border-color: #FF5E8C !important; color: #fff !important; box-shadow: 0 4px 12px rgba(255, 94, 140, 0.35) !important; }
+    .flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover, .flatpickr-day.prevMonthDay, .flatpickr-day.nextMonthDay { color: #ccc !important; }
   </style>
 </head>
 <body class="bg-[#FAF8F9] antialiased min-h-screen flex flex-col justify-between">
@@ -207,7 +211,7 @@
             <div class="mb-6">
                 <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period (LMP)</label>
                 <div class="relative">
-                    <input type="text" id="calc-due-date-last-period" placeholder="Select date..." class="flatpickr-input w-full px-5 py-4 bg-white border-2 border-brand-pink/30 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-brand-pink font-bold text-lg shadow-sm cursor-pointer" readonly>
+                    <input type="text" id="calc-due-date-last-period" placeholder="Select date..." class="flatpickr-input w-full cursor-pointer" readonly>
                 </div>
             </div>
             
