@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
   
+  
   <style>
     /* Premium Pink Flatpickr Theme - Fixed Width & Perfect Alignment */
     .flatpickr-calendar {
@@ -51,27 +52,32 @@
       border-radius: 22px !important;
       box-shadow: 0 20px 50px -10px rgba(255, 94, 140, 0.3), 0 10px 20px -5px rgba(0,0,0,0.06) !important;
       border: 2px solid #FF5E8C !important;
-      padding: 14px !important;
+      padding: 16px !important;
       width: 336px !important;
       box-sizing: border-box !important;
       background: #ffffff !important;
-      margin-top: 8px !important;
+      margin-top: 10px !important;
     }
     .flatpickr-calendar.open {
       animation: popupAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     @keyframes popupAnim {
-      from { opacity: 0; transform: scale(0.92) translateY(-10px); }
+      from { opacity: 0; transform: scale(0.92) translateY(-8px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
+    
+    /* Header & Month Navigation */
     .flatpickr-months {
-      padding: 2px 0 10px 0 !important;
+      padding: 4px 0 14px 0 !important;
       align-items: center !important;
+      position: relative !important;
+      height: 40px !important;
     }
     .flatpickr-month {
       color: #1A1819 !important;
       fill: #FF5E8C !important;
       height: 40px !important;
+      line-height: 40px !important;
     }
     .flatpickr-current-month {
       font-size: 16px !important;
@@ -80,6 +86,8 @@
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
+      height: 40px !important;
+      padding: 0 !important;
     }
     .flatpickr-current-month .cur-month {
       font-weight: 800 !important;
@@ -90,19 +98,46 @@
       font-size: 16px !important;
       color: #1A1819 !important;
     }
+
+    /* Symmetric Perfectly Aligned Navigation Arrows */
     .flatpickr-months .flatpickr-prev-month,
     .flatpickr-months .flatpickr-next-month {
+      position: absolute !important;
+      top: 2px !important;
       fill: #FF5E8C !important;
       color: #FF5E8C !important;
-      padding: 6px !important;
+      background: #FFF0F2 !important;
       border-radius: 50% !important;
       height: 34px !important;
       width: 34px !important;
-      top: 4px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+      z-index: 10 !important;
+    }
+    .flatpickr-months .flatpickr-prev-month {
+      left: 10px !important;
+    }
+    .flatpickr-months .flatpickr-next-month {
+      right: 10px !important;
+    }
+    .flatpickr-months .flatpickr-prev-month svg,
+    .flatpickr-months .flatpickr-next-month svg {
+      width: 14px !important;
+      height: 14px !important;
+      fill: #FF5E8C !important;
+      stroke: #FF5E8C !important;
+      stroke-width: 1.5px;
     }
     .flatpickr-months .flatpickr-prev-month:hover,
     .flatpickr-months .flatpickr-next-month:hover {
-      background: #FFF0F2 !important;
+      background: #FF5E8C !important;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover svg,
+    .flatpickr-months .flatpickr-next-month:hover svg {
+      fill: #ffffff !important;
+      stroke: #ffffff !important;
     }
 
     /* Grid & Container Fixes for Zero Clipping */
@@ -118,7 +153,7 @@
     .flatpickr-weekdays {
       width: 308px !important;
       margin: 0 auto !important;
-      padding: 4px 0 !important;
+      padding: 6px 0 !important;
     }
     .flatpickr-weekday {
       color: #FF5E8C !important;
@@ -171,6 +206,7 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { opacity: 0; transform: translateY(30px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
   </style>
+
 
 </head>
 <body class="bg-white antialiased min-h-screen flex flex-col justify-between">
@@ -473,13 +509,14 @@
 
       // Initialize Flatpickr
       picker = flatpickr("#calc-last-period", {
-        dateFormat: "d/m/Y",
-        maxDate: "today",
-        disableMobile: true,
-        allowInput: false,
-        clickOpens: true,
-        monthSelectorType: "static"
-      });
+      dateFormat: "d/m/Y",
+      maxDate: "today",
+      disableMobile: true,
+      allowInput: false,
+      clickOpens: true,
+      position: "below",
+      monthSelectorType: "static"
+    });
     });
 
     function calculateOvulation() {
