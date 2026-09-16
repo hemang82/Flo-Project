@@ -5,49 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png?v=4">
   <title>Pregnancy Due Date Calculator | Period Tracker Ovulation Cycle</title>
-  <meta name="description" content="Calculate your estimated due date instantly.">
+  <meta name="description" content="Calculate your estimated pregnancy due date instantly.">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  
   <!-- Lucide Icons -->
   <script src="lucide.min.js"></script>
-
-  <!-- Tailwind CSS -->
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: { pink: '#FF5E8C', peach: '#FF8C69', accent: '#FFF0F2', dark: '#1A1819', gray: '#706B6E' } }, fontFamily: { heading: ['Outfit', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'] } } } }
-  </script>
-  
-  <link rel="stylesheet" href="style.css">
-  <meta name="apple-itunes-app" content="app-id=6774117828">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Period Tracker Ovulation Cycle",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "iOS, Android",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  }
-  </script>
-
-  
-  
-  
-    <style>
-    /* Tailwind Styled Native Datepicker */
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        cursor: pointer;
-        filter: invert(48%) sepia(85%) saturate(1834%) hue-rotate(314deg) brightness(101%) contrast(101%);
-        opacity: 0.8;
-        transition: 0.2s;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
     }
-    input[type="date"]::-webkit-calendar-picker-indicator:hover {
-        opacity: 1;
-        transform: scale(1.1);
+  </script>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <style>
+    /* Premium Pink Flatpickr Theme */
+    .flatpickr-calendar {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      border-radius: 20px !important;
+      box-shadow: 0 20px 50px -10px rgba(255, 94, 140, 0.25), 0 10px 20px -5px rgba(0,0,0,0.05) !important;
+      border: 2px solid #FF5E8C !important;
+      padding: 14px !important;
+      width: 320px !important;
+      background: #ffffff !important;
+      margin-top: 8px !important;
+    }
+    .flatpickr-calendar.open {
+      animation: popupAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes popupAnim {
+      from { opacity: 0; transform: scale(0.92) translateY(-10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .flatpickr-months {
+      padding: 4px 0 12px 0 !important;
+      align-items: center !important;
+    }
+    .flatpickr-month {
+      color: #1A1819 !important;
+      fill: #FF5E8C !important;
+      height: 40px !important;
+    }
+    .flatpickr-current-month {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #1A1819 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .flatpickr-current-month .cur-month {
+      font-weight: 800 !important;
+      color: #1A1819 !important;
+    }
+    .flatpickr-current-month input.cur-year {
+      font-weight: 800 !important;
+      font-size: 16px !important;
+      color: #1A1819 !important;
+    }
+    .flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month {
+      fill: #FF5E8C !important;
+      color: #FF5E8C !important;
+      padding: 6px !important;
+      border-radius: 50% !important;
+      height: 34px !important;
+      width: 34px !important;
+      top: 4px !important;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover {
+      background: #FFF0F2 !important;
+    }
+    .flatpickr-weekdays {
+      padding: 4px 0 !important;
+    }
+    .flatpickr-weekday {
+      color: #FF5E8C !important;
+      font-weight: 800 !important;
+      font-size: 12px !important;
+      text-transform: uppercase;
+    }
+    .flatpickr-day {
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      height: 38px !important;
+      line-height: 38px !important;
+      max-width: 38px !important;
+      color: #1A1819 !important;
+      transition: all 0.15s ease !important;
+    }
+    .flatpickr-day:hover {
+      background: #FFF0F2 !important;
+      border-color: #FF5E8C !important;
+      color: #FF5E8C !important;
+    }
+    .flatpickr-day.today {
+      border-color: #FF5E8C !important;
+      background: #FFF0F2 !important;
+      color: #FF5E8C !important;
+      font-weight: 800 !important;
+    }
+    .flatpickr-day.selected,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.selected:focus {
+      background: #FF5E8C !important;
+      border-color: #FF5E8C !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(255, 94, 140, 0.35) !important;
+    }
+    .flatpickr-day.prevMonthDay,
+    .flatpickr-day.nextMonthDay {
+      color: #dcdcdc !important;
     }
 
     /* Modal Animation */
@@ -55,15 +150,12 @@
     #result-modal.show #modal-backdrop { animation: fadeIn 0.3s ease; }
     #result-modal.show #modal-card { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
   </style>
-
-
-
-
 </head>
-<body class="bg-[#FAF8F9] antialiased min-h-screen flex flex-col justify-between">
-<header
+<body class="bg-white antialiased min-h-screen flex flex-col justify-between">
+
+  <header
     class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -138,153 +230,164 @@
       </nav>
     </div>
   </header>
-  
+
   <main class="flex-1 w-full">
     
     <!-- Hero Section -->
-    <section class="bg-[#F8EFF3] pt-12 pb-16 px-6 border-b border-brand-pink/10 relative overflow-hidden">
-      <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-peach/10 rounded-full blur-3xl -z-0 pointer-events-none"></div>
-      
-      <div class="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center gap-12">
-        <div class="w-full max-w-3xl space-y-5">
-
-
-          
-          <h1 class="text-3xl md:text-5xl font-extrabold text-brand-dark font-heading leading-[1.15]">
-            Pregnancy due date calculator: <span class="block text-brand-pink mt-1">When will your baby arrive?</span>
+    <section class="bg-[#F8EBF0] pt-12 pb-16 px-6 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
+        
+        <div class="flex-1 space-y-5">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark font-heading leading-tight max-w-2xl">
+            Pregnancy Due Date Calculator: When will your baby arrive?
           </h1>
-          <p class="text-base md:text-lg text-brand-dark/80 leading-relaxed max-w-xl font-medium">
-            Finding out you're pregnant is incredibly exciting. Use our pregnancy due date calculator to estimate when your little one might arrive and see how far along you are today!
+          <p class="text-lg text-brand-dark/80 leading-relaxed max-w-xl font-medium">
+            Finding out you are pregnant is incredibly exciting. Use our pregnancy due date calculator to estimate when your little one might arrive!
           </p>
         </div>
         
-        <div class="hidden md:flex w-1/3 justify-center">
-            <div class="relative w-48 h-48 bg-white/40 rounded-3xl shadow-xl shadow-brand-pink/5 border border-white flex items-center justify-center transform -rotate-3">
-                <i data-lucide="baby" class="w-20 h-20 text-brand-peach/80"></i>
+        <div class="hidden md:flex w-full md:w-5/12 justify-end relative">
+          <div class="relative w-72 h-72">
+            <div class="absolute inset-0 bg-brand-pink/20 rounded-full blur-2xl"></div>
+            <img src="home_screen.png" alt="Tracking calendar" class="relative z-10 w-full object-contain drop-shadow-2xl opacity-90 mix-blend-multiply rounded-3xl transform rotate-3">
+            <div class="absolute -top-4 -right-6 bg-white px-5 py-2.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-2 z-20">
+              <i data-lucide="baby" class="text-brand-pink w-5 h-5"></i>
+              <span class="font-bold text-sm text-brand-dark font-heading">Due Date Calculator</span>
             </div>
+          </div>
         </div>
+        
       </div>
     </section>
 
-    <!-- Calculator Section -->
-    <section class="bg-white py-12 px-6 md:px-0 border-b border-gray-100 shadow-sm relative z-20 -mt-6 rounded-t-3xl max-w-7xl mx-auto">
-        <div class="mb-10 max-w-3xl">
-            <p class="text-xs font-semibold text-gray-500 mb-4">Updated 10 February 2026</p>
-            <div class="flex items-start gap-3">
-                <div class="w-8 h-8 rounded-full bg-brand-pink/20 flex items-center justify-center text-brand-pink font-bold flex-shrink-0">
-                    <i data-lucide="stethoscope" class="w-4 h-4"></i>
-                </div>
-                <div class="text-sm">
-                    <p class="text-gray-600"><span class="font-bold text-brand-dark">Medically reviewed by Medical Team</span>, Period Tracker App, US</p>
-                    <p class="text-gray-500 mt-1">Based on Naegele's rule for EDD calculation</p>
-                </div>
+    <!-- Main Content Section -->
+    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+      
+      <div class="md:col-span-8 space-y-10">
+        
+        <!-- Author / Review Info -->
+        <div class="space-y-3">
+          <p class="text-xs font-bold text-gray-500 uppercase">Updated September 2026</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
+               <i data-lucide="stethoscope" class="w-5 h-5"></i>
             </div>
+            <p class="text-sm text-brand-gray leading-relaxed">
+              Medically reviewed by <strong class="text-brand-dark">Dr. Jenna Flanagan</strong>, Assistant professor of obstetrics and gynecology.<br>
+              Written by <strong class="text-teal-600">Period Tracker Medical Team</strong>
+            </p>
+          </div>
         </div>
 
-        <div class="max-w-3xl bg-white">
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period (LMP)</label>
-                <div class="relative">
-                <input type="date" id="calc-due-date-last-period" class="w-full px-5 py-4 bg-[#FFF0F2] border-2 border-[#FF5E8C] rounded-xl text-[#1A1819] font-bold text-base focus:outline-none focus:ring-4 focus:ring-[#FF5E8C]/20 transition-all cursor-pointer accent-[#FF5E8C]">
+        <!-- THE CALCULATOR FORM -->
+        <div class="bg-white p-8 rounded-3xl border-2 border-brand-pink/15 shadow-xl shadow-brand-pink/5 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Date Input -->
+            <div>
+              <label class="block text-sm font-semibold text-brand-dark mb-2">First day of last period</label>
+              <div class="relative flex items-center">
+                <i data-lucide="calendar" class="w-5 h-5 text-brand-pink absolute left-4 pointer-events-none z-10"></i>
+                <input type="text" id="calc-due-date-last-period" placeholder="dd/mm/yyyy" class="w-full pl-12 pr-4 py-4 bg-brand-accent/50 border-2 border-brand-pink/30 rounded-2xl text-brand-dark font-bold text-base focus:outline-none focus:border-brand-pink focus:bg-white focus:ring-4 focus:ring-brand-pink/10 transition-all cursor-pointer" readonly>
               </div>
             </div>
             
-            <button onclick="calculateDueDate()" class="w-full py-4 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-2xl font-bold text-lg shadow-lg shadow-brand-pink/20 transition-all hover:-translate-y-0.5">
-                Calculate Due Date
-            </button>
-
-            <!-- Results -->
-            <div id="calc-due-date-results" class="hidden mt-8 p-8 bg-brand-accent/30 border-2 border-brand-pink/10 rounded-2xl text-center space-y-6">
-                <div>
-                    <p class="text-sm font-bold text-brand-gray uppercase tracking-wider mb-2">Estimated Due Date (EDD)</p>
-                    <p id="result-due-date" class="text-3xl md:text-4xl font-extrabold text-brand-pink font-heading">...</p>
-                </div>
-                <div class="pt-4 max-w-md mx-auto">
-                    <a href="#download" class="inline-block w-full py-3.5 bg-brand-dark hover:bg-black text-white rounded-xl font-bold text-base transition-all shadow-md">
-                        Track your pregnancy in our App
-                    </a>
-                </div>
+            <!-- Cycle Length (for Ovulation) or Extra field -->
+            <div>
+              <label class="block text-sm font-semibold text-brand-dark mb-2">Average cycle length (days)</label>
+              <div class="flex items-center border-2 border-brand-pink/30 rounded-2xl overflow-hidden bg-brand-accent/50 focus-within:border-brand-pink focus-within:bg-white transition-all py-1">
+                <button type="button" onclick="const input = document.getElementById('calc-cycle-length'); if(parseInt(input.value) > 20) input.value = parseInt(input.value) - 1;" class="px-5 py-3 text-brand-pink hover:bg-brand-pink/10 text-xl font-bold transition-colors">−</button>
+                <input type="number" id="calc-cycle-length" value="28" min="20" max="45" class="w-full py-3 text-center text-lg font-bold text-brand-dark focus:outline-none bg-transparent">
+                <button type="button" onclick="const input = document.getElementById('calc-cycle-length'); if(parseInt(input.value) < 45) input.value = parseInt(input.value) + 1;" class="px-5 py-3 text-brand-pink hover:bg-brand-pink/10 text-xl font-bold transition-colors">+</button>
+              </div>
             </div>
-            
-            <div class="mt-6 bg-gray-50 border border-gray-200 rounded-xl p-5 flex gap-4 text-sm text-gray-600">
-                <i data-lucide="info" class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5"></i>
-                <p>An estimated due date is just an estimate. Only about 5% of babies are born on their exact due date. Your doctor will confirm this date during an ultrasound.</p>
-            </div>
+          </div>
+          
+          <button type="button" onclick="calculateDueDate()" class="w-full py-4 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-2xl font-bold text-lg shadow-lg shadow-brand-pink/25 hover:shadow-brand-pink/40 hover:-translate-y-0.5 transition-all">
+            See results
+          </button>
         </div>
-    </section>
 
-    <!-- Article Content Section -->
-    <section class="max-w-7xl mx-auto px-6 md:px-0 py-16 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-8 space-y-10 text-brand-dark/90 leading-relaxed font-body">
-        <div class="prose prose-pink max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-brand-dark prose-p:text-gray-700 prose-a:text-brand-pink">
-          
-          <h2>How is my due date calculated?</h2>
-          <p>The most common way to calculate your pregnancy due date is by taking the first day of your last normal menstrual period (LMP) and adding 280 days (40 weeks).</p>
-          <p>This assumes you have a regular 28-day cycle. If your cycles are longer or shorter, your doctor may adjust this date later during an ultrasound scan. This is known as Naegele's rule.</p>
-          
-          <h2>Can my due date change?</h2>
-          <p>Yes! It's important to remember that your due date is just an estimate. Only about 4% to 5% of babies are actually born on their exact due date. Most babies arrive between 37 and 42 weeks of pregnancy. An early ultrasound (usually around 8 to 12 weeks) is the most accurate way to date a pregnancy and may change your initial EDD.</p>
+        <!-- Disclaimer Box -->
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200 flex gap-3 text-sm text-gray-600">
+           <i data-lucide="info" class="w-5 h-5 flex-shrink-0 text-brand-pink mt-0.5"></i>
+           <p>Remember that calculations are estimates based on standard biological averages. Consult your healthcare provider for clinical medical advice.</p>
         </div>
+
+        <!-- SEO Article Content -->
+        <div class="prose prose-pink max-w-none text-brand-dark/85 font-body">
+          <h2 class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How is your due date calculated?</h2><p>The most common way to calculate your pregnancy due date is by taking the first day of your last normal menstrual period (LMP) and adding 280 days (40 weeks).</p><h2 class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Can your due date change?</h2><p>Yes! Only about 5% of babies are born on their exact due date. Most babies arrive between 37 and 42 weeks of pregnancy. An early ultrasound is the most accurate way to date a pregnancy.</p>
+        </div>
+
       </div>
       
-      <div class="md:col-span-4 sticky top-32 space-y-6 hidden md:block">
-        <div>
-          <h3 class="text-xs font-extrabold text-brand-dark uppercase tracking-widest mb-6 border-b-2 border-brand-pink/20 inline-block pb-1">IN THIS ARTICLE</h3>
-          <ul class="space-y-5 text-sm font-bold text-gray-500">
-            <li><a href="#" class="hover:text-brand-pink transition-colors">How is my due date calculated?</a></li>
-            <li><a href="#" class="hover:text-brand-pink transition-colors">Can my due date change?</a></li>
-          </ul>
-        </div>
-        
-        <div class="bg-brand-pink text-white p-8 rounded-3xl shadow-xl shadow-brand-pink/20 text-center space-y-4 mt-8">
-          <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i data-lucide="baby" class="w-6 h-6"></i>
+      <!-- Right Sidebar -->
+      <div class="md:col-span-4 sticky top-28 space-y-8">
+        <div class="bg-brand-pink text-white p-8 rounded-3xl shadow-xl shadow-brand-pink/20 text-center space-y-4">
+          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+            <i data-lucide="smartphone" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-bold font-heading text-xl">Pregnancy Mode</h3>
+          <h3 class="font-bold font-heading text-xl">Track Daily in App</h3>
           <p class="text-sm text-white/90 leading-relaxed">
-            Switch our app to Pregnancy Mode to see weekly baby development updates and log pregnancy symptoms.
+            Take the guesswork out of your cycle. Log symptoms and get daily predictions on your phone.
           </p>
-          <a href="index.html#download" class="inline-block mt-2 w-full py-3 bg-white text-brand-pink rounded-xl font-bold text-sm shadow-md transition-all hover:bg-gray-50">
+          <a href="index.html#download" class="inline-block mt-2 w-full py-3.5 bg-white text-brand-pink rounded-xl font-bold text-sm shadow-md transition-all hover:bg-gray-50">
             Download Free App
           </a>
         </div>
       </div>
+      
     </section>
-  
-  <!-- ===== RESULTS MODAL ===== -->
+  </main>
+
+  <!-- ===== PREMIUM RESULTS MODAL ===== -->
   <div id="result-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
-    <div id="modal-backdrop" onclick="closeModal()" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
-    <div id="modal-card" class="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <!-- Backdrop -->
+    <div id="modal-backdrop" onclick="closeModal()" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+    
+    <!-- Modal Card -->
+    <div id="modal-card" class="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-brand-pink/20">
+      
+      <!-- Modal Close Button Top Right -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition-all">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Pink Header -->
       <div class="bg-gradient-to-br from-[#FF5E8C] to-[#FF8C69] p-8 text-white text-center relative overflow-hidden">
         <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
         <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full"></div>
+        
         <div class="relative z-10">
-          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 shadow-inner">
             <i data-lucide="baby" class="w-8 h-8"></i>
           </div>
-          <h3 class="text-2xl font-extrabold font-heading">Pregnancy Due Date</h3>
-          <p class="text-white/80 text-sm mt-1">Based on Naegele's Rule (280 days)</p>
+          <h3 class="text-2xl font-extrabold font-heading">Your Calculation Results</h3>
+          <p class="text-white/90 text-sm mt-1">Based on your menstrual cycle parameters</p>
         </div>
       </div>
-      <div class="p-8 space-y-6">
-        <div class="text-center p-6 bg-[#FFF0F2] rounded-2xl border border-[#FF5E8C]/15">
-          <p class="text-[10px] font-extrabold text-[#FF5E8C] uppercase tracking-[3px] mb-2">Estimated Due Date (EDD)</p>
-          <p id="result-due-date" class="text-3xl font-extrabold text-brand-dark font-heading">...</p>
-        </div>
-        <a href="index.html#download" class="block w-full py-4 bg-gradient-to-r from-[#FF5E8C] to-[#FF8C69] text-white rounded-xl font-bold text-center shadow-lg shadow-[#FF5E8C]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+      
+      <!-- Results Body -->
+      <div class="p-6 space-y-4">
+        
+        <div class="text-center p-6 bg-[#FFF0F2] rounded-2xl border border-[#FF5E8C]/20"><p class="text-[11px] font-extrabold text-[#FF5E8C] uppercase tracking-[2px] mb-1">Estimated Due Date (EDD)</p><p id="result-due-date" class="text-3xl font-extrabold text-brand-dark font-heading">...</p><p class="text-xs text-brand-gray mt-2">40 Weeks from Last Menstrual Period</p></div>
+        
+        <!-- CTA -->
+        <a href="index.html#download" class="block w-full py-4 bg-gradient-to-r from-[#FF5E8C] to-[#FF8C69] text-white rounded-2xl font-bold text-center shadow-lg shadow-[#FF5E8C]/25 hover:shadow-xl hover:-translate-y-0.5 transition-all mt-2">
           <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>
-          Track Pregnancy in Our Free App
+          Track Daily in Our Free App
         </a>
-        <button onclick="closeModal()" class="block w-full py-3 text-brand-gray font-semibold text-sm hover:text-brand-dark transition-colors">
-          Close
+        
+        <!-- Close -->
+        <button onclick="closeModal()" class="block w-full py-2.5 text-brand-gray font-semibold text-sm hover:text-brand-dark transition-colors text-center">
+          Close Window
         </button>
       </div>
+      
     </div>
   </div>
 
-</main>
-
-<footer id="contact" class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 scroll-mt-24">
+  <footer id="contact" class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 space-y-8">
 
       <!-- Top Tier: Logo, Navigation, Socials -->
@@ -331,59 +434,71 @@
 
     </div>
   </footer>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
+    let picker;
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
+
+      // Mobile menu toggle
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
-      const menuIconOpen = document.getElementById('menu-icon-open');
-      const menuIconClose = document.getElementById('menu-icon-close');
-
       if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
-          const isHidden = mobileMenu.classList.contains('hidden');
-          if (isHidden) {
-            mobileMenu.classList.remove('hidden');
-            setTimeout(() => { mobileMenu.classList.remove('opacity-0', '-translate-y-4'); }, 10);
-            menuIconOpen.classList.add('hidden');
-            menuIconClose.classList.remove('hidden');
-          } else {
-            mobileMenu.classList.add('opacity-0', '-translate-y-4');
-            setTimeout(() => { mobileMenu.classList.add('hidden'); }, 300);
-            menuIconClose.classList.add('hidden');
-            menuIconOpen.classList.remove('hidden');
-          }
+          mobileMenu.classList.toggle('hidden');
         });
       }
+
+      // Initialize Flatpickr
+      picker = flatpickr("#calc-due-date-last-period", {
+        dateFormat: "d/m/Y",
+        maxDate: "today",
+        disableMobile: true,
+        allowInput: false,
+        clickOpens: true,
+        monthSelectorType: "static"
+      });
     });
-    
-    
+
     function calculateDueDate() {
-        const lastPeriod = document.getElementById('calc-due-date-last-period').value;
-        if (!lastPeriod) return;
-        
-        const periodDate = new Date(lastPeriod);
-        const dueDate = new Date(periodDate);
-        dueDate.setDate(periodDate.getDate() + 280);
-        
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('result-due-date').textContent = dueDate.toLocaleDateString('en-US', options);
-        
-        const modal = document.getElementById('result-modal');
-        modal.classList.remove('hidden');
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        lucide.createIcons();
+      const lastPeriodStr = document.getElementById('calc-due-date-last-period').value;
+      
+      if (!lastPeriodStr) {
+        // Auto open picker if date is not selected
+        if (picker) picker.open();
+        return;
+      }
+
+      // Parse DD/MM/YYYY
+      let periodDate;
+      if (lastPeriodStr.includes('/')) {
+        const parts = lastPeriodStr.split('/');
+        periodDate = new Date(parts[2], parts[1] - 1, parts[0]);
+      } else {
+        periodDate = new Date(lastPeriodStr);
+      }
+
+      const options = { month: 'short', day: 'numeric' };
+      const yearOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      const dueDate = new Date(periodDate); dueDate.setDate(periodDate.getDate() + 280); document.getElementById("result-due-date").textContent = dueDate.toLocaleDateString("en-US", yearOptions);
+
+      // Show modal
+      const modal = document.getElementById('result-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
     }
 
     function closeModal() {
-        const modal = document.getElementById('result-modal');
-        modal.classList.add('hidden');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
+      const modal = document.getElementById('result-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
     }
-
   </script>
-
 </body>
 </html>

@@ -7,31 +7,142 @@
   <title>Ovulation Calculator | Period Tracker Ovulation Cycle</title>
   <meta name="description" content="Figure out your most fertile days with our free ovulation calculator.">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
   <script src="lucide.min.js"></script>
+  
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { brand: { pink: '#FF5E8C', peach: '#FF8C69', accent: '#FFF0F2', dark: '#1A1819', gray: '#706B6E' } }, fontFamily: { heading: ['Outfit', 'sans-serif'], body: ['Plus Jakarta Sans', 'sans-serif'] } } } }
-  </script>
-  
-  <link rel="stylesheet" href="style.css">
-
-  
-  
-  
-    <style>
-    /* Tailwind Styled Native Datepicker */
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        cursor: pointer;
-        filter: invert(48%) sepia(85%) saturate(1834%) hue-rotate(314deg) brightness(101%) contrast(101%);
-        opacity: 0.8;
-        transition: 0.2s;
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pink: '#FF5E8C',
+              peach: '#FF8C69',
+              accent: '#FFF0F2',
+              dark: '#1A1819',
+              gray: '#706B6E',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
     }
-    input[type="date"]::-webkit-calendar-picker-indicator:hover {
-        opacity: 1;
-        transform: scale(1.1);
+  </script>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <style>
+    /* Premium Pink Flatpickr Theme */
+    .flatpickr-calendar {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      border-radius: 20px !important;
+      box-shadow: 0 20px 50px -10px rgba(255, 94, 140, 0.25), 0 10px 20px -5px rgba(0,0,0,0.05) !important;
+      border: 2px solid #FF5E8C !important;
+      padding: 14px !important;
+      width: 320px !important;
+      background: #ffffff !important;
+      margin-top: 8px !important;
+    }
+    .flatpickr-calendar.open {
+      animation: popupAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes popupAnim {
+      from { opacity: 0; transform: scale(0.92) translateY(-10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .flatpickr-months {
+      padding: 4px 0 12px 0 !important;
+      align-items: center !important;
+    }
+    .flatpickr-month {
+      color: #1A1819 !important;
+      fill: #FF5E8C !important;
+      height: 40px !important;
+    }
+    .flatpickr-current-month {
+      font-size: 16px !important;
+      font-weight: 800 !important;
+      color: #1A1819 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .flatpickr-current-month .cur-month {
+      font-weight: 800 !important;
+      color: #1A1819 !important;
+    }
+    .flatpickr-current-month input.cur-year {
+      font-weight: 800 !important;
+      font-size: 16px !important;
+      color: #1A1819 !important;
+    }
+    .flatpickr-months .flatpickr-prev-month,
+    .flatpickr-months .flatpickr-next-month {
+      fill: #FF5E8C !important;
+      color: #FF5E8C !important;
+      padding: 6px !important;
+      border-radius: 50% !important;
+      height: 34px !important;
+      width: 34px !important;
+      top: 4px !important;
+    }
+    .flatpickr-months .flatpickr-prev-month:hover,
+    .flatpickr-months .flatpickr-next-month:hover {
+      background: #FFF0F2 !important;
+    }
+    .flatpickr-weekdays {
+      padding: 4px 0 !important;
+    }
+    .flatpickr-weekday {
+      color: #FF5E8C !important;
+      font-weight: 800 !important;
+      font-size: 12px !important;
+      text-transform: uppercase;
+    }
+    .flatpickr-day {
+      border-radius: 10px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      height: 38px !important;
+      line-height: 38px !important;
+      max-width: 38px !important;
+      color: #1A1819 !important;
+      transition: all 0.15s ease !important;
+    }
+    .flatpickr-day:hover {
+      background: #FFF0F2 !important;
+      border-color: #FF5E8C !important;
+      color: #FF5E8C !important;
+    }
+    .flatpickr-day.today {
+      border-color: #FF5E8C !important;
+      background: #FFF0F2 !important;
+      color: #FF5E8C !important;
+      font-weight: 800 !important;
+    }
+    .flatpickr-day.selected,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.selected:focus {
+      background: #FF5E8C !important;
+      border-color: #FF5E8C !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(255, 94, 140, 0.35) !important;
+    }
+    .flatpickr-day.prevMonthDay,
+    .flatpickr-day.nextMonthDay {
+      color: #dcdcdc !important;
     }
 
     /* Modal Animation */
@@ -39,15 +150,12 @@
     #result-modal.show #modal-backdrop { animation: fadeIn 0.3s ease; }
     #result-modal.show #modal-card { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(30px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
   </style>
-
-
-
-
 </head>
 <body class="bg-white antialiased min-h-screen flex flex-col justify-between">
-<header
+
+  <header
     class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
@@ -122,36 +230,29 @@
       </nav>
     </div>
   </header>
+
   <main class="flex-1 w-full">
     
-    <!-- Hero Section (Exactly like image: pink bg, breadcrumb, title, description on left, illustration on right) -->
+    <!-- Hero Section -->
     <section class="bg-[#F8EBF0] pt-12 pb-16 px-6 relative overflow-hidden">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
         
-        <!-- Left Side: Text -->
-        <div class="flex-1 space-y-6">
-          <!-- Breadcrumb -->
-          
-          
+        <div class="flex-1 space-y-5">
           <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark font-heading leading-tight max-w-2xl">
-            Ovulation calculator: Figure out your most fertile days
+            Ovulation Calculator: Figure out your most fertile days
           </h1>
           <p class="text-lg text-brand-dark/80 leading-relaxed max-w-xl font-medium">
-            Knowing when you ovulate helps you better understand your <a href="#" class="text-blue-600 underline hover:text-blue-800">fertile window</a> (and when you have a high chance of getting pregnant). Find out when that might be with our easy-to-use ovulation calculator.
+            Knowing when you ovulate helps you better understand your fertile window (and when you have a high chance of getting pregnant). Find out when that might be with our easy-to-use ovulation calculator.
           </p>
         </div>
         
-        <!-- Right Side: Illustration Graphic -->
         <div class="hidden md:flex w-full md:w-5/12 justify-end relative">
-          <!-- Abstract clean illustration placeholder for professional look -->
           <div class="relative w-72 h-72">
             <div class="absolute inset-0 bg-brand-pink/20 rounded-full blur-2xl"></div>
-            <img src="home_screen.png" alt="Ovulation tracking calendar" class="relative z-10 w-full object-contain drop-shadow-2xl opacity-90 mix-blend-multiply rounded-3xl transform rotate-3">
-            
-            <!-- Floating badge -->
-            <div class="absolute -top-4 -right-10 bg-white px-5 py-2.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-2 z-20 animate-bounce-slow">
-              <i data-lucide="calendar-heart" class="text-brand-pink w-4 h-4"></i>
-              <span class="font-bold text-sm text-brand-dark font-heading">Ovulation tracker</span>
+            <img src="home_screen.png" alt="Tracking calendar" class="relative z-10 w-full object-contain drop-shadow-2xl opacity-90 mix-blend-multiply rounded-3xl transform rotate-3">
+            <div class="absolute -top-4 -right-6 bg-white px-5 py-2.5 rounded-full shadow-lg border border-gray-100 flex items-center gap-2 z-20">
+              <i data-lucide="calendar-heart" class="text-brand-pink w-5 h-5"></i>
+              <span class="font-bold text-sm text-brand-dark font-heading">Ovulation Tracker</span>
             </div>
           </div>
         </div>
@@ -159,14 +260,13 @@
       </div>
     </section>
 
-    <!-- Main Content Section (White bg) -->
+    <!-- Main Content Section -->
     <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
       
-      <!-- Left Column: Calculator + Article -->
-      <div class="md:col-span-8 space-y-12">
+      <div class="md:col-span-8 space-y-10">
         
         <!-- Author / Review Info -->
-        <div class="space-y-4">
+        <div class="space-y-3">
           <p class="text-xs font-bold text-gray-500 uppercase">Updated September 2026</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
@@ -180,174 +280,114 @@
         </div>
 
         <!-- THE CALCULATOR FORM -->
-        <div class="bg-white">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+        <div class="bg-white p-8 rounded-3xl border-2 border-brand-pink/15 shadow-xl shadow-brand-pink/5 space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Date Input -->
             <div>
-              <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period</label>
-              <div class="relative">
-                <input type="date" id="calc-last-period" class="w-full px-5 py-4 bg-[#FFF0F2] border-2 border-[#FF5E8C] rounded-xl text-[#1A1819] font-bold text-base focus:outline-none focus:ring-4 focus:ring-[#FF5E8C]/20 transition-all cursor-pointer accent-[#FF5E8C]">
+              <label class="block text-sm font-semibold text-brand-dark mb-2">First day of last period</label>
+              <div class="relative flex items-center">
+                <i data-lucide="calendar" class="w-5 h-5 text-brand-pink absolute left-4 pointer-events-none z-10"></i>
+                <input type="text" id="calc-last-period" placeholder="dd/mm/yyyy" class="w-full pl-12 pr-4 py-4 bg-brand-accent/50 border-2 border-brand-pink/30 rounded-2xl text-brand-dark font-bold text-base focus:outline-none focus:border-brand-pink focus:bg-white focus:ring-4 focus:ring-brand-pink/10 transition-all cursor-pointer" readonly>
               </div>
             </div>
             
+            <!-- Cycle Length (for Ovulation) or Extra field -->
             <div>
               <label class="block text-sm font-semibold text-brand-dark mb-2">Average cycle length (days)</label>
-              <div class="flex items-center border-2 border-gray-200 rounded-xl overflow-hidden shadow-sm bg-white focus-within:border-brand-pink transition-all">
-                <button onclick="document.getElementById('calc-cycle-length').stepDown()" class="px-5 py-4 text-brand-pink hover:bg-gray-50 text-xl font-bold transition-colors">−</button>
-                <input type="number" id="calc-cycle-length" value="28" min="20" max="45" class="w-full py-4 text-center text-lg font-bold text-brand-dark focus:outline-none bg-transparent">
-                <button onclick="document.getElementById('calc-cycle-length').stepUp()" class="px-5 py-4 text-brand-pink hover:bg-gray-50 text-xl font-bold transition-colors">+</button>
+              <div class="flex items-center border-2 border-brand-pink/30 rounded-2xl overflow-hidden bg-brand-accent/50 focus-within:border-brand-pink focus-within:bg-white transition-all py-1">
+                <button type="button" onclick="const input = document.getElementById('calc-cycle-length'); if(parseInt(input.value) > 20) input.value = parseInt(input.value) - 1;" class="px-5 py-3 text-brand-pink hover:bg-brand-pink/10 text-xl font-bold transition-colors">−</button>
+                <input type="number" id="calc-cycle-length" value="28" min="20" max="45" class="w-full py-3 text-center text-lg font-bold text-brand-dark focus:outline-none bg-transparent">
+                <button type="button" onclick="const input = document.getElementById('calc-cycle-length'); if(parseInt(input.value) < 45) input.value = parseInt(input.value) + 1;" class="px-5 py-3 text-brand-pink hover:bg-brand-pink/10 text-xl font-bold transition-colors">+</button>
               </div>
             </div>
           </div>
           
-          <button onclick="calculateOvulation()" class="w-full py-4 bg-[#EE6B81] hover:bg-[#D9556C] text-white rounded-xl font-bold text-lg shadow-md transition-all">
+          <button type="button" onclick="calculateOvulation()" class="w-full py-4 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-2xl font-bold text-lg shadow-lg shadow-brand-pink/25 hover:shadow-brand-pink/40 hover:-translate-y-0.5 transition-all">
             See results
           </button>
-          
         </div>
 
         <!-- Disclaimer Box -->
-        <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 flex gap-3 text-sm text-gray-600">
-           <i data-lucide="info" class="w-5 h-5 flex-shrink-0 text-gray-400 mt-0.5"></i>
-           <p>Remember that ovulation predictors and calculators can help you learn more about your cycle and fertile window, but they are estimates. Do not use this as a method of birth control.</p>
+        <div class="bg-gray-50 p-5 rounded-2xl border border-gray-200 flex gap-3 text-sm text-gray-600">
+           <i data-lucide="info" class="w-5 h-5 flex-shrink-0 text-brand-pink mt-0.5"></i>
+           <p>Remember that calculations are estimates based on standard biological averages. Consult your healthcare provider for clinical medical advice.</p>
         </div>
 
-  <!-- ===== RESULTS MODAL ===== -->
+        <!-- SEO Article Content -->
+        <div class="prose prose-pink max-w-none text-brand-dark/85 font-body">
+          <h2 id="key-takeaways" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Key takeaways on calculating your fertile window</h2><p>Whether you are trying to conceive or simply wanting to understand your body better, knowing your fertile window is essential. A standardized medical algorithm can pinpoint these days using your cycle data.</p><h2 id="how-calculated" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How are your fertile days calculated?</h2><p>A typical menstrual cycle lasts 28 days. Ovulation usually happens about 14 days before your next period starts. Because sperm can live inside the reproductive tract for up to 5 days, your fertile window is generally the 5 days leading up to ovulation, plus the day of ovulation itself.</p><h2 id="signs-ovulation" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What are the signs of ovulation?</h2><ul class="list-disc pl-5 space-y-2"><li><strong>Changes in cervical mucus:</strong> Discharge becomes clear and stretchy.</li><li><strong>Mild pelvic pain:</strong> Slight twinge on one side.</li><li><strong>Basal body temperature shifts:</strong> A slight drop followed by a spike directly after ovulation.</li></ul>
+        </div>
+
+      </div>
+      
+      <!-- Right Sidebar -->
+      <div class="md:col-span-4 sticky top-28 space-y-8">
+        <div class="bg-brand-pink text-white p-8 rounded-3xl shadow-xl shadow-brand-pink/20 text-center space-y-4">
+          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
+            <i data-lucide="smartphone" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-bold font-heading text-xl">Track Daily in App</h3>
+          <p class="text-sm text-white/90 leading-relaxed">
+            Take the guesswork out of your cycle. Log symptoms and get daily predictions on your phone.
+          </p>
+          <a href="index.html#download" class="inline-block mt-2 w-full py-3.5 bg-white text-brand-pink rounded-xl font-bold text-sm shadow-md transition-all hover:bg-gray-50">
+            Download Free App
+          </a>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <!-- ===== PREMIUM RESULTS MODAL ===== -->
   <div id="result-modal" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
     <!-- Backdrop -->
-    <div id="modal-backdrop" onclick="closeModal()" class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    <div id="modal-backdrop" onclick="closeModal()" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
     
     <!-- Modal Card -->
-    <div id="modal-card" class="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+    <div id="modal-card" class="relative z-10 w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden border border-brand-pink/20">
       
+      <!-- Modal Close Button Top Right -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center transition-all">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
       <!-- Pink Header -->
       <div class="bg-gradient-to-br from-[#FF5E8C] to-[#FF8C69] p-8 text-white text-center relative overflow-hidden">
-        <!-- Decorative circles -->
         <div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
         <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-white/10 rounded-full"></div>
         
         <div class="relative z-10">
-          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 shadow-inner">
             <i data-lucide="heart-pulse" class="w-8 h-8"></i>
           </div>
-          <h3 class="text-2xl font-extrabold font-heading">Your Results</h3>
-          <p class="text-white/80 text-sm mt-1">Based on your cycle data</p>
+          <h3 class="text-2xl font-extrabold font-heading">Your Calculation Results</h3>
+          <p class="text-white/90 text-sm mt-1">Based on your menstrual cycle parameters</p>
         </div>
       </div>
       
       <!-- Results Body -->
-      <div class="p-8 space-y-6">
+      <div class="p-6 space-y-4">
         
-        <!-- Ovulation Day -->
-        <div class="text-center p-5 bg-[#FFF0F2] rounded-2xl border border-[#FF5E8C]/15">
-          <p class="text-[10px] font-extrabold text-[#FF5E8C] uppercase tracking-[3px] mb-2">Estimated Ovulation Day</p>
-          <p id="result-ovulation" class="text-2xl font-extrabold text-brand-dark font-heading">...</p>
-        </div>
-        
-        <!-- Fertile Window -->
-        <div class="text-center p-5 bg-gray-50 rounded-2xl border border-gray-100">
-          <p class="text-[10px] font-extrabold text-brand-gray uppercase tracking-[3px] mb-2">Your Fertile Window</p>
-          <p id="result-fertile" class="text-lg font-bold text-brand-dark">...</p>
-        </div>
-
-        <!-- Next Period -->
-        <div class="text-center p-5 bg-gray-50 rounded-2xl border border-gray-100">
-          <p class="text-[10px] font-extrabold text-brand-gray uppercase tracking-[3px] mb-2">Next Period Expected</p>
-          <p id="result-next-period" class="text-lg font-bold text-brand-dark">...</p>
-        </div>
+        <div class="text-center p-4 bg-[#FFF0F2] rounded-2xl border border-[#FF5E8C]/20"><p class="text-[11px] font-extrabold text-[#FF5E8C] uppercase tracking-[2px] mb-1">Estimated Ovulation Day</p><p id="result-ovulation" class="text-2xl font-extrabold text-brand-dark font-heading">...</p></div><div class="text-center p-4 bg-gray-50 rounded-2xl border border-gray-100"><p class="text-[11px] font-extrabold text-brand-gray uppercase tracking-[2px] mb-1">Fertile Window</p><p id="result-fertile" class="text-lg font-bold text-brand-dark">...</p></div><div class="text-center p-4 bg-gray-50 rounded-2xl border border-gray-100"><p class="text-[11px] font-extrabold text-brand-gray uppercase tracking-[2px] mb-1">Next Period Expected</p><p id="result-next-period" class="text-lg font-bold text-brand-dark">...</p></div>
         
         <!-- CTA -->
-        <a href="index.html#download" class="block w-full py-4 bg-gradient-to-r from-[#FF5E8C] to-[#FF8C69] text-white rounded-xl font-bold text-center shadow-lg shadow-[#FF5E8C]/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <a href="index.html#download" class="block w-full py-4 bg-gradient-to-r from-[#FF5E8C] to-[#FF8C69] text-white rounded-2xl font-bold text-center shadow-lg shadow-[#FF5E8C]/25 hover:shadow-xl hover:-translate-y-0.5 transition-all mt-2">
           <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>
           Track Daily in Our Free App
         </a>
         
         <!-- Close -->
-        <button onclick="closeModal()" class="block w-full py-3 text-brand-gray font-semibold text-sm hover:text-brand-dark transition-colors">
-          Close
+        <button onclick="closeModal()" class="block w-full py-2.5 text-brand-gray font-semibold text-sm hover:text-brand-dark transition-colors text-center">
+          Close Window
         </button>
       </div>
       
     </div>
   </div>
 
-  
-  
-  
-    <style>
-    /* Tailwind Styled Native Datepicker */
-    input[type="date"]::-webkit-calendar-picker-indicator {
-        cursor: pointer;
-        filter: invert(48%) sepia(85%) saturate(1834%) hue-rotate(314deg) brightness(101%) contrast(101%);
-        opacity: 0.8;
-        transition: 0.2s;
-    }
-    input[type="date"]::-webkit-calendar-picker-indicator:hover {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-
-    /* Modal Animation */
-    #result-modal.show { display: flex !important; }
-    #result-modal.show #modal-backdrop { animation: fadeIn 0.3s ease; }
-    #result-modal.show #modal-card { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
-  </style>
-
-
-
-
-        <!-- The SEO Article -->
-        <div class="prose prose-pink max-w-none text-brand-dark/85 font-body">
-          <h2 id="key-takeaways" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Key takeaways on calculating your fertile window</h2>
-          <p>Whether you're trying to conceive or simply wanting to understand your body better, knowing your fertile window is essential. A standardized medical algorithm can pinpoint these days using your cycle data.</p>
-          
-          <h2 id="how-calculated" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How are your fertile days calculated in the ovulation calculator?</h2>
-          <p>A typical menstrual cycle lasts 28 days. Ovulation—the release of an egg from the ovary—usually happens about 14 days before your next period starts. Because sperm can live inside the reproductive tract for up to 5 days, your fertile window is generally the 5 days leading up to ovulation, plus the day of ovulation itself.</p>
-
-          <h2 id="average-length" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What's the average length of a menstrual cycle?</h2>
-          <p>While 28 days is the textbook average, a healthy cycle can range anywhere from 21 to 35 days. Tracking your period for a few months is the best way to find your unique average.</p>
-
-          <h2 id="signs-ovulation" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What are the signs of ovulation?</h2>
-          <ul class="list-disc pl-5 space-y-2">
-            <li><strong>Changes in cervical mucus:</strong> Discharge becomes clear and stretchy (like raw egg whites).</li>
-            <li><strong>Mild pelvic pain:</strong> Also known as <em>mittelschmerz</em>, a slight twinge on one side.</li>
-            <li><strong>Basal body temperature shifts:</strong> A slight drop followed by a spike directly after ovulation.</li>
-          </ul>
-
-          <h2 id="increase-chances" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Can ovulation tracking increase your chances of pregnancy?</h2>
-          <p>Yes. Having intercourse during your fertile window maximizes the chance of conception. Using our <strong>Period Tracker App</strong> allows you to log daily symptoms, making predictions even more accurate.</p>
-        </div>
-
-      </div>
-      
-      <!-- Right Column: Sticky Sidebar -->
-      <div class="md:col-span-4 sticky top-28 space-y-8">
-        
-        <!-- Table of Contents -->
-        <div>
-          <h3 class="text-sm font-extrabold text-brand-dark uppercase tracking-widest mb-5 font-heading">IN THIS ARTICLE</h3>
-          <ul class="space-y-4 text-[15px] font-medium text-brand-dark/70">
-            <li><a href="#key-takeaways" class="hover:text-brand-pink transition-colors">Key takeaways on calculating your fertile window</a></li>
-            <li><a href="#how-calculated" class="hover:text-brand-pink transition-colors">How are your fertile days calculated in the ovulation calculator?</a></li>
-            <li><a href="#average-length" class="hover:text-brand-pink transition-colors">What's the average length of a menstrual cycle?</a></li>
-            <li><a href="#signs-ovulation" class="hover:text-brand-pink transition-colors">What are the signs of ovulation?</a></li>
-            <li><a href="#increase-chances" class="hover:text-brand-pink transition-colors">Can ovulation tracking increase your chances of pregnancy?</a></li>
-          </ul>
-        </div>
-        
-        <!-- App Promo Banner -->
-        <div class="bg-[#EE6B81] text-white p-6 rounded-2xl shadow-lg flex flex-col items-center text-center">
-          <i data-lucide="smartphone" class="w-10 h-10 mb-3 opacity-90"></i>
-          <h3 class="font-bold text-lg mb-2">Track Daily in App</h3>
-          <p class="text-sm opacity-90 mb-4">Log symptoms and get hyper-personalized predictions on your phone.</p>
-          <a href="index.html#download" class="w-full py-3 bg-white text-[#EE6B81] rounded-xl font-bold text-sm shadow-sm transition-all hover:bg-gray-50">Download Free</a>
-        </div>
-      </div>
-      
-    </section>
-  </main>
-<footer id="contact" class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 scroll-mt-24">
+  <footer id="contact" class="bg-brand-accent text-brand-gray/80 border-t border-brand-pink/10 py-12 scroll-mt-24">
     <div class="max-w-7xl mx-auto px-6 space-y-8">
 
       <!-- Top Tier: Logo, Navigation, Socials -->
@@ -394,8 +434,15 @@
 
     </div>
   </footer>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script>
+    let picker;
     document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      // Mobile menu toggle
       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       if (mobileMenuBtn && mobileMenu) {
@@ -403,49 +450,55 @@
           mobileMenu.classList.toggle('hidden');
         });
       }
+
+      // Initialize Flatpickr
+      picker = flatpickr("#calc-last-period", {
+        dateFormat: "d/m/Y",
+        maxDate: "today",
+        disableMobile: true,
+        allowInput: false,
+        clickOpens: true,
+        monthSelectorType: "static"
+      });
     });
-    
+
     function calculateOvulation() {
-        const lastPeriod = document.getElementById('calc-last-period').value;
-        const cycleLength = parseInt(document.getElementById('calc-cycle-length').value);
-        if (!lastPeriod || !cycleLength) return;
-        
-        const periodDate = new Date(lastPeriod);
-        const nextPeriodDate = new Date(periodDate);
-        nextPeriodDate.setDate(periodDate.getDate() + cycleLength);
-        
-        const ovulationDate = new Date(nextPeriodDate);
-        ovulationDate.setDate(nextPeriodDate.getDate() - 14);
-        
-        const fertileStart = new Date(ovulationDate);
-        fertileStart.setDate(ovulationDate.getDate() - 5);
-        
-        const fertileEnd = new Date(ovulationDate);
-        fertileEnd.setDate(ovulationDate.getDate() + 1);
-        
-        const options = { month: 'long', day: 'numeric' };
-        const yearOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        
-        document.getElementById('result-ovulation').textContent = ovulationDate.toLocaleDateString('en-US', yearOptions);
-        document.getElementById('result-fertile').textContent = fertileStart.toLocaleDateString('en-US', options) + " — " + fertileEnd.toLocaleDateString('en-US', yearOptions);
-        document.getElementById('result-next-period').textContent = nextPeriodDate.toLocaleDateString('en-US', yearOptions);
-        
-        // Show modal
-        const modal = document.getElementById('result-modal');
-        modal.classList.remove('hidden');
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-        lucide.createIcons();
+      const lastPeriodStr = document.getElementById('calc-last-period').value;
+      
+      if (!lastPeriodStr) {
+        // Auto open picker if date is not selected
+        if (picker) picker.open();
+        return;
+      }
+
+      // Parse DD/MM/YYYY
+      let periodDate;
+      if (lastPeriodStr.includes('/')) {
+        const parts = lastPeriodStr.split('/');
+        periodDate = new Date(parts[2], parts[1] - 1, parts[0]);
+      } else {
+        periodDate = new Date(lastPeriodStr);
+      }
+
+      const options = { month: 'short', day: 'numeric' };
+      const yearOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
+      const cycleLength = parseInt(document.getElementById("calc-cycle-length").value) || 28; const nextPeriodDate = new Date(periodDate); nextPeriodDate.setDate(periodDate.getDate() + cycleLength); const ovulationDate = new Date(nextPeriodDate); ovulationDate.setDate(nextPeriodDate.getDate() - 14); const fertileStart = new Date(ovulationDate); fertileStart.setDate(ovulationDate.getDate() - 5); const fertileEnd = new Date(ovulationDate); fertileEnd.setDate(ovulationDate.getDate() + 1); document.getElementById("result-ovulation").textContent = ovulationDate.toLocaleDateString("en-US", yearOptions); document.getElementById("result-fertile").textContent = fertileStart.toLocaleDateString("en-US", options) + " — " + fertileEnd.toLocaleDateString("en-US", yearOptions); document.getElementById("result-next-period").textContent = nextPeriodDate.toLocaleDateString("en-US", yearOptions);
+
+      // Show modal
+      const modal = document.getElementById('result-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
     }
 
     function closeModal() {
-        const modal = document.getElementById('result-modal');
-        modal.classList.add('hidden');
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
+      const modal = document.getElementById('result-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
     }
-
   </script>
-
 </body>
 </html>
