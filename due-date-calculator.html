@@ -36,6 +36,7 @@
 
   
   
+  
   <style>
     /* ===== DATE INPUT FIELD ===== */
     .flatpickr-input {
@@ -94,28 +95,62 @@
       line-height: 40px !important;
     }
     .flatpickr-current-month {
-      font-size: 17px !important;
-      font-weight: 800 !important;
+      font-size: 15px !important;
+      font-weight: 700 !important;
       color: #1A1819 !important;
       padding: 0 !important;
       height: 40px !important;
-      line-height: 40px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 6px;
+      gap: 6px !important;
     }
-    .flatpickr-current-month .cur-month {
-      font-weight: 800 !important;
+
+    /* Themed Month Dropdown & Year Input */
+    .flatpickr-current-month .flatpickr-monthDropdown-months {
+      background: #FFF0F2 !important;
+      border: 1.5px solid #FF5E8C !important;
+      border-radius: 10px !important;
+      padding: 4px 8px !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
       color: #1A1819 !important;
+      cursor: pointer !important;
+      outline: none !important;
+      transition: all 0.2s ease !important;
     }
-    .flatpickr-current-month input.cur-year {
-      font-weight: 800 !important;
-      font-size: 17px !important;
-      color: #1A1819 !important;
-      padding: 0 !important;
+    .flatpickr-current-month .flatpickr-monthDropdown-months:hover,
+    .flatpickr-current-month .flatpickr-monthDropdown-months:focus {
+      background: #fff !important;
+      box-shadow: 0 0 0 3px rgba(255, 94, 140, 0.2) !important;
     }
     
+    .flatpickr-current-month .numInputWrapper {
+      width: 72px !important;
+    }
+    .flatpickr-current-month input.cur-year {
+      background: #FFF0F2 !important;
+      border: 1.5px solid #FF5E8C !important;
+      border-radius: 10px !important;
+      padding: 4px 6px !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      color: #1A1819 !important;
+      width: 100% !important;
+      text-align: center !important;
+      cursor: pointer !important;
+      outline: none !important;
+      transition: all 0.2s ease !important;
+    }
+    .flatpickr-current-month input.cur-year:hover,
+    .flatpickr-current-month input.cur-year:focus {
+      background: #fff !important;
+      box-shadow: 0 0 0 3px rgba(255, 94, 140, 0.2) !important;
+    }
+    .flatpickr-current-month .numInputWrapper span {
+      border: none !important;
+    }
+
     /* Navigation Arrows */
     .flatpickr-months .flatpickr-prev-month,
     .flatpickr-months .flatpickr-next-month {
@@ -204,6 +239,7 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
   </style>
+
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -547,7 +583,7 @@
       allowInput: false,
       clickOpens: true,
       position: "auto center",
-      monthSelectorType: "static"
+      monthSelectorType: "dropdown"
     });
     lucide.createIcons();
   });
