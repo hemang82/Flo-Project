@@ -295,7 +295,7 @@
                 <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period (LMP)</label>
                 <div class="relative flex items-center">
                     <i data-lucide="calendar" class="w-5 h-5 text-[#FF5E8C] absolute left-4 pointer-events-none z-10"></i>
-                    <input type="text" id="calc-due-date-last-period" placeholder="Select date..." class="flatpickr-input w-full cursor-pointer" readonly>
+                    <input type="text" id="calc-due-date-last-period" placeholder="dd/mm/yyyy" class="flatpickr-input w-full cursor-pointer" readonly>
                 </div>
             </div>
             
@@ -472,7 +472,13 @@
         const lastPeriod = document.getElementById('calc-due-date-last-period').value;
         if (!lastPeriod) return;
         
-        const periodDate = new Date(lastPeriod);
+        let periodDate;
+        if (lastPeriod.includes('/')) {
+            const parts = lastPeriod.split('/');
+            periodDate = new Date(parts[2], parts[1] - 1, parts[0]);
+        } else {
+            periodDate = new Date(lastPeriod);
+        }
         const dueDate = new Date(periodDate);
         dueDate.setDate(periodDate.getDate() + 280);
         
@@ -498,11 +504,12 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     flatpickr("#calc-due-date-last-period", {
-      dateFormat: "Y-m-d",
+      dateFormat: "d/m/Y",
       maxDate: "today",
       disableMobile: true,
       allowInput: false,
-      clickOpens: true
+      clickOpens: true,
+      position: "auto center"
     });
     lucide.createIcons();
   });
