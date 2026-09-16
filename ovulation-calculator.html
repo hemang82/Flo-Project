@@ -18,18 +18,16 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    input[type="text" class="flatpickr-input" placeholder="Select date..."]::-webkit-calendar-picker-indicator {
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.2s;
-    }
-    input[type="text" class="flatpickr-input" placeholder="Select date..."]:hover::-webkit-calendar-picker-indicator {
-        opacity: 1;
-    }
-    input[type="text" class="flatpickr-input" placeholder="Select date..."] {
-        color: #FF5E8C;
+    .flatpickr-input {
+        color: #FF5E8C !important;
         font-weight: 700;
         font-family: inherit;
+        caret-color: #FF5E8C;
+    }
+    .flatpickr-input::placeholder {
+        color: #FF5E8C;
+        opacity: 0.5;
+        font-weight: 500;
     }
   </style>
 
@@ -65,7 +63,7 @@
       font-weight: 700 !important;
     }
     /* Hide native calendar icon since flatpickr handles it */
-    input[type="text" class="flatpickr-input" placeholder="Select date..."]::-webkit-calendar-picker-indicator {
+    input[type="text"]::-webkit-calendar-picker-indicator {
         display: none !important;
     }
   </style>
@@ -209,7 +207,7 @@
             <div>
               <label class="block text-sm font-semibold text-brand-dark mb-2">The first day of your last period</label>
               <div class="relative">
-                <input type="text" class="flatpickr-input" placeholder="Select date..." id="calc-last-period" class="w-full px-5 py-4 bg-white border-2 border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink transition-all text-brand-dark font-medium text-lg shadow-sm">
+                <input type="text" id="calc-last-period" placeholder="Select date..." class="flatpickr-input w-full px-5 py-4 bg-white border-2 border-brand-pink/30 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-4 focus:ring-brand-pink/10 transition-all text-brand-pink font-bold text-lg shadow-sm cursor-pointer" readonly>
               </div>
             </div>
             
@@ -381,10 +379,15 @@
   </script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
-  flatpickr("input[type=date]", {
-    dateFormat: "Y-m-d",
-    maxDate: "today",
-    disableMobile: "true"
+  document.addEventListener('DOMContentLoaded', function() {
+    flatpickr("#calc-last-period", {
+      dateFormat: "Y-m-d",
+      maxDate: "today",
+      disableMobile: true,
+      allowInput: false,
+      clickOpens: true
+    });
+    lucide.createIcons();
   });
 </script>
 </body>
