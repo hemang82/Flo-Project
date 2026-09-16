@@ -35,6 +35,7 @@
   </script>
 
   
+  
   <style>
     /* ===== DATE INPUT FIELD ===== */
     .flatpickr-input {
@@ -64,12 +65,13 @@
     /* ===== CALENDAR POPUP ===== */
     .flatpickr-calendar {
       font-family: 'Plus Jakarta Sans', sans-serif !important;
-      border-radius: 20px !important;
-      box-shadow: 0 20px 60px -15px rgba(255, 94, 140, 0.25), 0 10px 20px -10px rgba(0,0,0,0.08) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 20px 60px -15px rgba(255, 94, 140, 0.3), 0 10px 25px -10px rgba(0,0,0,0.08) !important;
       border: 2px solid #FF5E8C !important;
-      padding: 12px !important;
-      width: 320px !important;
+      padding: 16px !important;
+      width: 330px !important;
       background: #fff !important;
+      margin-top: 6px !important;
     }
     .flatpickr-calendar.open {
       animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -78,44 +80,75 @@
       from { opacity: 0; transform: scale(0.92) translateY(-8px); }
       to { opacity: 1; transform: scale(1) translateY(0); }
     }
+
+    /* Header Nav */
     .flatpickr-months {
-      padding: 4px 0 10px !important;
-      align-items: center;
+      padding: 0 0 12px 0 !important;
+      align-items: center !important;
+      position: relative !important;
     }
     .flatpickr-month {
       color: #1A1819 !important;
       fill: #FF5E8C !important;
       height: 40px !important;
+      line-height: 40px !important;
     }
     .flatpickr-current-month {
-      font-size: 16px !important;
+      font-size: 17px !important;
       font-weight: 800 !important;
       color: #1A1819 !important;
-      padding-top: 4px !important;
+      padding: 0 !important;
+      height: 40px !important;
+      line-height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px;
     }
-    .flatpickr-current-month .flatpickr-monthDropdown-months {
+    .flatpickr-current-month .cur-month {
       font-weight: 800 !important;
-      font-size: 16px !important;
       color: #1A1819 !important;
     }
     .flatpickr-current-month input.cur-year {
       font-weight: 800 !important;
-      font-size: 16px !important;
+      font-size: 17px !important;
       color: #1A1819 !important;
+      padding: 0 !important;
     }
+    
+    /* Navigation Arrows */
     .flatpickr-months .flatpickr-prev-month,
     .flatpickr-months .flatpickr-next-month {
       fill: #FF5E8C !important;
       color: #FF5E8C !important;
-      padding: 6px !important;
-      border-radius: 10px;
+      padding: 8px !important;
+      height: 36px !important;
+      width: 36px !important;
+      top: 2px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      transition: all 0.2s ease !important;
+      z-index: 10 !important;
+    }
+    .flatpickr-months .flatpickr-prev-month svg,
+    .flatpickr-months .flatpickr-next-month svg {
+      width: 14px !important;
+      height: 14px !important;
+      fill: #FF5E8C !important;
+      stroke: #FF5E8C !important;
+      stroke-width: 1px;
     }
     .flatpickr-months .flatpickr-prev-month:hover,
     .flatpickr-months .flatpickr-next-month:hover {
       background: #FFF0F2 !important;
     }
+
+    /* Weekday Headers */
     .flatpickr-weekdays {
-      padding: 4px 0 !important;
+      padding: 6px 0 !important;
+      margin-bottom: 4px !important;
     }
     .flatpickr-weekday {
       color: #FF5E8C !important;
@@ -124,15 +157,18 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
+
+    /* Day Cells */
     .flatpickr-day {
       border-radius: 12px !important;
       font-weight: 600 !important;
       font-size: 14px !important;
-      height: 38px !important;
-      line-height: 38px !important;
-      max-width: 38px !important;
+      height: 40px !important;
+      line-height: 40px !important;
+      max-width: 40px !important;
       color: #1A1819 !important;
       margin: 1px !important;
+      border: 1px solid transparent !important;
       transition: all 0.15s ease !important;
     }
     .flatpickr-day:hover {
@@ -158,7 +194,7 @@
     .flatpickr-day.flatpickr-disabled:hover,
     .flatpickr-day.prevMonthDay,
     .flatpickr-day.nextMonthDay {
-      color: #ddd !important;
+      color: #e0e0e0 !important;
     }
 
     /* Modal Animation */
@@ -168,6 +204,7 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideUp { from { opacity: 0; transform: translateY(40px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
   </style>
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
@@ -509,7 +546,8 @@
       disableMobile: true,
       allowInput: false,
       clickOpens: true,
-      position: "auto center"
+      position: "auto center",
+      monthSelectorType: "static"
     });
     lucide.createIcons();
   });
