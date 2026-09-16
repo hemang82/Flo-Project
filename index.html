@@ -1,12 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png?v=4">
-  <title>Period Tracker & Ovulation Cycle | Free Menstrual Calendar</title>
-  <meta name="description" content="Predict your next period, track ovulation, and monitor your menstrual cycle safely. The ultimate period tracker and fertility calendar app.">
+  <title>Period Tracker & Ovulation Cycle | Free Menstrual Calendar App</title>
+  <meta name="description" content="Period Tracker Ovulation Cycle helps you predict period dates, track fertile windows, calculate ovulation, and monitor cycle symptoms accurately for free.">
+  <meta name="keywords" content="Period Tracker Ovulation Cycle, period tracker app, ovulation calculator, menstrual cycle tracker, fertility calendar, period calculator, pregnancy due date calculator, symptom logging app">
+  <meta name="author" content="Tracewave Transparency PVT LTD">
+  <link rel="canonical" href="https://periodtrackerovulationcycle.com/">
+
+  <!-- Open Graph / Facebook SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://periodtrackerovulationcycle.com/">
+  <meta property="og:title" content="Period Tracker & Ovulation Cycle | Free Menstrual Calendar App">
+  <meta property="og:description" content="Predict your next period, track ovulation, and monitor your menstrual cycle safely. Free period tracker and fertility calendar app.">
+  <meta property="og:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
+
+  <!-- Twitter SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://periodtrackerovulationcycle.com/">
+  <meta name="twitter:title" content="Period Tracker & Ovulation Cycle | Free Menstrual Calendar App">
+  <meta name="twitter:description" content="Predict your next period, track ovulation, and monitor your menstrual cycle safely. Free period tracker and fertility calendar app.">
+  <meta name="twitter:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,19 +41,6 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontSize: {
-            'xs': '0.85rem',
-            'sm': '0.975rem',
-            'base': '1.1rem',
-            'lg': '1.225rem',
-            'xl': '1.375rem',
-            '2xl': '1.65rem',
-            '3xl': '2.05rem',
-            '4xl': '2.5rem',
-            '5xl': '3.3rem',
-            '6xl': '4.1rem',
-            '7xl': '4.85rem',
-          },
           colors: {
             brand: {
               pink: '#FF5E8C', // Primary brand pink
@@ -98,6 +102,7 @@
       border-radius: 16px !important;
       box-shadow: 0 10px 25px -5px rgba(255, 94, 140, 0.15), 0 8px 10px -6px rgba(255, 94, 140, 0.1) !important;
       border: 1px solid rgba(255, 94, 140, 0.1) !important;
+      z-index: 990 !important;
     }
     .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay {
       background: #FF5E8C !important;
@@ -150,11 +155,11 @@
        STICKY NAVIGATION BAR
        ========================================== -->
   <header
-    class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    class="sticky top-0 z-[9999] bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <!-- LOGO (Pink Spirals, Transparent Background, Solid Bold Text Next to It) -->
-      <a href="#" class="flex items-center gap-2">
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
         <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
       </a>
 
@@ -165,7 +170,7 @@
         <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptoms</a>
 
-        <!-- Tools Dropdown -->
+        <!-- Calculators Dropdown -->
         <div class="relative group cursor-pointer">
           <div class="flex items-center gap-1 hover:text-brand-pink transition-colors py-2">
             Calculators <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -177,14 +182,26 @@
         </div>
 
         <a href="index.html#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
-        <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
       </nav>
 
-      <!-- CTA BUTTON -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#download"
-          class="px-6 py-2.5 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20 hover:bg-brand-pink/90 hover:shadow-brand-pink/35 transform hover:-translate-y-0.5 transition-all">
-          Download App
+      <!-- STORE CTA BUTTONS -->
+      <div class="hidden md:flex items-center gap-2.5">
+        <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Download on App Store">
+          <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+          </svg>
+          <span>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Get it on Google Play">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+            <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+            <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+            <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+          </svg>
+          <span>Google Play</span>
         </a>
       </div>
 
@@ -200,14 +217,14 @@
     <!-- MOBILE DROPDOWN MENU -->
     <div id="mobile-menu"
       class="hidden md:hidden px-6 pb-6 pt-2 border-t border-brand-pink/10 transition-all duration-300 opacity-0 -translate-y-4">
-      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80">
+      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80 text-sm">
         <a href="index.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Home</a>
         <a href="feature-period-tracker.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Period Tracker</a>
         <a href="feature-ovulation-calendar.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Symptoms</a>
 
         <div class="py-2 border-b border-gray-100">
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
+          <p class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
           <div class="flex flex-col gap-2 pl-2">
             <a href="ovulation-calculator.html" class="hover:text-brand-pink text-sm">Ovulation Calculator</a>
             <a href="due-date-calculator.html" class="hover:text-brand-pink text-sm">Pregnancy Due Date</a>
@@ -215,12 +232,25 @@
         </div>
 
         <a href="index.html#pricing" class="py-2 hover:text-brand-pink border-b border-gray-100">Pricing</a>
-        <a href="faq.html" class="py-2 hover:text-brand-pink border-b border-gray-100">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-brand-pink">Contact</a>
-        <a href="#download"
-          class="mt-2 text-center py-3 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20">
-          Download App
-        </a>
+        <div class="pt-2 grid grid-cols-2 gap-3">
+          <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+            </svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+              <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+              <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+              <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+            </svg>
+            <span>Google Play</span>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -238,16 +268,6 @@
 
     <!-- LEFT: TEXT CONTENT -->
     <div class="lg:col-span-7 space-y-6 animate-on-scroll">
-      <!-- Animated Pulsing Badge -->
-      <div
-        class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-xs tracking-wide shadow-sm shadow-brand-pink/5 hover:shadow-md hover:shadow-brand-pink/15 transition-all duration-300">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-pink opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-pink"></span>
-        </span>
-        <span>Smart Period & Cycle Tracker</span>
-      </div>
-
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-dark leading-tight tracking-tight">
         Free Period Tracker &<br>
         <span class="text-gradient">Ovulation Cycle</span>
@@ -1448,57 +1468,6 @@
   <!-- ==========================================
        FEATURES GRID SECTION
        ========================================== -->
-  
-  <!-- ==========================================
-       MINI CALCULATOR SECTION
-       ========================================== -->
-  <section class="max-w-4xl mx-auto px-6 py-12">
-    <div class="glass-panel p-8 md:p-10 rounded-3xl border border-brand-pink/15 shadow-xl bg-gradient-to-br from-white to-brand-accent/30 text-center space-y-6">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-pink/10 text-brand-pink font-semibold text-xs tracking-wide">
-        Quick Estimate
-      </div>
-      <h2 class="text-2xl md:text-3xl font-extrabold text-brand-dark font-heading">Calculate Your Next Period</h2>
-      
-      <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
-        <div class="w-full sm:w-auto text-left">
-          <label class="block text-sm font-semibold text-brand-gray mb-1">First day of last period:</label>
-          <input type="text" class="flatpickr-input" placeholder="Select date..." id="calc-last-period" class="w-full sm:w-48 px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20">
-        </div>
-        <div class="w-full sm:w-auto text-left">
-          <label class="block text-sm font-semibold text-brand-gray mb-1">Cycle length (days):</label>
-          <input type="number" id="calc-cycle-length" value="28" min="20" max="45" class="w-full sm:w-32 px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:border-brand-pink focus:ring-2 focus:ring-brand-pink/20">
-        </div>
-        <div class="w-full sm:w-auto mt-5">
-          <button onclick="calculateNextPeriod()" class="w-full px-6 py-3 bg-brand-pink hover:bg-brand-pink/90 text-white rounded-xl font-bold text-sm shadow-md transition-all">Calculate</button>
-        </div>
-      </div>
-      
-      <div id="calc-result" class="hidden pt-6 border-t border-gray-100">
-        <p class="text-lg text-brand-gray">Your next period is expected around:</p>
-        <p id="calc-date" class="text-2xl font-extrabold text-brand-pink font-heading my-2">...</p>
-        <p class="text-sm text-brand-gray mb-4">This is just an estimate. For accurate predictions, daily symptom tracking, and reminders, download our free app!</p>
-        <a href="#download" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-dark text-white font-semibold text-sm hover:bg-black transition-all">
-          Get the App
-        </a>
-      </div>
-    </div>
-
-    <script>
-      function calculateNextPeriod() {
-        const lastPeriod = document.getElementById('calc-last-period').value;
-        const cycleLength = parseInt(document.getElementById('calc-cycle-length').value);
-        if (!lastPeriod || !cycleLength) return;
-        
-        const date = new Date(lastPeriod);
-        date.setDate(date.getDate() + cycleLength);
-        
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('calc-date').textContent = date.toLocaleDateString('en-US', options);
-        document.getElementById('calc-result').classList.remove('hidden');
-      }
-    </script>
-  </section>
-
   <section id="features"
     class="scroll-mt-20 py-12 md:py-16 bg-white border-y border-brand-pink/5 relative overflow-hidden">
     <!-- Background glow orb -->
@@ -2498,6 +2467,56 @@
   </section>
 
   <!-- ==========================================
+       FREE WEB CALCULATORS SECTION (LINK SUGGESTIONS)
+       ========================================== -->
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <div class="text-center space-y-3 mb-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink font-semibold text-sm tracking-wide">
+        <i data-lucide="calculator" class="w-4 h-4"></i>
+        <span>Free Online Health Tools</span>
+      </div>
+      <h2 class="text-3xl font-extrabold text-brand-dark font-heading">Explore Our Smart Calculators</h2>
+      <p class="text-brand-gray text-base max-w-xl mx-auto">Get instant, accurate insights for fertility planning and pregnancy milestones with our free tools.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Calculator Link Card 1: Ovulation Calculator -->
+      <a href="ovulation-calculator.html" class="group glass-panel p-8 rounded-3xl border border-brand-pink/20 shadow-sm hover:shadow-xl hover:border-brand-pink/40 bg-gradient-to-br from-white to-brand-accent/30 transition-all duration-300 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 text-brand-pink flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-brand-dark font-heading group-hover:text-brand-pink transition-colors">Ovulation Calculator</h3>
+            <p class="text-brand-gray text-sm leading-relaxed mt-2">Find your peak fertile days, egg release dates, and optimal conception timing based on your last period.</p>
+          </div>
+        </div>
+        <div class="pt-6 mt-6 border-t border-brand-pink/10 flex items-center justify-between text-brand-pink font-bold text-sm">
+          <span>Open Ovulation Calculator</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+        </div>
+      </a>
+
+      <!-- Calculator Link Card 2: Pregnancy Due Date Calculator -->
+      <a href="due-date-calculator.html" class="group glass-panel p-8 rounded-3xl border border-brand-peach/20 shadow-sm hover:shadow-xl hover:border-brand-peach/40 bg-gradient-to-br from-white to-brand-accent/30 transition-all duration-300 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-brand-peach/10 text-brand-peach flex items-center justify-center group-hover:scale-110 transition-transform">
+            <i data-lucide="baby" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-brand-dark font-heading group-hover:text-brand-peach transition-colors">Pregnancy Due Date Calculator</h3>
+            <p class="text-brand-gray text-sm leading-relaxed mt-2">Estimate your baby's due date, gestational age, and trimester milestones with clinical accuracy.</p>
+          </div>
+        </div>
+        <div class="pt-6 mt-6 border-t border-brand-peach/10 flex items-center justify-between text-brand-peach font-bold text-sm">
+          <span>Open Due Date Calculator</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================
        FAQ SECTION (ACCORDION)
        ========================================== -->
   <section id="faqs" class="scroll-mt-20 py-12 md:py-16 max-w-4xl mx-auto px-6 space-y-8">
@@ -2677,18 +2696,26 @@
       <!-- Top Tier: Logo, Navigation, Socials -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
         <!-- Logo -->
-        <a href="#" class="opacity-90 hover:opacity-100 transition-opacity">
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
           <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
         </a>
 
         <!-- Center navigation -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
-          <a href="#" class="hover:text-brand-pink transition-colors">Home</a>
-          <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Period Tracker</a><a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Ovulation Calendar</a><a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Symptom Logging</a><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
-          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
-          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
-          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        <div class="flex flex-col items-center gap-3 text-sm font-semibold text-brand-gray">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+            <a href="features.html" class="hover:text-brand-pink transition-colors">Features</a>
+            <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors">Period Tracker</a>
+            <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Calendar</a>
+            <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptom Logging</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+            <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+            <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+            <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+          </div>
         </div>
 
         <!-- Right socials -->
@@ -2706,7 +2733,7 @@
       </div>
 
       <!-- Bottom Tier: Copyright & Legal links -->
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-gray">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-brand-gray">
         <p>
           &copy; 2026 Tracewave Transparency PVT LTD. All rights reserved.
         </p>

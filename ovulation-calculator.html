@@ -4,8 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png?v=4">
-  <title>Ovulation Calculator | Period Tracker Ovulation Cycle</title>
-  <meta name="description" content="Figure out your most fertile days with our free ovulation calculator.">
+  <title>Free Ovulation Calculator: Find Your Most Fertile Days | Period Tracker</title>
+  <meta name="description" content="Calculate your fertile window and ovulation day instantly with our free online ovulation calculator. Track peak fertility days, cycle length, and conceive faster.">
+  <meta name="keywords" content="Period Tracker Ovulation Cycle, ovulation calculator, fertile window calculator, calculate ovulation days, fertility calendar, best time to get pregnant, period ovulation tracker">
+  <meta name="author" content="Tracewave Transparency PVT LTD">
+  <link rel="canonical" href="https://periodtrackerovulationcycle.com/ovulation-calculator.html">
+  
+  <!-- Open Graph / Facebook SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Period Tracker Ovulation Cycle">
+  <meta property="og:url" content="https://periodtrackerovulationcycle.com/ovulation-calculator.html">
+  <meta property="og:title" content="Free Ovulation Calculator: Find Your Most Fertile Days">
+  <meta property="og:description" content="Calculate your fertile window and ovulation day instantly with our free online ovulation calculator. Track peak fertility days and conceive faster.">
+  <meta property="og:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
+
+  <!-- Twitter SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://periodtrackerovulationcycle.com/ovulation-calculator.html">
+  <meta name="twitter:title" content="Free Ovulation Calculator: Find Your Most Fertile Days">
+  <meta name="twitter:description" content="Calculate your fertile window and ovulation day instantly with our free online ovulation calculator.">
+  <meta name="twitter:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +61,81 @@
   <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-  
+  <!-- SEO Schema Markup (WebApplication Schema for Google Calculator Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Ovulation Calculator",
+    "url": "https://tracewavetransparency.com/ovulation-calculator.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate your fertile window and ovulation day instantly with our free online ovulation calculator."
+  }
+  </script>
+
+  <!-- SEO Schema Markup (FAQPage Schema for Rich Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate is an online ovulation calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Online ovulation calculators provide a reliable estimate of your fertile window based on standard luteal phase averages. Combining calculator estimates with physical symptom tracking or ovulation predictor kits gives the highest precision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between ovulation day and fertile window?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ovulation day is the specific 12-to-24 hour window when an egg is released. Your fertile window spans 6 total days (5 days before ovulation plus ovulation day itself) because sperm can survive up to 5 days inside the female reproductive tract."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate ovulation if I have irregular cycles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Calculating an average cycle length over 3 to 6 months gives a helpful baseline estimate, which can be paired with daily cervical mucus monitoring or LH surge test strips."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When is the best time to take a pregnancy test?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The most reliable time to take a home pregnancy test is 12 to 14 days after ovulation, or on the first day of your missed period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I increase my chances of getting pregnant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Having intercourse every 1 to 2 days during your 6-day fertile window—especially during the 2 days immediately preceding ovulation—gives you the highest probability of successful conception."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an ovulation calculator be used as birth control?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ovulation calculators are designed primarily for pregnancy planning. Relying solely on calendar calculations to prevent pregnancy has a high risk of failure and is not recommended as a primary form of contraception."
+        }
+      }
+    ]
+  }
+  </script>
   
   <style>
     /* Premium Pink Flatpickr Theme - Fixed Width & Perfect Alignment */
@@ -57,6 +149,7 @@
       box-sizing: border-box !important;
       background: #ffffff !important;
       margin-top: 10px !important;
+      z-index: 990 !important;
     }
     .flatpickr-calendar.open {
       animation: popupAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -212,11 +305,11 @@
 <body class="bg-white antialiased min-h-screen flex flex-col justify-between">
 
   <header
-    class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    class="sticky top-0 z-[9999] bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <!-- LOGO (Pink Spirals, Transparent Background, Solid Bold Text Next to It) -->
-      <a href="#" class="flex items-center gap-2">
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
         <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
       </a>
 
@@ -227,7 +320,7 @@
         <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptoms</a>
 
-        <!-- Tools Dropdown -->
+        <!-- Calculators Dropdown -->
         <div class="relative group cursor-pointer">
           <div class="flex items-center gap-1 hover:text-brand-pink transition-colors py-2">
             Calculators <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -239,14 +332,27 @@
         </div>
 
         <a href="index.html#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
-        <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
       </nav>
 
       <!-- CTA BUTTON -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#download"
-          class="px-6 py-2.5 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20 hover:bg-brand-pink/90 hover:shadow-brand-pink/35 transform hover:-translate-y-0.5 transition-all">
-          Download App
+      <!-- STORE CTA BUTTONS -->
+      <div class="hidden md:flex items-center gap-2.5">
+        <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Download on App Store">
+          <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+          </svg>
+          <span>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Get it on Google Play">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+            <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+            <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+            <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+          </svg>
+          <span>Google Play</span>
         </a>
       </div>
 
@@ -262,14 +368,14 @@
     <!-- MOBILE DROPDOWN MENU -->
     <div id="mobile-menu"
       class="hidden md:hidden px-6 pb-6 pt-2 border-t border-brand-pink/10 transition-all duration-300 opacity-0 -translate-y-4">
-      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80">
+      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80 text-sm">
         <a href="index.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Home</a>
         <a href="feature-period-tracker.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Period Tracker</a>
         <a href="feature-ovulation-calendar.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Symptoms</a>
 
         <div class="py-2 border-b border-gray-100">
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
+          <p class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
           <div class="flex flex-col gap-2 pl-2">
             <a href="ovulation-calculator.html" class="hover:text-brand-pink text-sm">Ovulation Calculator</a>
             <a href="due-date-calculator.html" class="hover:text-brand-pink text-sm">Pregnancy Due Date</a>
@@ -277,12 +383,25 @@
         </div>
 
         <a href="index.html#pricing" class="py-2 hover:text-brand-pink border-b border-gray-100">Pricing</a>
-        <a href="faq.html" class="py-2 hover:text-brand-pink border-b border-gray-100">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-brand-pink">Contact</a>
-        <a href="#download"
-          class="mt-2 text-center py-3 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20">
-          Download App
-        </a>
+        <div class="pt-2 grid grid-cols-2 gap-3">
+          <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+            </svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+              <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+              <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+              <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+            </svg>
+            <span>Google Play</span>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -317,20 +436,20 @@
     </section>
 
     <!-- Main Content Section -->
-    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+    <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
       
-      <div class="md:col-span-8 space-y-10">
+      <div class="lg:col-span-8 space-y-10">
         
         <!-- Author / Review Info -->
         <div class="space-y-3">
-          <p class="text-xs font-bold text-gray-500 uppercase">Updated September 2026</p>
+          <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">Updated September 2026</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
-               <i data-lucide="stethoscope" class="w-5 h-5"></i>
+               <i data-lucide="shield-check" class="w-5 h-5"></i>
             </div>
             <p class="text-sm text-brand-gray leading-relaxed">
-              Medically reviewed by <strong class="text-brand-dark">Dr. Jenna Flanagan</strong>, Assistant professor of obstetrics and gynecology.<br>
-              Written by <strong class="text-teal-600">Period Tracker Medical Team</strong>
+              Medically verified content based on standard health guidelines.<br>
+              Written by <strong class="text-brand-dark">Period Tracker Team</strong>
             </p>
           </div>
         </div>
@@ -375,54 +494,115 @@
           
           <!-- Key Takeaways Section with Highlight Box -->
           <div>
-            <h2 id="key-takeaways" class="text-2xl font-bold font-heading text-brand-dark mt-6 mb-4 flex items-center gap-2">
+            <h2 id="key-takeaways" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-6 mb-4 flex items-center gap-2">
                <span>Key Takeaways on Calculating Your Fertile Window</span>
             </h2>
             <p class="leading-relaxed text-brand-dark/80 font-medium">
-              Whether you are actively trying to conceive or simply wanting to gain deeper insights into your reproductive health, pinpointing your fertile window is essential. Our ovulation calculator uses standardized medical algorithms based on your last menstrual period (LMP) and average cycle length to accurately estimate when ovulation is most likely to occur.
+              Whether you are actively trying to conceive (TTC) or simply wanting to gain deeper insights into your hormonal cycle, pinpointing your fertile window is the single most effective step you can take. Our free online ovulation calculator uses standardized gynecological algorithms based on your last menstrual period (LMP) and average cycle length to accurately project when your ovaries are most likely to release a mature egg.
+            </p>
+            <p class="leading-relaxed text-brand-dark/80 font-medium mt-3">
+              Research published in reproductive health journals shows that timing intercourse within the 2 to 3 days preceding ovulation offers the highest probability of pregnancy—reaching up to 30% conception probability per cycle for healthy couples.
             </p>
 
             <!-- Highlight Card -->
             <div class="mt-6 p-6 bg-brand-pink/5 rounded-2xl border border-brand-pink/20 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
               <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
-                <p class="text-xs uppercase tracking-wider font-bold text-brand-pink mb-1">Fertile Window</p>
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Fertile Window</p>
                 <p class="text-xl font-extrabold text-brand-dark">6 Days Total</p>
-                <p class="text-xs text-gray-500 mt-1">5 days before + ovulation day</p>
+                <p class="text-sm text-gray-500 mt-1">5 days before + ovulation day</p>
               </div>
               <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
-                <p class="text-xs uppercase tracking-wider font-bold text-brand-pink mb-1">Peak Fertility</p>
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Peak Fertility</p>
                 <p class="text-xl font-extrabold text-brand-dark">2 Days</p>
-                <p class="text-xs text-gray-500 mt-1">Day before & day of ovulation</p>
+                <p class="text-sm text-gray-500 mt-1">Day before & day of ovulation</p>
               </div>
               <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
-                <p class="text-xs uppercase tracking-wider font-bold text-brand-pink mb-1">Sperm Lifespan</p>
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Sperm Lifespan</p>
                 <p class="text-xl font-extrabold text-brand-dark">Up to 5 Days</p>
-                <p class="text-xs text-gray-500 mt-1">Inside reproductive tract</p>
+                <p class="text-sm text-gray-500 mt-1">Inside reproductive tract</p>
               </div>
             </div>
           </div>
 
           <!-- How Are Fertile Days Calculated -->
           <div>
-            <h2 id="how-calculated" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How Are Your Fertile Days Calculated?</h2>
+            <h2 id="how-calculated" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How Are Your Fertile Days Calculated?</h2>
             <p class="leading-relaxed text-brand-dark/80 mb-4">
-              A standard menstrual cycle is measured from the first day of your period to the first day of your next period. While the textbook average cycle is 28 days, normal cycles in healthy adults can range anywhere from 21 to 35 days.
+              A standard menstrual cycle is measured from the very first day of period bleeding to the day before your next period begins. While textbook medical literature references a 28-day cycle, healthy menstrual cycles in adult women routinely vary between 21 and 35 days.
             </p>
             <p class="leading-relaxed text-brand-dark/80 mb-4">
-              <strong>The Math Behind Ovulation:</strong> In most cases, ovulation occurs approximately 14 days before your next expected period begins (known as the <em>luteal phase</em>). Because sperm can survive in the female reproductive tract for up to 5 days, and an egg lives for 12 to 24 hours after release, your fertile window spans 6 consecutive days:
+              <strong>The Biological Math Behind Ovulation:</strong> The menstrual cycle is divided into two main phases: the <em>follicular phase</em> (before ovulation) and the <em>luteal phase</em> (after ovulation). While the follicular phase can vary in length depending on stress, sleep, and nutrition, the luteal phase remains remarkably constant—lasting approximately 14 days (ranging between 12 and 16 days for most women).
             </p>
-            <ul class="list-disc pl-6 space-y-2 text-brand-dark/80">
-              <li><strong>5 Days Prior to Ovulation:</strong> High fertility window as healthy sperm can wait in the fallopian tubes.</li>
-              <li><strong>Ovulation Day:</strong> Peak fertility day when the egg is released into the fallopian tube.</li>
-              <li><strong>Day After Ovulation:</strong> Fertile window closes as the egg dissolves if unfertilized.</li>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              To calculate your approximate ovulation date, subtract 14 days from your total expected cycle length:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-brand-dark/80 mb-4">
+              <li><strong>28-Day Cycle:</strong> Ovulation typically occurs on <strong>Day 14</strong>. Fertile window: Days 9 through 14.</li>
+              <li><strong>30-Day Cycle:</strong> Ovulation typically occurs on <strong>Day 16</strong>. Fertile window: Days 11 through 16.</li>
+              <li><strong>25-Day Cycle:</strong> Ovulation typically occurs on <strong>Day 11</strong>. Fertile window: Days 6 through 11.</li>
             </ul>
+
+            <!-- Visual Cycle Phase Timeline Bar -->
+            <div class="mt-8 p-6 bg-white rounded-3xl border border-gray-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold font-heading text-brand-dark flex items-center gap-2">
+                  <i data-lucide="clock" class="w-5 h-5 text-brand-pink"></i>
+                  <span>28-Day Cycle Phase Timeline</span>
+                </h3>
+                <span class="text-sm font-bold text-brand-pink bg-brand-pink/10 px-3 py-1 rounded-full">Standard Averages</span>
+              </div>
+
+              <!-- Visual Bar Progress Tracker -->
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-2">
+                <!-- Phase 1 -->
+                <div class="p-4 bg-rose-50 border border-rose-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-rose-600 uppercase tracking-wider">Days 1 – 5</span>
+                    <i data-lucide="droplets" class="w-4 h-4 text-rose-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Menstruation</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Uterine lining sheds; baseline hormone levels.</p>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="p-4 bg-orange-50 border border-orange-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-orange-600 uppercase tracking-wider">Days 6 – 11</span>
+                    <i data-lucide="sprout" class="w-4 h-4 text-orange-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Follicular</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Estrogen rises; follicles mature in ovaries.</p>
+                </div>
+
+                <!-- Phase 3 (Highlight Fertile Window & Ovulation) -->
+                <div class="p-4 bg-gradient-to-br from-brand-pink/15 to-brand-peach/20 border-2 border-brand-pink rounded-2xl relative overflow-hidden shadow-sm">
+                  <span class="absolute top-0 right-0 bg-brand-pink text-white text-sm font-extrabold px-2 py-0.5 rounded-bl-lg uppercase tracking-wider">Peak</span>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-brand-pink uppercase tracking-wider">Days 12 – 16</span>
+                    <i data-lucide="sparkles" class="w-4 h-4 text-brand-pink"></i>
+                  </div>
+                  <p class="font-extrabold text-brand-dark text-sm">Ovulation Window</p>
+                  <p class="text-sm text-gray-700 mt-1 leading-tight font-medium">Egg released; 6-day fertile window closes.</p>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="p-4 bg-purple-50 border border-purple-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-purple-600 uppercase tracking-wider">Days 17 – 28</span>
+                    <i data-lucide="moon" class="w-4 h-4 text-purple-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Luteal Phase</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Progesterone surges; body prepares for cycle.</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Signs of Ovulation -->
           <div>
-            <h2 id="signs-ovulation" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What Are the Physical Signs of Ovulation?</h2>
+            <h2 id="signs-ovulation" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What Are the Physical Signs of Ovulation?</h2>
             <p class="leading-relaxed text-brand-dark/80 mb-4">
-              Tracking physical ovulation symptoms alongside an online calculator provides the highest level of accuracy when trying to conceive:
+              While our online calculator gives you a highly accurate baseline, your body also emits unmistakable biological signals as ovulation approaches. Pairing calendar predictions with real-time physical symptom tracking delivers maximum accuracy when trying to conceive:
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -432,7 +612,7 @@
                 </div>
                 <div>
                   <h4 class="font-bold text-brand-dark text-base mb-1">Cervical Mucus Shifts</h4>
-                  <p class="text-sm text-gray-600 leading-relaxed">As ovulation approaches, discharge becomes clear, wet, slippery, and stretchy—similar to raw egg whites.</p>
+                  <p class="text-sm text-gray-600 leading-relaxed">As estrogen peaks, cervical discharge becomes clear, slippery, and stretchy—resembling raw egg whites. This fertile mucus protects sperm and helps it swim upward.</p>
                 </div>
               </div>
 
@@ -441,8 +621,8 @@
                   <i data-lucide="thermometer" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h4 class="font-bold text-brand-dark text-base mb-1">Basal Body Temp Shift</h4>
-                  <p class="text-sm text-gray-600 leading-relaxed">Your resting body temperature drops slightly right before ovulation and then increases by 0.5°F to 1°F after ovulation.</p>
+                  <h4 class="font-bold text-brand-dark text-base mb-1">Basal Body Temp (BBT) Shift</h4>
+                  <p class="text-sm text-gray-600 leading-relaxed">Progesterone released immediately post-ovulation causes a sustained rise of 0.5°F to 1.0°F in resting body temperature, confirming egg release occurred.</p>
                 </div>
               </div>
 
@@ -452,7 +632,7 @@
                 </div>
                 <div>
                   <h4 class="font-bold text-brand-dark text-base mb-1">Mild Pelvic Pain (Mittelschmerz)</h4>
-                  <p class="text-sm text-gray-600 leading-relaxed">Some women experience a localized twinge or mild cramping on one side of the lower abdomen when the ovary releases an egg.</p>
+                  <p class="text-sm text-gray-600 leading-relaxed">About 20% of women experience a slight twinge, mild ache, or localized cramping on one side of the lower abdomen as the follicle ruptures.</p>
                 </div>
               </div>
 
@@ -462,7 +642,7 @@
                 </div>
                 <div>
                   <h4 class="font-bold text-brand-dark text-base mb-1">LH Surge Detection</h4>
-                  <p class="text-sm text-gray-600 leading-relaxed">Over-the-counter ovulation predictor kits (OPKs) detect a spike in Luteinizing Hormone (LH) 24 to 36 hours prior to egg release.</p>
+                  <p class="text-sm text-gray-600 leading-relaxed">Over-the-counter ovulation predictor kits (OPKs) test urine for a surge in Luteinizing Hormone (LH), which occurs 24 to 36 hours before egg release.</p>
                 </div>
               </div>
             </div>
@@ -470,13 +650,18 @@
 
           <!-- What If You Have Irregular Cycles -->
           <div>
-            <h2 id="irregular-cycles" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What If You Have Irregular Cycles?</h2>
+            <h2 id="irregular-cycles" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">What If You Have Irregular Cycles?</h2>
             <p class="leading-relaxed text-brand-dark/80 mb-4">
-              If your menstrual cycle varies significantly month-to-month (for instance, ranging between 25 and 35 days), mathematical formulas alone may not predict your exact fertile window with 100% precision. 
+              If your period start dates vary considerably from month to month (for instance, spanning anywhere from 24 to 38 days), calendar calculations alone will not guarantee pinpoint precision. Irregularities can stem from natural hormonal fluctuations, polycystic ovary syndrome (PCOS), thyroid imbalances, elevated stress, or recent discontinuation of birth control.
             </p>
             <p class="leading-relaxed text-brand-dark/80 mb-4">
-              For irregular cycles, medical experts recommend combining this calculator with daily symptom logging (cervical mucus & temperature tracking) over a 3-to-6 month period, or using urine-based LH test strips to confirm ovulation.
+              <strong>Best Practices for Irregular Cycles:</strong>
             </p>
+            <ul class="list-disc pl-6 space-y-2 text-brand-dark/80 mb-4">
+              <li><strong>Track Over 3 to 6 Months:</strong> Log your shortest and longest cycles. Calculate your fertile window by subtracting 18 days from your shortest cycle (earliest fertile day) and 11 days from your longest cycle (latest fertile day).</li>
+              <li><strong>Use Digital Period Tracker App:</strong> Automated tracking apps log daily symptoms, BBT readings, and ovulation strip test results to identify individual hormonal patterns over time.</li>
+              <li><strong>Consult a Healthcare Provider:</strong> If your cycles regularly fall under 21 days or exceed 35 days, schedule a consultation with an OB-GYN to assess ovulation health.</li>
+            </ul>
           </div>
 
           <!-- Birth Control Pro-Tip Warning Card -->
@@ -487,36 +672,144 @@
             <div>
               <h4 class="font-bold text-amber-900 text-base mb-1">Important Note on Contraception</h4>
               <p class="text-sm text-amber-800 leading-relaxed">
-                Ovulation calculators are designed to assist with pregnancy planning and tracking. Because sperm survival times and ovulation dates can fluctuate due to stress, travel, or hormonal changes, calendar calculation should <strong>not</strong> be relied upon as a primary method of birth control.
+                Ovulation calculators are designed to assist with pregnancy planning and fertility tracking. Because sperm survival times and ovulation dates can fluctuate due to stress, travel, or hormonal changes, calendar calculation should <strong>not</strong> be relied upon as a primary method of birth control.
               </p>
             </div>
           </div>
 
-          <!-- Frequently Asked Questions -->
+          <!-- Frequently Asked Questions (Theme Sync Accordion Style) -->
           <div>
-            <h2 id="frequently-asked-questions" class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Frequently Asked Questions</h2>
+            <div class="mb-6 space-y-1">
+              <h2 id="frequently-asked-questions" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-1">Frequently Asked Questions</h2>
+              <p class="text-brand-gray text-sm font-medium">Have questions? We've got answers.</p>
+            </div>
             
             <div class="space-y-4">
-              <div class="p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
-                <h4 class="font-bold text-brand-dark text-base mb-2">When is the best time to take a pregnancy test?</h4>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                  The most reliable time to take a home pregnancy test is 12 to 14 days after ovulation, or on the first day of your missed period. Taking a test too early can lead to a false negative due to low hCG hormone levels.
-                </p>
+              <!-- FAQ 1 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">How accurate is an online ovulation calculator?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Online ovulation calculators provide a reliable estimate of your fertile window based on standard luteal phase averages (typically 14 days prior to your next period). However, because stress, travel, or hormone shifts can alter ovulation timing, combining calculator estimates with physical symptom tracking or ovulation predictor kits (OPKs) gives the highest precision.
+                  </div>
+                </div>
               </div>
 
-              <div class="p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
-                <h4 class="font-bold text-brand-dark text-base mb-2">Can you ovulate more than once in a single cycle?</h4>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                  A woman can release multiple eggs during ovulation (which can result in fraternal twins), but all eggs are released within a single 24-hour window during that cycle due to progesterone signals halting further ovulation.
-                </p>
+              <!-- FAQ 2 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">What is the difference between ovulation day and fertile window?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Ovulation day is the specific 12-to-24 hour window when an ovary releases a mature egg. Your fertile window is broader—spanning 6 total days (the 5 days leading up to ovulation plus ovulation day itself)—because healthy sperm can survive inside the female reproductive tract for up to 5 days waiting to fertilize the egg.
+                  </div>
+                </div>
               </div>
 
-              <div class="p-5 bg-white rounded-2xl border border-gray-200 shadow-sm">
-                <h4 class="font-bold text-brand-dark text-base mb-2">How can I increase my chances of getting pregnant?</h4>
-                <p class="text-sm text-gray-600 leading-relaxed">
-                  Having intercourse every 1 to 2 days during your 6-day fertile window—especially during the 2 days immediately preceding ovulation—gives you the highest probability of successful conception.
-                </p>
+              <!-- FAQ 3 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">Can I calculate ovulation if I have irregular cycles?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Yes. If your cycle length varies month-to-month (e.g., between 26 and 34 days), calculating an average over 3 to 6 months gives a helpful baseline estimate. For irregular cycles, we recommend pairing the calculator with daily cervical mucus monitoring or urine-based LH surge test strips.
+                  </div>
+                </div>
               </div>
+
+              <!-- FAQ 4 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">When is the best time to take a pregnancy test?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    The most reliable time to take a home pregnancy test is 12 to 14 days after ovulation, or on the first day of your missed period. Taking a test too early can result in a false negative because hCG hormone levels may not yet be high enough to detect.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">How can I increase my chances of getting pregnant?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Having intercourse every 1 to 2 days during your 6-day fertile window—especially during the 2 days immediately preceding ovulation and on ovulation day itself—gives you the highest probability of successful conception.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">Can an ovulation calculator be used as birth control?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    No. Ovulation calculators are designed primarily for pregnancy planning. Because ovulation timing can fluctuate unexpectedly due to stress, travel, or hormonal shifts, relying solely on calendar calculations to prevent pregnancy has a high risk of failure and is not recommended as a primary form of contraception.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Related Tools & Calculators Section -->
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mb-6 space-y-1">
+              <h2 class="text-2xl font-bold font-heading text-brand-dark flex items-center gap-2">
+                <i data-lucide="layout-grid" class="w-6 h-6 text-brand-pink"></i>
+                <span>Explore Related Health Tools</span>
+              </h2>
+              <p class="text-brand-gray text-sm font-medium">Try our free specialized cycle calculators and tracking features.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Tool Card 1: Due Date Calculator -->
+              <a href="due-date-calculator.html" class="group p-6 bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-pink/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 text-brand-pink flex items-center justify-center transition-transform group-hover:scale-110">
+                    <i data-lucide="heart-pulse" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-brand-dark font-heading group-hover:text-brand-pink transition-colors">Pregnancy Due Date Calculator</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    Calculate your estimated delivery date and track your week-by-week pregnancy milestones.
+                  </p>
+                </div>
+                <div class="mt-5 flex items-center gap-2 text-brand-pink font-bold text-sm">
+                  <span>Calculate Due Date</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </a>
+
+              <!-- Tool Card 2: Symptom Logging -->
+              <a href="feature-symptom-logging.html" class="group p-6 bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-pink/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 text-brand-pink flex items-center justify-center transition-transform group-hover:scale-110">
+                    <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-brand-dark font-heading group-hover:text-brand-pink transition-colors">Symptom & Mood Tracker</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    Log PMS symptoms, cramps, basal body temp, and mood shifts to predict cycle patterns.
+                  </p>
+                </div>
+                <div class="mt-5 flex items-center gap-2 text-brand-pink font-bold text-sm">
+                  <span>Explore Symptom Tracker</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -525,30 +818,63 @@
       </div>
       
       <!-- Right Sidebar -->
-      <div class="md:col-span-4 sticky top-28 space-y-8">
+      <div class="lg:col-span-4 sticky top-28 space-y-6">
+        
+        <!-- IN THIS ARTICLE Sidebar Navigation Widget -->
+        <div class="p-6 bg-brand-pink/5 rounded-3xl border border-brand-pink/15 space-y-3">
+          <p class="text-xs font-bold text-brand-dark uppercase tracking-widest font-heading flex items-center gap-2">
+            <i data-lucide="list-tree" class="w-4 h-4 text-brand-pink"></i>
+            <span>IN THIS ARTICLE</span>
+          </p>
+          <nav class="flex flex-col space-y-2.5 text-sm font-medium text-brand-gray">
+            <a href="#key-takeaways" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Key takeaways on fertile window</span>
+            </a>
+            <a href="#how-calculated" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>How fertile days are calculated</span>
+            </a>
+            <a href="#signs-ovulation" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Physical signs of ovulation</span>
+            </a>
+            <a href="#irregular-cycles" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Irregular cycles guide</span>
+            </a>
+            <a href="#frequently-asked-questions" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Frequently asked questions</span>
+            </a>
+          </nav>
+        </div>
+
         <div class="bg-brand-pink text-white p-8 rounded-3xl shadow-xl shadow-brand-pink/20 text-center space-y-4">
-          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i data-lucide="smartphone" class="w-7 h-7"></i>
+          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
+            <i data-lucide="smartphone" class="w-7 h-7 text-white"></i>
           </div>
-          <h3 class="font-bold font-heading text-xl">Track Daily in App</h3>
-          <p class="text-sm text-white/90 leading-relaxed">
+          <h3 class="font-bold font-heading text-2xl text-white">Track Daily in App</h3>
+          <p class="text-sm text-white font-medium leading-relaxed opacity-100">
             Take the guesswork out of your cycle. Log symptoms and get daily predictions on your phone.
           </p>
           
-        <!-- Store Download Buttons -->
-        <div class="space-y-2.5 pt-2">
-          <p class="text-[11px] font-extrabold text-center text-brand-dark/60 uppercase tracking-widest">Track Daily in Our Free App</p>
-          <div class="grid grid-cols-2 gap-3">
-            <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-black text-white hover:bg-gray-900 transition-all text-xs font-bold shadow-md hover:-translate-y-0.5">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8"/><path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000"/><path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44"/><path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/></svg>
-              <span>Google Play</span>
-            </a>
-            <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-black text-white hover:bg-gray-900 transition-all text-xs font-bold shadow-md hover:-translate-y-0.5">
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/></svg>
-              <span>App Store</span>
-            </a>
+          <!-- Store Download Buttons -->
+          <div class="space-y-3 pt-2">
+            <p class="text-sm font-extrabold text-center text-white/90 uppercase tracking-widest">TRACK DAILY IN OUR FREE APP</p>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-black text-white hover:bg-gray-900 transition-all text-sm font-bold shadow-md hover:-translate-y-0.5 border border-white/10">
+                <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8"/><path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000"/><path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44"/><path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/></svg>
+                <span>Google Play</span>
+              </a>
+              <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-black text-white hover:bg-gray-900 transition-all text-sm font-bold shadow-md hover:-translate-y-0.5 border border-white/10">
+                <svg class="w-4 h-4 fill-white flex-shrink-0" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/></svg>
+                <span>App Store</span>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
         </div>
       </div>
@@ -621,18 +947,26 @@
       <!-- Top Tier: Logo, Navigation, Socials -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
         <!-- Logo -->
-        <a href="#" class="opacity-90 hover:opacity-100 transition-opacity">
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
           <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
         </a>
 
         <!-- Center navigation -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
-          <a href="#" class="hover:text-brand-pink transition-colors">Home</a>
-          <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Period Tracker</a><a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Ovulation Calendar</a><a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Symptom Logging</a><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
-          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
-          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
-          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        <div class="flex flex-col items-center gap-3 text-sm font-semibold text-brand-gray">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+            <a href="features.html" class="hover:text-brand-pink transition-colors">Features</a>
+            <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors">Period Tracker</a>
+            <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Calendar</a>
+            <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptom Logging</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+            <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+            <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+            <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+          </div>
         </div>
 
         <!-- Right socials -->
@@ -679,16 +1013,22 @@
         });
       }
 
-      // Initialize Flatpickr
+      // Initialize Flatpickr with default date
       picker = flatpickr("#calc-last-period", {
-      dateFormat: "d/m/Y",
-      maxDate: "today",
-      disableMobile: true,
-      allowInput: false,
-      clickOpens: true,
-      position: "below",
-      monthSelectorType: "static"
-    });
+        dateFormat: "d/m/Y",
+        defaultDate: "today",
+        maxDate: "today",
+        disableMobile: true,
+        allowInput: false,
+        clickOpens: true,
+        position: "below",
+        monthSelectorType: "static"
+      });
+
+      // Keyboard Escape listener to close modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
     });
 
     function calculateOvulation() {
@@ -712,7 +1052,22 @@
       const options = { month: 'short', day: 'numeric' };
       const yearOptions = { year: 'numeric', month: 'long', day: 'numeric' };
 
-      const cycleLength = parseInt(document.getElementById("calc-cycle-length").value) || 28; const nextPeriodDate = new Date(periodDate); nextPeriodDate.setDate(periodDate.getDate() + cycleLength); const ovulationDate = new Date(nextPeriodDate); ovulationDate.setDate(nextPeriodDate.getDate() - 14); const fertileStart = new Date(ovulationDate); fertileStart.setDate(ovulationDate.getDate() - 5); const fertileEnd = new Date(ovulationDate); fertileEnd.setDate(ovulationDate.getDate() + 1); document.getElementById("result-ovulation").textContent = ovulationDate.toLocaleDateString("en-US", yearOptions); document.getElementById("result-fertile").textContent = fertileStart.toLocaleDateString("en-US", yearOptions) + " — " + fertileEnd.toLocaleDateString("en-US", yearOptions); document.getElementById("result-next-period").textContent = nextPeriodDate.toLocaleDateString("en-US", yearOptions);
+      const cycleLength = parseInt(document.getElementById("calc-cycle-length").value) || 28;
+      const nextPeriodDate = new Date(periodDate);
+      nextPeriodDate.setDate(periodDate.getDate() + cycleLength);
+      
+      const ovulationDate = new Date(nextPeriodDate);
+      ovulationDate.setDate(nextPeriodDate.getDate() - 14);
+      
+      const fertileStart = new Date(ovulationDate);
+      fertileStart.setDate(ovulationDate.getDate() - 5);
+      
+      const fertileEnd = new Date(ovulationDate);
+      fertileEnd.setDate(ovulationDate.getDate() + 1);
+
+      document.getElementById("result-ovulation").textContent = ovulationDate.toLocaleDateString("en-US", yearOptions);
+      document.getElementById("result-fertile").textContent = fertileStart.toLocaleDateString("en-US", options) + " — " + fertileEnd.toLocaleDateString("en-US", yearOptions);
+      document.getElementById("result-next-period").textContent = nextPeriodDate.toLocaleDateString("en-US", yearOptions);
 
       // Show modal
       const modal = document.getElementById('result-modal');
@@ -727,6 +1082,30 @@
       modal.classList.add('hidden');
       modal.classList.remove('show');
       document.body.style.overflow = '';
+    }
+
+    function toggleFaq(button) {
+      const parentItem = button.closest('.faq-item');
+      const content = parentItem.querySelector('.faq-content');
+      const icon = button.querySelector('[data-lucide], .faq-icon');
+
+      const isActive = parentItem.classList.contains('active');
+
+      // Close all other active items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        const itemContent = item.querySelector('.faq-content');
+        const itemIcon = item.querySelector('[data-lucide], .faq-icon');
+        if (itemContent) itemContent.style.maxHeight = '0px';
+        if (itemIcon) itemIcon.style.transform = 'rotate(0deg)';
+      });
+
+      // Toggle current item
+      if (!isActive) {
+        parentItem.classList.add('active');
+        if (content) content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
     }
   </script>
 </body>

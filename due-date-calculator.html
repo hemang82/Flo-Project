@@ -4,8 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="favicon.png?v=4">
-  <title>Pregnancy Due Date Calculator | Period Tracker Ovulation Cycle</title>
-  <meta name="description" content="Calculate your estimated pregnancy due date instantly.">
+  <title>Free Pregnancy Due Date Calculator: Estimate Your Baby's Arrival</title>
+  <meta name="description" content="Calculate your estimated pregnancy due date instantly with our free online due date calculator. Track trimesters, pregnancy weeks, and baby milestones.">
+  <meta name="keywords" content="Period Tracker Ovulation Cycle, pregnancy due date calculator, estimated due date, due date calculator, pregnancy calculator, pregnancy weeks, trimester timeline">
+  <meta name="author" content="Tracewave Transparency PVT LTD">
+  <link rel="canonical" href="https://periodtrackerovulationcycle.com/due-date-calculator.html">
+  
+  <!-- Open Graph / Facebook SEO -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Period Tracker Ovulation Cycle">
+  <meta property="og:url" content="https://periodtrackerovulationcycle.com/due-date-calculator.html">
+  <meta property="og:title" content="Free Pregnancy Due Date Calculator: Estimate Your Baby's Arrival">
+  <meta property="og:description" content="Calculate your estimated pregnancy due date instantly with our free online due date calculator. Track trimesters, pregnancy weeks, and baby milestones.">
+  <meta property="og:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
+
+  <!-- Twitter SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://periodtrackerovulationcycle.com/due-date-calculator.html">
+  <meta name="twitter:title" content="Free Pregnancy Due Date Calculator: Estimate Your Baby's Arrival">
+  <meta name="twitter:description" content="Calculate your estimated pregnancy due date instantly with our free online due date calculator.">
+  <meta name="twitter:image" content="https://periodtrackerovulationcycle.com/brand-logo-final.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +61,57 @@
   <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-  
+  <!-- SEO Schema Markup (WebApplication Schema for Google Calculator Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pregnancy Due Date Calculator",
+    "url": "https://tracewavetransparency.com/due-date-calculator.html",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Calculate your estimated pregnancy due date and trimester timeline instantly with our free online due date calculator."
+  }
+  </script>
+
+  <!-- SEO Schema Markup (FAQPage Schema for Rich Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How accurate is a pregnancy due date calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Online due date calculators provide a highly reliable baseline calculation by adding 280 days (40 weeks) to the first day of your last menstrual period (LMP). While about 5% of babies arrive on their exact due date, most healthy babies are born within a 2-week window before or after."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Naegele's Rule?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Naegele's Rule is the standard clinical method used by obstetricians to calculate a pregnancy due date: subtract 3 months from the first day of your last menstrual period and add 7 days plus 1 year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why might my doctor change my estimated due date?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your healthcare provider may adjust your due date based on a first-trimester ultrasound dating scan, which measures the embryo's crown-rump length (CRL) for clinical accuracy."
+        }
+      }
+    ]
+  }
+  </script>
   
   <style>
     /* Premium Pink Flatpickr Theme - Fixed Width & Perfect Alignment */
@@ -57,6 +125,7 @@
       box-sizing: border-box !important;
       background: #ffffff !important;
       margin-top: 10px !important;
+      z-index: 990 !important;
     }
     .flatpickr-calendar.open {
       animation: popupAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -212,11 +281,11 @@
 <body class="bg-white antialiased min-h-screen flex flex-col justify-between">
 
   <header
-    class="sticky top-0 z-50 bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
+    class="sticky top-0 z-[9999] bg-brand-accent/80 backdrop-blur-md border-b border-brand-pink/10 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-      <!-- LOGO (Pink Spirals, Transparent Background, Solid Bold Text Next to It) -->
-      <a href="#" class="flex items-center gap-2">
+      <!-- LOGO -->
+      <a href="index.html" class="flex items-center gap-2">
         <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
       </a>
 
@@ -227,7 +296,7 @@
         <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptoms</a>
 
-        <!-- Tools Dropdown -->
+        <!-- Calculators Dropdown -->
         <div class="relative group cursor-pointer">
           <div class="flex items-center gap-1 hover:text-brand-pink transition-colors py-2">
             Calculators <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -239,14 +308,27 @@
         </div>
 
         <a href="index.html#pricing" class="hover:text-brand-pink transition-colors">Pricing</a>
-        <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
       </nav>
 
       <!-- CTA BUTTON -->
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#download"
-          class="px-6 py-2.5 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20 hover:bg-brand-pink/90 hover:shadow-brand-pink/35 transform hover:-translate-y-0.5 transition-all">
-          Download App
+      <!-- STORE CTA BUTTONS -->
+      <div class="hidden md:flex items-center gap-2.5">
+        <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Download on App Store">
+          <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+          </svg>
+          <span>App Store</span>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+          class="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-black text-white hover:bg-black/90 transition-all shadow-md hover:shadow-lg text-xs font-semibold transform hover:-translate-y-0.5" aria-label="Get it on Google Play">
+          <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+            <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+            <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+            <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+          </svg>
+          <span>Google Play</span>
         </a>
       </div>
 
@@ -262,14 +344,14 @@
     <!-- MOBILE DROPDOWN MENU -->
     <div id="mobile-menu"
       class="hidden md:hidden px-6 pb-6 pt-2 border-t border-brand-pink/10 transition-all duration-300 opacity-0 -translate-y-4">
-      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80">
+      <nav class="flex flex-col gap-4 font-medium text-brand-dark/80 text-sm">
         <a href="index.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Home</a>
         <a href="feature-period-tracker.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Period Tracker</a>
         <a href="feature-ovulation-calendar.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Ovulation Cycle</a>
         <a href="feature-symptom-logging.html" class="py-2 hover:text-brand-pink border-b border-gray-100">Symptoms</a>
 
         <div class="py-2 border-b border-gray-100">
-          <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
+          <p class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">Calculators</p>
           <div class="flex flex-col gap-2 pl-2">
             <a href="ovulation-calculator.html" class="hover:text-brand-pink text-sm">Ovulation Calculator</a>
             <a href="due-date-calculator.html" class="hover:text-brand-pink text-sm">Pregnancy Due Date</a>
@@ -277,12 +359,25 @@
         </div>
 
         <a href="index.html#pricing" class="py-2 hover:text-brand-pink border-b border-gray-100">Pricing</a>
-        <a href="faq.html" class="py-2 hover:text-brand-pink border-b border-gray-100">FAQs</a>
-        <a href="contact.html" class="py-2 hover:text-brand-pink">Contact</a>
-        <a href="#download"
-          class="mt-2 text-center py-3 rounded-full bg-brand-pink text-white font-semibold shadow-lg shadow-brand-pink/20">
-          Download App
-        </a>
+        <div class="pt-2 grid grid-cols-2 gap-3">
+          <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 fill-white shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z" />
+            </svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 py-2.5 rounded-xl bg-black text-white text-xs font-semibold shadow-md">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8" />
+              <path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000" />
+              <path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44" />
+              <path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676" />
+            </svg>
+            <span>Google Play</span>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -317,20 +412,20 @@
     </section>
 
     <!-- Main Content Section -->
-    <section class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+    <section class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
       
-      <div class="md:col-span-8 space-y-10">
+      <div class="lg:col-span-8 space-y-10">
         
         <!-- Author / Review Info -->
         <div class="space-y-3">
-          <p class="text-xs font-bold text-gray-500 uppercase">Updated September 2026</p>
+          <p class="text-sm font-bold text-gray-500 uppercase tracking-wider">Updated September 2026</p>
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-brand-pink/10 flex items-center justify-center text-brand-pink flex-shrink-0">
-               <i data-lucide="stethoscope" class="w-5 h-5"></i>
+               <i data-lucide="shield-check" class="w-5 h-5"></i>
             </div>
             <p class="text-sm text-brand-gray leading-relaxed">
-              Medically reviewed by <strong class="text-brand-dark">Dr. Jenna Flanagan</strong>, Assistant professor of obstetrics and gynecology.<br>
-              Written by <strong class="text-teal-600">Period Tracker Medical Team</strong>
+              Medically verified content based on standard health guidelines.<br>
+              Written by <strong class="text-brand-dark">Period Tracker Team</strong>
             </p>
           </div>
         </div>
@@ -371,37 +466,334 @@
         </div>
 
         <!-- SEO Article Content -->
-        <div class="prose prose-pink max-w-none text-brand-dark/85 font-body">
-          <h2 class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How is your due date calculated?</h2><p>The most common way to calculate your pregnancy due date is by taking the first day of your last normal menstrual period (LMP) and adding 280 days (40 weeks).</p><h2 class="text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Can your due date change?</h2><p>Yes! Only about 5% of babies are born on their exact due date. Most babies arrive between 37 and 42 weeks of pregnancy. An early ultrasound is the most accurate way to date a pregnancy.</p>
+        <div class="prose prose-pink max-w-none text-brand-dark/85 font-body space-y-8">
+
+          <!-- Key Takeaways Section -->
+          <div>
+            <h2 id="key-takeaways" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-6 mb-4">Understanding Your Pregnancy Due Date</h2>
+            <p class="leading-relaxed text-brand-dark/80 font-medium">
+              Discovering you are pregnant marks the beginning of an extraordinary 40-week journey. Our free online pregnancy due date calculator estimates your expected date of delivery (EDD) based on Naegele's Rule—the clinical gold standard method recognized by the American College of Obstetricians and Gynecologists (ACOG).
+            </p>
+            <p class="leading-relaxed text-brand-dark/80 font-medium mt-3">
+              Calculating your EDD early helps healthcare providers track fetal development milestones, schedule critical prenatal screening tests (such as first-trimester screening and anatomy scans), and monitor your baby's growth timeline accurately.
+            </p>
+
+            <!-- Highlight Card -->
+            <div class="mt-6 p-6 bg-brand-pink/5 rounded-2xl border border-brand-pink/20 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Total Gestation</p>
+                <p class="text-xl font-extrabold text-brand-dark">280 Days</p>
+                <p class="text-sm text-gray-500 mt-1">40 full weeks from LMP</p>
+              </div>
+              <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Conception Window</p>
+                <p class="text-xl font-extrabold text-brand-dark">~Week 2</p>
+                <p class="text-sm text-gray-500 mt-1">Approx. 14 days after LMP</p>
+              </div>
+              <div class="p-3 bg-white rounded-xl shadow-sm border border-brand-pink/10">
+                <p class="text-sm uppercase tracking-wider font-bold text-brand-pink mb-1">Full Term Birth</p>
+                <p class="text-xl font-extrabold text-brand-dark">37 – 42 Weeks</p>
+                <p class="text-sm text-gray-500 mt-1">Normal delivery window</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- How Due Date is Calculated -->
+          <div>
+            <h2 id="how-calculated" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">How Is Your Pregnancy Due Date Calculated?</h2>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              Obstetric pregnancy timeline is officially measured from the <strong>first day of your last menstrual period (LMP)</strong>, rather than the exact day conception occurs. Because ovulation typically happens 14 days into a standard 28-day cycle, you are technically considered 2 weeks pregnant at the moment of fertilization!
+            </p>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              <strong>The Formula Behind Naegele's Rule:</strong>
+            </p>
+            <div class="p-4 bg-gray-50 rounded-2xl border border-gray-200 font-mono text-sm text-brand-dark mb-4 space-y-1">
+              <p><strong>EDD Formula:</strong> [First Day of Last Period] + 7 Days - 3 Months + 1 Year</p>
+              <p class="text-sm text-gray-500 font-sans mt-1">Example: LMP of May 10th → Add 7 days (May 17th) → Subtract 3 months = <strong>February 17th</strong> of the following year.</p>
+            </div>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              If your average cycle length is shorter or longer than 28 days, our calculator automatically adjusts the calculation by adding or subtracting the variance to maintain clinical precision.
+            </p>
+            
+            <!-- Visual Pregnancy Trimester Timeline Bar -->
+            <div class="mt-8 p-6 bg-white rounded-3xl border border-gray-200 shadow-sm space-y-4">
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-bold font-heading text-brand-dark flex items-center gap-2">
+                  <i data-lucide="baby" class="w-5 h-5 text-brand-pink"></i>
+                  <span>Pregnancy Trimester Timeline</span>
+                </h3>
+                <span class="text-sm font-bold text-brand-pink bg-brand-pink/10 px-3 py-1 rounded-full">40 Weeks Total</span>
+              </div>
+
+              <!-- Visual Bar Progress Tracker -->
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-2">
+                <!-- Trimester 1 -->
+                <div class="p-4 bg-rose-50 border border-rose-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-rose-600 uppercase tracking-wider">Weeks 1 – 12</span>
+                    <i data-lucide="flower2" class="w-4 h-4 text-rose-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Trimester 1</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Implantation, heartbeat & early embryo development.</p>
+                </div>
+
+                <!-- Trimester 2 -->
+                <div class="p-4 bg-orange-50 border border-orange-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-orange-600 uppercase tracking-wider">Weeks 13 – 27</span>
+                    <i data-lucide="heart" class="w-4 h-4 text-orange-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Trimester 2</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Rapid growth, gender scan & baby movements felt.</p>
+                </div>
+
+                <!-- Trimester 3 -->
+                <div class="p-4 bg-purple-50 border border-purple-100 rounded-2xl relative overflow-hidden">
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-sm font-extrabold text-purple-600 uppercase tracking-wider">Weeks 28 – 40</span>
+                    <i data-lucide="shield" class="w-4 h-4 text-purple-500"></i>
+                  </div>
+                  <p class="font-bold text-brand-dark text-sm">Trimester 3</p>
+                  <p class="text-sm text-gray-500 mt-1 leading-tight">Final weight gain, lung maturity & birth prep.</p>
+                </div>
+
+                <!-- Due Date Arrival -->
+                <div class="p-4 bg-gradient-to-br from-brand-pink/15 to-brand-peach/20 border-2 border-brand-pink rounded-2xl relative overflow-hidden shadow-sm">
+                  <span class="absolute top-0 right-0 bg-brand-pink text-white text-sm font-extrabold px-2 py-0.5 rounded-bl-lg uppercase tracking-wider">Arrival</span>
+                  <div class="flex justify-between items-center mb-1">
+                    <span class="text-xs font-extrabold text-brand-pink uppercase tracking-wider">Week 40</span>
+                    <i data-lucide="sparkles" class="w-4 h-4 text-brand-pink"></i>
+                  </div>
+                  <p class="font-extrabold text-brand-dark text-sm">Estimated Due Date</p>
+                  <p class="text-[11px] text-gray-700 mt-1 leading-tight font-medium">Your expected delivery arrival date.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Can Due Date Change Section -->
+          <div>
+            <h2 id="due-date-change" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-4">Can Your Due Date Change?</h2>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              Yes, it is very common! In fact, clinical research shows that only about <strong>5% of babies</strong> arrive on their exact calculated due date. Most healthy full-term deliveries take place between 37 weeks (early term) and 42 weeks (late term).
+            </p>
+            <p class="leading-relaxed text-brand-dark/80 mb-4">
+              <strong>Reasons Your Healthcare Provider May Adjust Your EDD:</strong>
+            </p>
+            <ul class="list-disc pl-6 space-y-2 text-brand-dark/80 mb-4">
+              <li><strong>Early Ultrasound Dating Scan:</strong> During your first-trimester ultrasound scan (typically performed between weeks 8 and 13), your doctor measures the crown-rump length (CRL). If the scan date differs by more than 5 to 7 days from your LMP estimate, the ultrasound date becomes your official clinical due date.</li>
+              <li><strong>Irregular Menstrual Cycles:</strong> If you experienced delayed ovulation or irregular period timing before conceiving, calendar formulas based on period start date may over- or under-estimate fetal age.</li>
+              <li><strong>Fundal Height & Milestone Observations:</strong> Abnormal fundal height measurements or early ultrasound anatomical findings may warrant timeline recalibration.</li>
+            </ul>
+          </div>
+
+          <!-- Important Healthcare Note -->
+          <div class="p-6 bg-brand-pink/5 rounded-2xl border border-brand-pink/20 flex gap-4 items-start">
+            <div class="w-10 h-10 rounded-xl bg-brand-pink/10 text-brand-pink flex items-center justify-center flex-shrink-0 mt-0.5">
+              <i data-lucide="stethoscope" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-brand-dark text-base mb-1">Clinical Dating Scan Advice</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                Online calculations are standard biological estimations. Always confirm your clinical pregnancy timeline with your obstetrician or midwife during your routine prenatal appointments.
+              </p>
+            </div>
+          </div>
+
+          <!-- Pregnancy FAQs Section -->
+          <div>
+            <div class="mb-6 space-y-1">
+              <h2 id="frequently-asked-questions" class="scroll-mt-24 text-2xl font-bold font-heading text-brand-dark mt-8 mb-1">Frequently Asked Questions</h2>
+              <p class="text-brand-gray text-sm font-medium">Have questions about your pregnancy due date? We've got answers.</p>
+            </div>
+            
+            <div class="space-y-4">
+              <!-- FAQ 1 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">How accurate is a pregnancy due date calculator?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Online due date calculators provide a highly reliable baseline calculation by adding 280 days (40 weeks) to the first day of your last menstrual period (LMP). While about 5% of babies arrive on their exact due date, most healthy babies are born within a 2-week window before or after.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">What is Naegele's Rule?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Naegele's Rule is the standard clinical method used by obstetricians to calculate a pregnancy due date: subtract 3 months from the first day of your last menstrual period and add 7 days plus 1 year.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">Why might my doctor change my estimated due date?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Your healthcare provider may adjust your due date based on a first-trimester ultrasound dating scan, which measures the embryo's crown-rump length (CRL) for clinical accuracy.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">What is considered a full-term pregnancy?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    A full-term pregnancy is defined as delivery between 39 weeks and 40 weeks, 6 days. Babies born between 37 and 38 weeks are considered early term, while those born at 41 weeks are late term.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">Can I calculate my due date if I have irregular cycles?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    If your menstrual cycle is longer or shorter than 28 days, entering your average cycle length adjusts the calculation. An early ultrasound scan is the most precise way to confirm due dates for irregular cycles.
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ 6 -->
+              <div class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm transition-all duration-300">
+                <button type="button" class="faq-trigger w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none" onclick="toggleFaq(this)">
+                  <span class="font-bold text-brand-dark text-base sm:text-lg font-heading">How are pregnancy weeks and trimesters calculated?</span>
+                  <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-brand-gray transition-transform duration-300 flex-shrink-0"></i>
+                </button>
+                <div class="faq-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                  <div class="px-6 pb-6 text-sm sm:text-base text-brand-gray leading-relaxed border-t border-gray-50 pt-3">
+                    Pregnancy is divided into three trimesters: First Trimester (Weeks 1 to 12), Second Trimester (Weeks 13 to 27), and Third Trimester (Weeks 28 to 40+).
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Related Tools & Calculators Section -->
+          <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="mb-6 space-y-1">
+              <h2 class="text-2xl font-bold font-heading text-brand-dark flex items-center gap-2">
+                <i data-lucide="layout-grid" class="w-6 h-6 text-brand-pink"></i>
+                <span>Explore Related Health Tools</span>
+              </h2>
+              <p class="text-brand-gray text-sm font-medium">Try our free specialized cycle calculators and tracking features.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <!-- Tool Card 1: Ovulation Calculator -->
+              <a href="ovulation-calculator.html" class="group p-6 bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-pink/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 text-brand-pink flex items-center justify-center transition-transform group-hover:scale-110">
+                    <i data-lucide="calendar-heart" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-brand-dark font-heading group-hover:text-brand-pink transition-colors">Ovulation Calculator</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    Determine your 6-day fertile window and peak ovulation days to increase conception chances.
+                  </p>
+                </div>
+                <div class="mt-5 flex items-center gap-2 text-brand-pink font-bold text-sm">
+                  <span>Calculate Fertile Window</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </a>
+
+              <!-- Tool Card 2: Symptom Logging -->
+              <a href="feature-symptom-logging.html" class="group p-6 bg-white rounded-3xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-pink/40 transition-all duration-300 flex flex-col justify-between">
+                <div class="space-y-3">
+                  <div class="w-12 h-12 rounded-2xl bg-brand-pink/10 text-brand-pink flex items-center justify-center transition-transform group-hover:scale-110">
+                    <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                  </div>
+                  <h3 class="text-lg font-bold text-brand-dark font-heading group-hover:text-brand-pink transition-colors">Symptom & Mood Tracker</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">
+                    Log PMS symptoms, cramps, basal body temp, and mood shifts to predict cycle patterns.
+                  </p>
+                </div>
+                <div class="mt-5 flex items-center gap-2 text-brand-pink font-bold text-sm">
+                  <span>Explore Symptom Tracker</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                </div>
+              </a>
+            </div>
+          </div>
+
         </div>
 
       </div>
       
       <!-- Right Sidebar -->
-      <div class="md:col-span-4 sticky top-28 space-y-8">
+      <div class="lg:col-span-4 sticky top-28 space-y-6">
+        
+        <!-- IN THIS ARTICLE Sidebar Navigation Widget -->
+        <div class="p-6 bg-brand-pink/5 rounded-3xl border border-brand-pink/15 space-y-3">
+          <p class="text-xs font-bold text-brand-dark uppercase tracking-widest font-heading flex items-center gap-2">
+            <i data-lucide="list-tree" class="w-4 h-4 text-brand-pink"></i>
+            <span>IN THIS ARTICLE</span>
+          </p>
+          <nav class="flex flex-col space-y-2.5 text-sm font-medium text-brand-gray">
+            <a href="#key-takeaways" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Understanding pregnancy due date</span>
+            </a>
+            <a href="#how-calculated" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>How due date is calculated</span>
+            </a>
+            <a href="#due-date-change" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Can your due date change?</span>
+            </a>
+            <a href="#frequently-asked-questions" class="hover:text-brand-pink transition-colors flex items-center gap-2 group">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-pink/60 group-hover:bg-brand-pink flex-shrink-0 transition-colors"></span>
+              <span>Frequently asked questions</span>
+            </a>
+          </nav>
+        </div>
+
         <div class="bg-brand-pink text-white p-8 rounded-3xl shadow-xl shadow-brand-pink/20 text-center space-y-4">
-          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i data-lucide="smartphone" class="w-7 h-7"></i>
+          <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-2 text-white">
+            <i data-lucide="smartphone" class="w-7 h-7 text-white"></i>
           </div>
-          <h3 class="font-bold font-heading text-xl">Track Daily in App</h3>
-          <p class="text-sm text-white/90 leading-relaxed">
+          <h3 class="font-bold font-heading text-2xl text-white">Track Daily in App</h3>
+          <p class="text-sm text-white font-medium leading-relaxed opacity-100">
             Take the guesswork out of your cycle. Log symptoms and get daily predictions on your phone.
           </p>
           
-        <!-- Store Download Buttons -->
-        <div class="space-y-2.5 pt-2">
-          <p class="text-[11px] font-extrabold text-center text-brand-dark/60 uppercase tracking-widest">Track Daily in Our Free App</p>
-          <div class="grid grid-cols-2 gap-3">
-            <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-black text-white hover:bg-gray-900 transition-all text-xs font-bold shadow-md hover:-translate-y-0.5">
-              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8"/><path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000"/><path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44"/><path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/></svg>
-              <span>Google Play</span>
-            </a>
-            <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-black text-white hover:bg-gray-900 transition-all text-xs font-bold shadow-md hover:-translate-y-0.5">
-              <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/></svg>
-              <span>App Store</span>
-            </a>
+          <!-- Store Download Buttons -->
+          <div class="space-y-3 pt-2">
+            <p class="text-sm font-extrabold text-center text-white/90 uppercase tracking-widest">TRACK DAILY IN OUR FREE APP</p>
+            <div class="grid grid-cols-2 gap-3">
+              <a href="https://play.google.com/store/apps/details?id=com.tracewave.period" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-black text-white hover:bg-gray-900 transition-all text-sm font-bold shadow-md hover:-translate-y-0.5 border border-white/10">
+                <svg class="w-4 h-4 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M3.25 1.413c-.155.156-.25.378-.25.68v19.814c0 .302.095.524.25.68l.056.056L14.39 11.56V11.4L3.306 1.357l-.056.056z" fill="#00DFB8"/><path d="M18.02 7.77L14.39 11.4V11.56L18.02 15.19L18.09 15.15L22.34 12.73C23.55 12.04 23.55 10.92 22.34 10.23L18.09 7.81L18.02 7.77Z" fill="#FFE000"/><path d="M14.39 11.56L3.306 22.643C3.656 23.003 4.226 23.033 4.866 22.673L18.02 15.19L14.39 11.56Z" fill="#FF3A44"/><path d="M14.39 11.4L18.02 7.77L4.866 0.287C4.226 -.073 3.656 -.043 3.306.317L14.39 11.4Z" fill="#00E676"/></svg>
+                <span>Google Play</span>
+              </a>
+              <a href="https://apps.apple.com/app/id6774117828" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 py-3 px-3 rounded-2xl bg-black text-white hover:bg-gray-900 transition-all text-sm font-bold shadow-md hover:-translate-y-0.5 border border-white/10">
+                <svg class="w-4 h-4 fill-white flex-shrink-0" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.5-1.34.05-1.77-.76-3.29-.76-1.53 0-2 .76-3.28.81-1.3.05-2.29-1.28-3.13-2.49C4.25 17.08 2.94 12.5 4.7 9.45c.87-1.52 2.44-2.48 4.15-2.51 1.3-.02 2.52.88 3.32.88.8 0 2.27-1.07 3.83-.91.65.03 2.49.27 3.68 2.01-.1.06-2.08 1.21-2.06 3.58.03 2.84 2.46 3.79 2.48 3.8-.02.07-.4 1.36-1.39 3.2zM15.97 4.17c.66-.8 1.1-1.89.98-3.17-1.1.04-2.44.73-3.22 1.64-.66.77-1.24 1.88-1.09 3.14 1.23.09 2.48-.61 3.33-1.61z"/></svg>
+                <span>App Store</span>
+              </a>
+            </div>
           </div>
         </div>
+      </div>
 
         </div>
       </div>
@@ -474,18 +866,26 @@
       <!-- Top Tier: Logo, Navigation, Socials -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-pink/10">
         <!-- Logo -->
-        <a href="#" class="opacity-90 hover:opacity-100 transition-opacity">
+        <a href="index.html" class="opacity-90 hover:opacity-100 transition-opacity">
           <img src="brand-logo-final.png" alt="Period Tracker Ovulation Cycle Logo" class="h-11 w-auto">
         </a>
 
         <!-- Center navigation -->
-        <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-brand-gray">
-          <a href="#" class="hover:text-brand-pink transition-colors">Home</a>
-          <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Period Tracker</a><a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Ovulation Calendar</a><a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors text-brand-dark/90">Symptom Logging</a><a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
-          <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
-          <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
-          <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
-          <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+        <div class="flex flex-col items-center gap-3 text-sm font-semibold text-brand-gray">
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="index.html" class="hover:text-brand-pink transition-colors">Home</a>
+            <a href="features.html" class="hover:text-brand-pink transition-colors">Features</a>
+            <a href="feature-period-tracker.html" class="hover:text-brand-pink transition-colors">Period Tracker</a>
+            <a href="feature-ovulation-calendar.html" class="hover:text-brand-pink transition-colors">Ovulation Calendar</a>
+            <a href="feature-symptom-logging.html" class="hover:text-brand-pink transition-colors">Symptom Logging</a>
+          </div>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a href="about.html" class="hover:text-brand-pink transition-colors">About Us</a>
+            <a href="faq.html" class="hover:text-brand-pink transition-colors">FAQs</a>
+            <a href="contact.html" class="hover:text-brand-pink transition-colors">Contact Us</a>
+            <a href="privacy.html" class="hover:text-brand-pink transition-colors">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-brand-pink transition-colors">Terms & Conditions</a>
+          </div>
         </div>
 
         <!-- Right socials -->
@@ -532,16 +932,22 @@
         });
       }
 
-      // Initialize Flatpickr
+      // Initialize Flatpickr with default date
       picker = flatpickr("#calc-due-date-last-period", {
-      dateFormat: "d/m/Y",
-      maxDate: "today",
-      disableMobile: true,
-      allowInput: false,
-      clickOpens: true,
-      position: "below",
-      monthSelectorType: "static"
-    });
+        dateFormat: "d/m/Y",
+        defaultDate: "today",
+        maxDate: "today",
+        disableMobile: true,
+        allowInput: false,
+        clickOpens: true,
+        position: "below",
+        monthSelectorType: "static"
+      });
+
+      // Keyboard Escape listener to close modal
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
     });
 
     function calculateDueDate() {
@@ -580,6 +986,30 @@
       modal.classList.add('hidden');
       modal.classList.remove('show');
       document.body.style.overflow = '';
+    }
+
+    function toggleFaq(button) {
+      const parentItem = button.closest('.faq-item');
+      const content = parentItem.querySelector('.faq-content');
+      const icon = button.querySelector('[data-lucide], .faq-icon');
+
+      const isActive = parentItem.classList.contains('active');
+
+      // Close all other active items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+        const itemContent = item.querySelector('.faq-content');
+        const itemIcon = item.querySelector('[data-lucide], .faq-icon');
+        if (itemContent) itemContent.style.maxHeight = '0px';
+        if (itemIcon) itemIcon.style.transform = 'rotate(0deg)';
+      });
+
+      // Toggle current item
+      if (!isActive) {
+        parentItem.classList.add('active');
+        if (content) content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
     }
   </script>
 </body>
